@@ -29,4 +29,9 @@ public class LobbyNavigationUI : MonoBehaviour
 	{
 		_gameSceneLoader.LoadSoldierListScreen();
 	}
+
+	private void OnDestroy()
+	{
+		_view.Dispose();
+	}
 }

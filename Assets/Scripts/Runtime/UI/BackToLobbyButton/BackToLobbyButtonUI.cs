@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BackToLobbyButtonUI : MonoBehaviour
@@ -15,5 +16,10 @@ public class BackToLobbyButtonUI : MonoBehaviour
 	private void OnButtonClicked()
 	{
 		_gameSceneLoader.LoadLobby();
+	}
+
+	private void OnDestroy()
+	{
+		_view.Dispose();
 	}
 }
