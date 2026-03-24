@@ -611,6 +611,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavButton_Soldier
       objectReference: {fileID: 0}
+    - target: {fileID: 5909076744070789999, guid: 351320c172c72478ea521ed45462ec85, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -813,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 4252975636373247747, guid: 5fa113f3eaf04475f954d4cc37f90758, type: 3}
       propertyPath: m_Name
       value: NavButton_Summon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5909076744070789999, guid: 5fa113f3eaf04475f954d4cc37f90758, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1100,6 +1108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1118775501}
   - component: {fileID: 1118775502}
+  - component: {fileID: 1118775503}
   m_Layer: 5
   m_Name: NavigationBar
   m_TagString: Untagged
@@ -1155,6 +1164,22 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1118775503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118775500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61b3361ee57a4110924de2d0b06d1538, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _view:
+    _summonNavigator: {fileID: 1822714679}
+    _shopNavigator: {fileID: 1487344946}
+    _soldierListNavigator: {fileID: 1580764548}
 --- !u!1 &1148347280
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NavButton_Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 5909076744070789999, guid: 2eb2e2787779441dfa4907a8356d0304, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1398,6 +1427,39 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4114695009113099163, guid: 2eb2e2787779441dfa4907a8356d0304, type: 3}
   m_PrefabInstance: {fileID: 1487344941}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1487344946 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8614582495767647418, guid: 2eb2e2787779441dfa4907a8356d0304, type: 3}
+  m_PrefabInstance: {fileID: 1487344941}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1580764548 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8614582495767647418, guid: 351320c172c72478ea521ed45462ec85, type: 3}
+  m_PrefabInstance: {fileID: 601849116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1822714679 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8614582495767647418, guid: 5fa113f3eaf04475f954d4cc37f90758, type: 3}
+  m_PrefabInstance: {fileID: 836107897}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1883131352
 GameObject:
   m_ObjectHideFlags: 0

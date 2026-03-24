@@ -8,4 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/Lobby.unity
+    guid: 46eb41a1820c24dfea8af58458b3d876
+  - enabled: 1
+    path: Assets/Scenes/SummonScreen.unity
+    guid: 8bdc429df9f6d49c69f1445b0c9e19b7
+  - enabled: 1
+    path: Assets/Scenes/ShopScreen.unity
+    guid: ad4effe000c32416b821bfa883878d7d
+  - enabled: 1
+    path: Assets/Scenes/SoldierListScreen.unity
+    guid: 65f0c96c0c822496f8b0aec25e02036e
   m_configObjects: {}
