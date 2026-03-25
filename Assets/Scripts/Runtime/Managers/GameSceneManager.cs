@@ -1,3 +1,4 @@
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameSceneManager : ILoadGameScenes
@@ -27,7 +28,8 @@ public class GameSceneManager : ILoadGameScenes
 
 	public void LoadLobby()
 	{
-		SceneManager.LoadScene(LOBBY_SCENE_NAME);
+		var loadingContextHolder = new SceneLoadingContextHolder(LOBBY_SCENE_NAME);
+		LoadingTransitionEventBus.StartLoading?.Invoke(loadingContextHolder);
 	}
 	
 	public void LoadSummonScreen()
