@@ -30,7 +30,7 @@ public class GameSceneManager : ILoadGameScenes
 	public void LoadLobby()
 	{
 		var loadingContextHolder = new SceneLoadingContextHolder(LOBBY_SCENE_NAME);
-		LoadingTransitionEventBus.StartLoading?.Invoke(loadingContextHolder);
+		CommandBuffer.AddCommand(new LoadingCommands.StartLoadingCommand(loadingContextHolder));
 	}
 	
 	public void LoadSummonScreen()
