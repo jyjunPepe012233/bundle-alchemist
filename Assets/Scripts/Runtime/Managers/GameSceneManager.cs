@@ -7,6 +7,7 @@ public class GameSceneManager : ILoadGameScenes
 	private const string SUMMON_SCREEN_SCENE_NAME = "SummonScreen";
 	private const string SHOP_SCREEN_SCENE_NAME = "ShopScreen";
 	private const string SOLDIER_LIST_SCREEN_SCENE_NAME = "SoldierListScreen";
+	private const string WORLD_MAP_SCREEN_SCENE_NAME = "WorldMapScreen";
 
 	private static GameSceneManager _singleton;
 	public static GameSceneManager Singleton
@@ -45,5 +46,10 @@ public class GameSceneManager : ILoadGameScenes
 	public void LoadSoldierListScreen()
 	{
 		SceneManager.LoadScene(SOLDIER_LIST_SCREEN_SCENE_NAME);
+	}
+
+	public void LoadWorldMapScreen()
+	{
+		SceneManager.LoadScene(WORLD_MAP_SCREEN_SCENE_NAME);
 	}
 }

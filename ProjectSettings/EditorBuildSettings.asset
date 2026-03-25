@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SoldierListScreen.unity
     guid: 65f0c96c0c822496f8b0aec25e02036e
+  - enabled: 1
+    path: Assets/Scenes/WorldMapScreen.unity
+    guid: 2c10df20af0ce4ca89d4fd683b8e4143
   m_configObjects: {}

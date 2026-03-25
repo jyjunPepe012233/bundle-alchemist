@@ -7,4 +7,6 @@ public interface ILoadGameScenes
 	void LoadShopScreen();
 	
 	void LoadSoldierListScreen();
+
+	void LoadWorldMapScreen();
 }
