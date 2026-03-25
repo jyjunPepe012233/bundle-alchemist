@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable] // unity 엔진에서 직렬화를 통해 객체를 자동 주입시키기 위함
-public class LobbyNavigationView : IDisposable
+public class LobbyNavigationView : UIView
 {
 	[SerializeField] private Button _summonNavigator;
 	[SerializeField] private Button _shopNavigator;
@@ -13,7 +13,7 @@ public class LobbyNavigationView : IDisposable
 	public event Action ShopNavigatorClicked;
 	public event Action SoldierListNavigatorClicked;
 
-	public void OnSetupUICallbacks()
+	public override void RegisterUICallbacks()
 	{
 		if (_summonNavigator == null || _shopNavigator == null || _soldierListNavigator == null)
 		{
@@ -25,12 +25,8 @@ public class LobbyNavigationView : IDisposable
 		_shopNavigator.onClick.AddListener(OnShopNavigatorClicked);
 		_soldierListNavigator.onClick.AddListener(OnSoldierNavigatorClicked);
 	}
-
-	private void OnSummonNavigatorClicked() => SummonNavigatorClicked?.Invoke();
-	private void OnShopNavigatorClicked() => ShopNavigatorClicked?.Invoke();
-	private void OnSoldierNavigatorClicked() => SoldierListNavigatorClicked?.Invoke();
-
-	public void Dispose()
+	
+	public override void Dispose()
 	{
 		if (_summonNavigator == null || _shopNavigator == null || _soldierListNavigator == null)
 		{
@@ -42,4 +38,8 @@ public class LobbyNavigationView : IDisposable
 		_shopNavigator.onClick.RemoveListener(OnShopNavigatorClicked);
 		_soldierListNavigator.onClick.RemoveListener(OnSoldierNavigatorClicked);
 	}
+
+	private void OnSummonNavigatorClicked() => SummonNavigatorClicked?.Invoke();
+	private void OnShopNavigatorClicked() => ShopNavigatorClicked?.Invoke();
+	private void OnSoldierNavigatorClicked() => SoldierListNavigatorClicked?.Invoke();
 }
