@@ -3,7 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// 게임 시스템이 UI 시스템의 요청을 동기적으로 처리하는 흐름을 만들고자 커맨드 패턴을 바탕으로 이 클래스를 구현하였음. - 250325
+// 게임 시스템이 UI 시스템의 요청을 동기적으로 처리하는 흐름을 만들고자 커맨드 패턴을 바탕으로 이 클래스를 구현하였음. - 260325
+
+// 현재 커맨드 버퍼는 모든 곳에서 공유되어 사용되는 싱글톤 형태로 구현되어 있음.
+// 커맨드 버퍼를 객체로 만들어 각 시스템이 개별적으로 사용할 수 있게 변경할 계획임 - 260327
 public static class CommandBuffer
 {
 	private static readonly Queue<ICommand> _commandQueue = new(); 
