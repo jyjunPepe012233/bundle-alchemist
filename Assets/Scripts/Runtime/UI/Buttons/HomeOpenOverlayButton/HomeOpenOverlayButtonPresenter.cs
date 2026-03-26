@@ -1,23 +1,23 @@
-public class WorldMapButtonPresenter : UIPresenter<WorldMapButtonView>
+using UnityEngine;
+
+public class HomeOpenOverlayButtonPresenter : UIPresenter<ButtonView>
 {
-	private ILoadGameScenes _gameSceneLoader = GameSceneManager.Singleton;
+	[SerializeField] private string _overlayID;
 	
 	protected override void SetupSubscriptions()
 	{
 		base.SetupSubscriptions();
-
 		view.ButtonClicked += OnButtonClicked;
 	}
 
 	protected override void DisposeSubscriptions()
 	{
 		base.DisposeSubscriptions();
-		
 		view.ButtonClicked -= OnButtonClicked;
 	}
 
 	private void OnButtonClicked()
 	{
-		_gameSceneLoader.LoadWorldMapScreen();
+		HomeUIEventBus.OpenOverlay?.Invoke(_overlayID);
 	}
 }
