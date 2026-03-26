@@ -1,4 +1,4 @@
-public class BackToLobbyButtonPresenter : UIPresenter<BackToLobbyButtonView>
+public class BackToLobbyButtonPresenter : UIPresenter<ButtonView>
 {
 	private ILoadGameScenes _gameSceneLoader = GameSceneManager.Singleton;
 
