@@ -329,9 +329,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4030664755722488202}
-  - component: {fileID: 1841416707535345375}
+  - component: {fileID: 4261770309908194249}
   m_Layer: 5
-  m_Name: BackToLobbyButton
+  m_Name: Button_BackToLobby
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ RectTransform:
   m_AnchoredPosition: {x: 55, y: -45}
   m_SizeDelta: {x: 200, y: 65}
   m_Pivot: {x: 0, y: 1}
---- !u!114 &1841416707535345375
+--- !u!114 &4261770309908194249
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,12 +366,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6800634987246156798}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ef5bbc92ab140b88ebed1600522d53c, type: 3}
+  m_Script: {fileID: 11500000, guid: 879df47aaafb468eaa7399812f189ac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   view:
     _topElement: {fileID: 3861272441618780570}
     _button: {fileID: 5264799555582628126}
+  _overlayID: Bu
 --- !u!1 &6805856722387338818
 GameObject:
   m_ObjectHideFlags: 0
