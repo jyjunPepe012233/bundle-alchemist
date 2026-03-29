@@ -12,6 +12,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2d38e1c5673114d42927ed6e9e5b6758, type: 3}
+    - target: {fileID: 760686463613236478, guid: dd64e846b7d8a4ad797a7b61afa1f639, type: 3}
+      propertyPath: m_text
+      value: "\uBCD1\uC0AC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 3746677926546748666, guid: dd64e846b7d8a4ad797a7b61afa1f639, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: f60623a6eda534b08bf2e1b28dc686d1, type: 3}
+    - target: {fileID: 3954159441724195462, guid: dd64e846b7d8a4ad797a7b61afa1f639, type: 3}
+      propertyPath: _overlayID
+      value: SoldierList
+      objectReference: {fileID: 0}
     - target: {fileID: 5242556900505783842, guid: dd64e846b7d8a4ad797a7b61afa1f639, type: 3}
       propertyPath: m_Name
       value: NavButton_Soldier
