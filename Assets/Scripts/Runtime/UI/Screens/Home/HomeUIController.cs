@@ -81,5 +81,6 @@ public class HomeUIController : MonoBehaviour
 		}
 		
 		_screens.Add(overlay.OverlayID, overlay);
+		overlay.Hide();
 	}
 }
