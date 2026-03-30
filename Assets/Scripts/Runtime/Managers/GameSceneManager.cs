@@ -1,13 +1,6 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
 public class GameSceneManager : ILoadGameScenes
 {
-	private const string LOBBY_SCENE_NAME = "Lobby";
-	private const string SUMMON_SCREEN_SCENE_NAME = "SummonScreen";
-	private const string SHOP_SCREEN_SCENE_NAME = "ShopScreen";
-	private const string SOLDIER_LIST_SCREEN_SCENE_NAME = "SoldierListScreen";
-	private const string WORLD_MAP_SCREEN_SCENE_NAME = "WorldMapScreen";
+	private const string HOME_SCENE_NAME = "Home";
 
 	private static GameSceneManager _singleton;
 	public static GameSceneManager Singleton
@@ -27,29 +20,9 @@ public class GameSceneManager : ILoadGameScenes
 		// 외부에서 인스턴스 생성 불허
 	}
 
-	public void LoadLobby()
+	public void LoadHome()
 	{
-		var loadingContextHolder = new SceneLoadingContextHolder(LOBBY_SCENE_NAME);
+		var loadingContextHolder = new SceneLoadingContextHolder(HOME_SCENE_NAME);
 		CommandBuffer.AddCommand(new LoadingCommands.StartLoadingCommand(loadingContextHolder));
-	}
-	
-	public void LoadSummonScreen()
-	{
-		SceneManager.LoadScene(SUMMON_SCREEN_SCENE_NAME);
-	}
-
-	public void LoadShopScreen()
-	{
-		SceneManager.LoadScene(SHOP_SCREEN_SCENE_NAME);
-	}
-	
-	public void LoadSoldierListScreen()
-	{
-		SceneManager.LoadScene(SOLDIER_LIST_SCREEN_SCENE_NAME);
-	}
-
-	public void LoadWorldMapScreen()
-	{
-		SceneManager.LoadScene(WORLD_MAP_SCREEN_SCENE_NAME);
 	}
 }

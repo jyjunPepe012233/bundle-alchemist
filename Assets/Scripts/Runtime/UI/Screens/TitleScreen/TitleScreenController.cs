@@ -20,7 +20,7 @@ public class TitleScreenController : MonoBehaviour
 	
 	private void OnTouchBegan(Touch touch)
 	{
-		_loadGameScenes.LoadLobby();
+		_loadGameScenes.LoadHome();
 		_touchInfoProvider.TouchBegan -= OnTouchBegan;
 	}
 }
