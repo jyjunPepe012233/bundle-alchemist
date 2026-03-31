@@ -35,4 +35,14 @@ public abstract class UIPresenter<TView> : MonoBehaviour where TView : UIView
 	{
 		
 	}
+
+	public virtual void Show()
+	{
+		view?.Show();
+	}
+
+	public virtual void Hide()
+	{
+		view?.Hide();
+	}
 }

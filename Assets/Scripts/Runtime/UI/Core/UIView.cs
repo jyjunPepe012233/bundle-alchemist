@@ -15,4 +15,14 @@ public abstract class UIView : IDisposable
 	{
 		
 	}
+	
+	public virtual void Show()
+	{
+		_topElement?.SetActive(true);
+	}
+	
+	public virtual void Hide()
+	{
+		_topElement?.SetActive(false);
+	}
 }
