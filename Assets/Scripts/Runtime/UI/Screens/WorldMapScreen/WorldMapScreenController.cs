@@ -9,6 +9,8 @@ public class WorldMapScreenController : MonoBehaviour
 	[SerializeField] private StageInfoModalPresenter _stageInfoModalRight;
 	[SerializeField] private StageInfoModalPresenter _stageInfoModalLeft;
 	
+	private StageSO _lastStageInfo;
+	
 	public void Awake()
 	{
 		HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked += OnStageInfoButtonClicked;
@@ -24,21 +26,36 @@ public class WorldMapScreenController : MonoBehaviour
 
 	private void OnStageInfoButtonClicked(StageSO stage, bool isRightSide)
 	{
-		// StageInfoModal 스스로 UI를 닫을 수 있으므로
-		// 본 클래스의 내부적인 상태가 아닌 Modal의 실제 상태를 참조하여 모달이 열려있는지 확인해야 했음
 		if (_stageInfoModalRight.IsOpen || _stageInfoModalLeft.IsOpen)
 		{
 			_stageInfoModalRight.Hide();
 			_stageInfoModalLeft.Hide();
+
+			if (_lastStageInfo != stage)
+			{
+				_lastStageInfo = stage;
+				OpenStageInfoModal(stage, isRightSide);
+			}
+			else
+			{
+				_lastStageInfo = null;
+			}
 		}
 		else
 		{
-			// 오른쪽에 있는 버튼이 클릭되면 왼쪽 모달을 사용함
-			var stageModal = isRightSide ? _stageInfoModalLeft : _stageInfoModalRight;
-			
-			stageModal.InitializeStageInfo(stage);
-			stageModal.Show();
+			_lastStageInfo = stage;
+			OpenStageInfoModal(stage, isRightSide);
 		}
+	}
+	
+	private void OpenStageInfoModal(StageSO stage, bool isRightSide)
+	{
+		var stageModal = isRightSide ? _stageInfoModalLeft : _stageInfoModalRight;
+		
+		stageModal.InitializeStageInfo(stage);
+		stageModal.Show();
+		
+		_lastStageInfo = stage;
 	}
 	
 	public void InitializeChapter(ChapterSO chapter)
