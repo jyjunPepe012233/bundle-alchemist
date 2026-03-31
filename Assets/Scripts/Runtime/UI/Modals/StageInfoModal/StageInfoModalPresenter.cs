@@ -1,7 +1,19 @@
 public class StageInfoModalPresenter : UIPresenter<StageInfoModalView>
 {
 	public bool IsOpen { get; private set; }
-	
+
+	protected override void SetupSubscriptions()
+	{
+		base.SetupSubscriptions();
+		view.CloseButtonClicked += OnCloseButtonClicked;
+	}
+
+	protected override void DisposeSubscriptions()
+	{
+		base.DisposeSubscriptions();
+		view.CloseButtonClicked -= OnCloseButtonClicked;
+	}
+
 	public override void Show()
 	{
 		base.Show();
@@ -11,6 +23,12 @@ public class StageInfoModalPresenter : UIPresenter<StageInfoModalView>
 	public override void Hide()
 	{
 		base.Hide();
+		IsOpen = false;
+	}
+
+	private void OnCloseButtonClicked()
+	{
+		Hide();
 		IsOpen = false;
 	}
 
