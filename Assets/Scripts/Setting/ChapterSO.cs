@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Chapter")]
@@ -7,4 +8,5 @@ public class ChapterSO : ScriptableObject
 	public string ChapterName => _chapterName;
 
 	[SerializeField] private StageSO[] _stages;
+	public IReadOnlyList<StageSO> Stages => _stages;
 }
