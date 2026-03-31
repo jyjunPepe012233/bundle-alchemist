@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class StageInfoButtonPresenter : UIPresenter<StageInfoButtonView>
 {
+	// 버튼이 오른쪽에 있는지 여부
+	// 버튼이 오른쪽에 있으면 왼쪽 모달이 사용됨 
+	[SerializeField] private bool _isRightSide;
+	
+	
 	[SerializeField] private StageSO _stage;
 	
 	private InvasionLevelQueryService _invasionModel;
@@ -30,6 +35,6 @@ public class StageInfoButtonPresenter : UIPresenter<StageInfoButtonView>
 
 	private void OnButtonClicked()
 	{
-		HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked?.Invoke(_stage);
+		HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked?.Invoke(_stage, _isRightSide);
 	}
 }

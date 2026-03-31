@@ -7,6 +7,6 @@ public static class HomeUIEventBus
 
 	public static class WorldMapScreen
 	{
-		public static Action<StageSO> StageInfoButtonClicked;
+		public static Action<StageSO, bool> StageInfoButtonClicked; // StageSO, isRightSide
 	}
 }
