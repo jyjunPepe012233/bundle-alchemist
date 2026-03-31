@@ -34,4 +34,14 @@ public class WorldMapScreenController : MonoBehaviour
 			_stageInfoModal.Show();
 		}
 	}
+	
+	public void InitializeChapter(ChapterSO chapter)
+	{
+		UpdateChapterName(chapter.ChapterName);
+	}
+	
+	private void UpdateChapterName(string chapterName)
+	{
+		_chapterNameText.text = string.Format(_chapterNameFormat, chapterName);
+	}
 }

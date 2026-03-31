@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5527412843518742772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5453586196920694327}
+  - component: {fileID: 1587325188102189453}
+  m_Layer: 0
+  m_Name: WorldMapScreenInitializer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5453586196920694327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527412843518742772}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7539296470890314301}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1587325188102189453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5527412843518742772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79d63df8476e4231b9baa87f5a02e6ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _worldMapScreenController: {fileID: 6436833354647687875}
+  _chapter: {fileID: 11400000, guid: b6ef644cc49f94acb990a41e2935e1cb, type: 2}
 --- !u!1001 &367669637752398298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -731,6 +777,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8539797764765618994, guid: d255ecea6c3d145688c6388b1bb40361, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1386696802596482585}
+    - targetCorrespondingSourceObject: {fileID: 8539797764765618994, guid: d255ecea6c3d145688c6388b1bb40361, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5453586196920694327}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4026277699555300802, guid: d255ecea6c3d145688c6388b1bb40361, type: 3}
       insertIndex: -1

@@ -1061,7 +1061,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 32439389461213200, guid: 7e7f0d8bb81cc485d9c3085422941747, type: 3}
       propertyPath: m_text
-      value: "\uC138\uACC4 \uC9C0\uB3C4 (\uCE68\uB7B5)"
+      value: "\uCE68\uB7B5 (\uCC55\uD130)"
       objectReference: {fileID: 0}
     - target: {fileID: 3616036492833320316, guid: 7e7f0d8bb81cc485d9c3085422941747, type: 3}
       propertyPath: m_AnchorMax.y
