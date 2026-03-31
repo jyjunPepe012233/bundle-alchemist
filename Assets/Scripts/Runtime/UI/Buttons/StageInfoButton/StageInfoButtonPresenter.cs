@@ -30,6 +30,6 @@ public class StageInfoButtonPresenter : UIPresenter<StageInfoButtonView>
 
 	private void OnButtonClicked()
 	{
-		HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked?.Invoke();
+		HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked?.Invoke(_stage);
 	}
 }
