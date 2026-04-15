@@ -1,8 +1,8 @@
-using Core.Types;
+using ProjectB.Core.Types;
 using UnityEditor;
 using UnityEngine;
 
-namespace Core.Editor.Drawers
+namespace ProjectB.Core.Editor.Drawers
 {
 
 	[CustomPropertyDrawer(typeof(InterfaceRef<>))]

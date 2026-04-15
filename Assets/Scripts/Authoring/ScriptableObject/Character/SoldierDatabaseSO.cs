@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Core.Types;
-using Data.Character;
+using ProjectB.Core.Types;
+using ProjectB.Data.Static.Character;
 using UnityEngine;
 
-namespace Authoring.ScriptableObject.Character
+namespace ProjectB.Authoring.ScriptableObject.Character
 {
 
 	[CreateAssetMenu(menuName = "Soldier Database")]

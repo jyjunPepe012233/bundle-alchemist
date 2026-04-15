@@ -1,6 +1,4 @@
-using Core.Models;
-
-namespace Gameplay.Ports.Outbound
+namespace ProjectB.Gameplay.Ports.Outbound
 {
 
 	public interface ILoadHomePort

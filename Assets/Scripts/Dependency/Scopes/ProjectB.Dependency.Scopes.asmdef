@@ -1,6 +1,6 @@
 {
     "name": "ProjectB.Dependency.Scopes",
-    "rootNamespace": "",
+    "rootNamespace": "ProjectB",
     "references": [
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
         "GUID:57c074a4726b4ac9a0b105d90daef00c",

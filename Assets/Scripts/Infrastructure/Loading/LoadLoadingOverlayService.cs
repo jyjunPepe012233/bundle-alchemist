@@ -1,8 +1,8 @@
 using System.Collections;
-using Gameplay.Ports.Outbound;
+using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine.SceneManagement;
 
-namespace Infrastructure.Loading
+namespace ProjectB.Infrastructure.Loading
 {
 
 	public class LoadLoadingOverlayService : ILoadLoadingOverlayPort

@@ -1,4 +1,4 @@
-namespace Gameplay.Ports.Inbound
+namespace ProjectB.Gameplay.Ports.Inbound
 {
 
 	public interface ITitleScreenManagerPort

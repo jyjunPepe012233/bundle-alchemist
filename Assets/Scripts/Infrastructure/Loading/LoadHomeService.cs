@@ -1,7 +1,6 @@
-using Core.Models;
-using Gameplay.Ports.Outbound;
+using ProjectB.Gameplay.Ports.Outbound;
 
-namespace Infrastructure.LoadHome
+namespace ProjectB.Infrastructure.Loading
 {
 
 	public class LoadHomeService : ILoadHomePort

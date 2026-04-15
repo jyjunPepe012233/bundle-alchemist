@@ -1,7 +1,7 @@
-using Data.Invasion;
+using ProjectB.Data.Static.Invasion;
 using UnityEngine;
 
-namespace Authoring.ScriptableObject.Invasion
+namespace ProjectB.Authoring.ScriptableObject.Invasion
 {
 
 	[CreateAssetMenu(menuName = "Stage")]

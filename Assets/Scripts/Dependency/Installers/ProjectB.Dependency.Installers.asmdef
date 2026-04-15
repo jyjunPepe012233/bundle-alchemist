@@ -1,6 +1,6 @@
 {
     "name": "ProjectB.Dependency.Installers",
-    "rootNamespace": "",
+    "rootNamespace": "ProjectB",
     "references": [
         "GUID:b0214a6008ed146ff8f122a6a9c2f6cc",
         "GUID:6934533433c34282a53f61bc6c623e17"

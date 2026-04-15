@@ -1,6 +1,6 @@
 {
     "name": "ProjectB.Core",
-    "rootNamespace": "",
+    "rootNamespace": "ProjectB",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Data.Invasion
+namespace ProjectB.Data.Static.Invasion
 {
 
 	public interface IChapterData

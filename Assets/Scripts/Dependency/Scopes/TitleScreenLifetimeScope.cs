@@ -1,11 +1,7 @@
-using Composition.Core;
-using Gameplay.Ports.Inbound;
-using Gameplay.Ports.Outbound;
-using Gameplay.TitleScreen;
-using VContainer;
-using VContainer.Unity;
+using ProjectB.Gameplay.Ports.Inbound;
+using ProjectB.Gameplay.TitleScreen;
 
-namespace Composition
+namespace ProjectB.Dependency.Scopes
 {
 
 	public class TitleScreenLifetimeScope : StructuredLifetimeScope

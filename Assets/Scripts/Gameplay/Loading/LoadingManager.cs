@@ -1,12 +1,11 @@
 using System;
 using System.Collections;
-using Core.Handlers;
-using Core.Models;
-using Gameplay.Ports.Inbound;
-using Gameplay.Ports.Outbound;
+using ProjectB.Core.Supports;
+using ProjectB.Gameplay.Ports.Inbound;
+using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 
-namespace Gameplay.TitleScreen
+namespace ProjectB.Gameplay.Loading
 {
 
 	public class LoadingManager : ILoadingServicePort, ILoadingOverlayManagerPort

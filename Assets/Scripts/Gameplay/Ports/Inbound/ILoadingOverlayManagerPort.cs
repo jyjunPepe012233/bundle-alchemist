@@ -1,6 +1,6 @@
 using System;
 
-namespace Gameplay.Ports.Inbound
+namespace ProjectB.Gameplay.Ports.Inbound
 {
 
 	public interface ILoadingOverlayManagerPort

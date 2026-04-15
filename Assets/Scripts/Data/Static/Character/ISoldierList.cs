@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Data.Character
+namespace ProjectB.Data.Static.Character
 {
 
 	public interface ISoldierList

@@ -1,6 +1,6 @@
-using Core.Models;
+using ProjectB.Gameplay.Ports.Outbound;
 
-namespace Gameplay.Ports.Inbound
+namespace ProjectB.Gameplay.Ports.Inbound
 {
 
 	public interface ILoadingServicePort

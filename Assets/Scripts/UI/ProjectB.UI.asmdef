@@ -1,0 +1,19 @@
+{
+    "name": "ProjectB.UI",
+    "rootNamespace": "ProjectB",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:57c074a4726b4ac9a0b105d90daef00c",
+        "GUID:6934533433c34282a53f61bc6c623e17",
+        "GUID:8d576225a1e146719f95ad838b9bd801"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

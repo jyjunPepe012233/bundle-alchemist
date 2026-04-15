@@ -1,6 +1,6 @@
 using System.Collections;
 
-namespace Gameplay.Ports.Outbound
+namespace ProjectB.Gameplay.Ports.Outbound
 {
 
 	public interface ILoadLoadingOverlayPort

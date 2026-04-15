@@ -1,8 +1,7 @@
-using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 
-namespace Composition.Core
+namespace ProjectB.Dependency.Scopes
 {
 
 	// 구조화된 LifetimeScope 작성을 위해 메서드를 제공하는 추상 클래스

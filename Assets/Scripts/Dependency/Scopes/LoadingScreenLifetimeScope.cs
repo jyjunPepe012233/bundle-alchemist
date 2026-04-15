@@ -1,6 +1,4 @@
-using Composition.Core;
-
-namespace Dependency.Scopes
+namespace ProjectB.Dependency.Scopes
 {
 
 	public class LoadingScreenLifetimeScope : StructuredLifetimeScope

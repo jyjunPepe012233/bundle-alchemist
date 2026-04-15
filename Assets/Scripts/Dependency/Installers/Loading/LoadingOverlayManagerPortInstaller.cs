@@ -1,7 +1,6 @@
-using Gameplay.Ports.Inbound;
-using UI.Installers.Core;
+using ProjectB.Gameplay.Ports.Inbound;
 
-namespace UI.Installers
+namespace ProjectB.Dependency.Installers.Loading
 {
 
 	public class LoadingOverlayManagerPortInstaller : DIBasedPortInstaller<ILoadingOverlayManagerPort>

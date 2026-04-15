@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core.Handlers
+namespace ProjectB.Core.Supports
 {
 
 	public class CoroutineHandler : MonoBehaviour

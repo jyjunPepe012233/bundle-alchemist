@@ -1,12 +1,10 @@
-using Composition.Core;
-using Gameplay.Ports.Inbound;
-using Gameplay.Ports.Outbound;
-using Gameplay.TitleScreen;
-using Infrastructure.LoadHome;
-using Infrastructure.Loading;
+using ProjectB.Gameplay.Loading;
+using ProjectB.Gameplay.Ports.Inbound;
+using ProjectB.Gameplay.Ports.Outbound;
+using ProjectB.Infrastructure.Loading;
 using VContainer;
 
-namespace Composition
+namespace ProjectB.Dependency.Scopes
 {
 
 	public class CoreLifetimeScope : StructuredLifetimeScope

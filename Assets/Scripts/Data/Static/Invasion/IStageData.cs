@@ -1,4 +1,4 @@
-namespace Data.Invasion
+namespace ProjectB.Data.Static.Invasion
 {
 
 	public interface IStageData

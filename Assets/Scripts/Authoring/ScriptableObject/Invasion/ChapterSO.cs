@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using Core.Types;
-using Data.Invasion;
+using ProjectB.Core.Types;
+using ProjectB.Data.Static.Invasion;
 using UnityEngine;
 
-namespace Authoring.ScriptableObject.Invasion
+namespace ProjectB.Authoring.ScriptableObject.Invasion
 {
 
 	[CreateAssetMenu(menuName = "Chapter")]

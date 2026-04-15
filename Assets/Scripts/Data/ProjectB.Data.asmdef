@@ -1,6 +1,6 @@
 {
     "name": "ProjectB.Data",
-    "rootNamespace": "",
+    "rootNamespace": "ProjectB",
     "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],

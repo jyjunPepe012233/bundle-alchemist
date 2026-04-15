@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Data.Character
+namespace ProjectB.Data.Static.Character
 {
 
 	public interface IDeckSelectableData

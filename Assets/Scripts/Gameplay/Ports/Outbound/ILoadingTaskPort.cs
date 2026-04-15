@@ -1,4 +1,4 @@
-namespace Core.Models
+namespace ProjectB.Gameplay.Ports.Outbound
 {
 
 	public interface ILoadingTaskPort

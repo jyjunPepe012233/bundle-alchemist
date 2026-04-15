@@ -1,7 +1,7 @@
 using UnityEngine;
 using VContainer;
 
-namespace UI.Installers.Core
+namespace ProjectB.Dependency.Installers
 {
 
 	public abstract class DIBasedPortInstaller<T> : MonoBehaviour where T : class

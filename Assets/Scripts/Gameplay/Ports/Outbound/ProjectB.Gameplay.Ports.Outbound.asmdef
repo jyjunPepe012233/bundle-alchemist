@@ -1,6 +1,6 @@
 {
     "name": "ProjectB.Gameplay.Ports.Outbound",
-    "rootNamespace": "",
+    "rootNamespace": "ProjectB",
     "references": [
         "GUID:57c074a4726b4ac9a0b105d90daef00c"
     ],
