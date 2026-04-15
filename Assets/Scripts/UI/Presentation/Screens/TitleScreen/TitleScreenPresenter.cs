@@ -1,6 +1,7 @@
 using UI.Installers;
 using UI.Presentation.Core;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace UI.Presentation.Screens.TitleScreen
 {
@@ -8,7 +9,7 @@ namespace UI.Presentation.Screens.TitleScreen
 	public class TitleScreenPresenter : UIPresenter<TitleScreenTouchAreaView>
 	{
 		[SerializeField]
-		private TitleScreenTouchPortInstaller _titleScreenTouchPortInstaller;
+		private TitleScreenManagerPortInstaller _titleScreenManagerPortInstaller;
 
 		protected override void SetupSubscriptions()
 		{
@@ -24,7 +25,7 @@ namespace UI.Presentation.Screens.TitleScreen
 
 		void OnTouched()
 		{
-			_titleScreenTouchPortInstaller.Port.Touched();
+			_titleScreenManagerPortInstaller.Port.Touched();
 		}
 	}
 

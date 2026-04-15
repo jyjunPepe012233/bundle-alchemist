@@ -259,7 +259,7 @@ MonoBehaviour:
   view:
     _topElement: {fileID: 1383442416}
     _touchAreaButton: {fileID: 4127475815143450137}
-  _titleScreenTouchPortInstaller: {fileID: 1381521320}
+  _titleScreenManagerPortInstaller: {fileID: 1381521320}
 --- !u!1001 &1689268779413890368
 PrefabInstance:
   m_ObjectHideFlags: 0

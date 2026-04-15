@@ -1,32 +1,37 @@
 using System.Collections;
+using Gameplay.Ports.Inbound;
+using UI.Installers;
 using UI.Presentation.Core;
+using UnityEngine;
 
 namespace UI.Presentation.Screens.LoadingOverlay
 {
 
 	public class LoadingOverlayPresenter : UIPresenter<LoadingOverlayView>
 	{
-//		[SerializeField]
-//		private InterfaceRef<IObjectContext> _objectContext;
+		[SerializeField] private LoadingOverlayManagerPortInstaller _loadingOverlayManagerPortInstaller;
+
+		private ILoadingOverlayManagerPort _loadingOverlayManager;
 		
-//		private ILoadingTransitionPort _loadingTransitionPort;
-		
+		protected override void SetupReferences()
+		{
+			base.SetupReferences();
+			_loadingOverlayManager = _loadingOverlayManagerPortInstaller.Port;
+		}
+
 		protected override void SetupSubscriptions()
 		{
 			base.SetupSubscriptions();
-
-//			_loadingTransitionPort = _objectContext.Value.Resolve<ILoadingTransitionPort>();
-
-//			_loadingTransitionPort.LoadingStarted += OnLoadingStarted;
-//			_loadingTransitionPort.LoadingFinished += OnLoadingFinished;
+			_loadingOverlayManager.LoadingStarted += OnLoadingStarted;
+			_loadingOverlayManager.LoadingFinished += OnLoadingFinished;
 		}
 
 		protected override void DisposeSubscriptions()
 		{
 			base.DisposeSubscriptions();
 			
-//			_loadingTransitionPort.LoadingStarted -= OnLoadingStarted;
-//			_loadingTransitionPort.LoadingFinished -= OnLoadingFinished;
+			_loadingOverlayManager.LoadingStarted -= OnLoadingStarted;
+			_loadingOverlayManager.LoadingFinished -= OnLoadingFinished;
 		}
 
 		private void OnLoadingStarted()
@@ -34,7 +39,7 @@ namespace UI.Presentation.Screens.LoadingOverlay
 			IEnumerator Coroutine()
 			{
 				yield return view.OpenTransitionCoroutine();
-//				_loadingTransitionPort.TransitionReadied?.Invoke();
+				_loadingOverlayManager.TransitionReadied();
 			}
 			StartCoroutine(Coroutine());
 		}
@@ -44,7 +49,7 @@ namespace UI.Presentation.Screens.LoadingOverlay
 			IEnumerator Coroutine()
 			{
 				yield return view.CloseTransitionCoroutine();
-//				_loadingTransitionPort.TransitionDisposed?.Invoke();
+				_loadingOverlayManager.TransitionDisposed();
 			}
 			StartCoroutine(Coroutine());
 		}

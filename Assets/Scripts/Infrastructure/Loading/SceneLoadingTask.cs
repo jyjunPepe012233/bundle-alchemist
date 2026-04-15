@@ -4,7 +4,7 @@ using Core.Models;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SceneLoadingTask : ILoadingTask
+public class SceneLoadingTask : ILoadingTaskPort
 {
 	public bool IsDone => asyncOperation?.isDone ?? false;
 

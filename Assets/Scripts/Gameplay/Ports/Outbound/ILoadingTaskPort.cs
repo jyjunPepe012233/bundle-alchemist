@@ -1,7 +1,7 @@
 namespace Core.Models
 {
 
-	public interface ILoadingTask
+	public interface ILoadingTaskPort
 	{
 		bool IsDone { get; }
 	

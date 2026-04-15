@@ -10,6 +10,7 @@ namespace UI.Presentation.Core
 		public void Awake()
 		{
 			view.RegisterUICallbacks();
+			SetupReferences();
 			SetupSubscriptions();
 		}
 
@@ -22,6 +23,11 @@ namespace UI.Presentation.Core
 		{
 			view.Dispose();
 			DisposeSubscriptions();
+		}
+
+		protected virtual void SetupReferences()
+		{
+			
 		}
 	
 		protected virtual void SetupSubscriptions()

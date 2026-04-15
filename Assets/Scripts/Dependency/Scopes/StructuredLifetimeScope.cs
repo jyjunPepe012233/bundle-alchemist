@@ -11,6 +11,9 @@ namespace Composition.Core
 		// Configure 시작 시 바로 등록됨
 		private IContainerBuilder _builder;
 		
+		// 직접 Builder를 사용하여 Register할 수도 있게 함
+		protected IContainerBuilder Builder => _builder;
+		
 		// 구조화된 LifetimeScope 작성을 위해 이 클래스에서 제공하는 추상 메서드를 통해서만 어댑터들을 등록할 수 있게 함
 		protected override void Configure(IContainerBuilder builder)
 		{
@@ -43,18 +46,13 @@ namespace Composition.Core
 		/// <summary>
 		/// Infrastructure 내부 시스템을 등록 (예시: SceneLoader 등)
 		/// </summary>
-		protected virtual void AddInfrastructure()
+		/*protected virtual*/ void AddInfrastructure() // 사용 안 함
 		{
 			
 		}
 		
-		protected void RegisterSingleSystem<T>() where T : class
-		{
-			_builder.Register<T>(Lifetime.Singleton).As<T>();
-		}
-		
 		/// <summary>
-		/// 이 메서드를 통해서만 Port-Adapter를 등록할 수 있도록 함
+		/// 이 메서드를 통해서 Port-Adapter를 편하게 등록할 수 있도록 함
 		/// </summary>
 		protected void RegisterPortAdapter<TPort, TAdapter>()
 			where TPort : class
