@@ -10,15 +10,15 @@ namespace Composition
 
 	public class TitleScreenLifetimeScope : StructuredLifetimeScope
 	{
-		protected override void Configure(IContainerBuilder builder)
-//		protected override void AddInboundAdapters()
+		protected override void AddInboundAdapters()
 		{
-			base.Configure(builder);
+			base.AddInboundAdapters();
 			RegisterPortAdapter<ITitleScreenTouchPort, TitleScreenHomeLoader>();
-//		}
+		}
 
-//		protected override void AddOutboundAdapters()
-//		{
+		protected override void AddOutboundAdapters()
+		{
+			base.AddInboundAdapters();
 			RegisterPortAdapter<ILoadHomeScenePort, GameSceneLoader>();
 		}
 	}

@@ -18,8 +18,10 @@ namespace Composition.Core
 			
 			base.Configure(builder);
 			
+			// 컨테이너에 Register하는 순서는 상관 없음
 			AddInboundAdapters();
 			AddOutboundAdapters();
+			AddInfrastructure();
 		}
 
 		/// <summary>
