@@ -1,10 +1,11 @@
+using Core.Types;
 using UnityEditor;
 using UnityEngine;
 
-namespace Core.Editor.InterfaceRef
+namespace Core.Editor.Drawers
 {
 
-	[CustomPropertyDrawer(typeof(Core.Type.InterfaceRef<>))]
+	[CustomPropertyDrawer(typeof(InterfaceRef<>))]
 	public class InterfaceRefDrawer : PropertyDrawer
 	{
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -51,7 +52,7 @@ namespace Core.Editor.InterfaceRef
 
 		internal static System.Type ExtractInterfaceType(System.Type fieldType)
 		{
-			if (fieldType.IsGenericType && fieldType.GetGenericTypeDefinition() == typeof(Core.Type.InterfaceRef<>))
+			if (fieldType.IsGenericType && fieldType.GetGenericTypeDefinition() == typeof(InterfaceRef<>))
 				return fieldType.GetGenericArguments()[0];
 
 			if (fieldType.IsArray)
@@ -64,7 +65,7 @@ namespace Core.Editor.InterfaceRef
 		}
 	}
 
-	[CustomPropertyDrawer(typeof(Core.Type.InterfaceRefs<>))]
+	[CustomPropertyDrawer(typeof(InterfaceRefs<>))]
 	public class InterfaceRefsDrawer : PropertyDrawer
 	{
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)

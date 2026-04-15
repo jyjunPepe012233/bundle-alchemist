@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Core.Type;
+using Core.Types;
 using Data.Invasion;
 using UnityEngine;
 

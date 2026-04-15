@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df5a3a29acd4d55a86c12c04dd73e91, type: 3}
   m_Name: Soldiers1
   m_EditorClassIdentifier: 
-  _worldIdlePrefab: {fileID: 0}
+  _worldIdlePrefab: {fileID: 1824668350962886144, guid: d6c3c650b0b379149a826b54b40b4571, type: 3}

@@ -1,0 +1,19 @@
+{
+    "name": "ProjectB.UI.Presentation",
+    "rootNamespace": "",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:57c074a4726b4ac9a0b105d90daef00c",
+        "GUID:420bbcea48794f5da612d9cc468b2c27",
+        "GUID:6934533433c34282a53f61bc6c623e17"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
