@@ -1,5 +1,6 @@
 using ProjectB.UI.Buttons.Common;
 using ProjectB.UI.Core;
+using ProjectB.UI.Screens.Home;
 
 namespace ProjectB.UI.Buttons.HomeCloseOverlayButton
 {
@@ -20,6 +21,7 @@ namespace ProjectB.UI.Buttons.HomeCloseOverlayButton
 
 		private void OnButtonClicked()
 		{
+			HomeOverlaysController.CloseOverlay?.Invoke();
 		}
 	}
 

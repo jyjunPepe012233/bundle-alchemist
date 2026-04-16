@@ -1,5 +1,7 @@
+using ProjectB.Dependency.Installers.HomeScreen;
 using ProjectB.UI.Buttons.Common;
 using ProjectB.UI.Core;
+using ProjectB.UI.Screens.Home;
 using UnityEngine;
 
 namespace ProjectB.UI.Buttons.HomeOpenOverlayButton
@@ -23,6 +25,7 @@ namespace ProjectB.UI.Buttons.HomeOpenOverlayButton
 
 		private void OnButtonClicked()
 		{
+			HomeOverlaysController.OpenOverlay?.Invoke(_overlayID);
 		}
 	}
 
