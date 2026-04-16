@@ -1,0 +1,16 @@
+{
+    "name": "ProjectB.UI.Services",
+    "rootNamespace": "ProjectB",
+    "references": [
+        "GUID:de4f40fdb7fb46ea853345d07a4c4fe0"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
