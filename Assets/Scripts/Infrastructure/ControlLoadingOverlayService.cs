@@ -1,12 +1,11 @@
 using System.Collections;
 using ProjectB.Gameplay.Ports.Outbound;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace ProjectB.Infrastructure.Loading
 {
 
-	public class LoadLoadingOverlayService : ILoadLoadingOverlayPort // TODO: Load보다 Control이 더 적합함 (Load, Unload를 모두 담당하기 때문)
+	public class ControlLoadingOverlayService : IControlLoadingOverlayPort // TODO: Load보다 Control이 더 적합함 (Load, Unload를 모두 담당하기 때문)
 	{
 		private const string LOADING_OVERLAY_SCENE_NAME = "LoadingOverlay";
 		

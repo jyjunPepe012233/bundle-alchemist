@@ -21,7 +21,7 @@ namespace ProjectB.Dependency.Scopes
 		protected override void AddOutboundAdapters()
 		{
 			base.AddOutboundAdapters();
-			RegisterPortAdapter<ILoadLoadingOverlayPort, LoadLoadingOverlayService>();
+			RegisterPortAdapter<IControlLoadingOverlayPort, ControlLoadingOverlayService>();
 			RegisterPortAdapter<ILoadHomePort, LoadHomeService>();
 		}
 	}

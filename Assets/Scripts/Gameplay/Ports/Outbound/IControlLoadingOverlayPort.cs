@@ -3,7 +3,7 @@ using System.Collections;
 namespace ProjectB.Gameplay.Ports.Outbound
 {
 
-	public interface ILoadLoadingOverlayPort
+	public interface IControlLoadingOverlayPort
 	{
 		IEnumerator LoadLoadingOverlay();
 

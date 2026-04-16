@@ -20,11 +20,11 @@ namespace ProjectB.Gameplay.Loading
 		private event Action _TransitionDisposedEvent;
 		
 		
-		private readonly ILoadLoadingOverlayPort _loadLoadingOverlayPort;
+		private readonly IControlLoadingOverlayPort _controlLoadingOverlayPort;
 		
-		public LoadingManager(ILoadLoadingOverlayPort loadLoadingOverlayPort)
+		public LoadingManager(IControlLoadingOverlayPort controlLoadingOverlayPort)
 		{
-			_loadLoadingOverlayPort = loadLoadingOverlayPort;
+			_controlLoadingOverlayPort = controlLoadingOverlayPort;
 		}
 		
 		
@@ -57,7 +57,7 @@ namespace ProjectB.Gameplay.Loading
 			_currentLoadingTask = loadingTaskPort;
 			
 			// 로딩 화면 로드
-			yield return _loadLoadingOverlayPort.LoadLoadingOverlay();
+			yield return _controlLoadingOverlayPort.LoadLoadingOverlay();
 			LoadingStarted?.Invoke();
 
 
@@ -79,7 +79,7 @@ namespace ProjectB.Gameplay.Loading
 			yield return new WaitUntil(() => isTransitionDisposed);
 			
 			// 로딩 화면 Unload
-			yield return _loadLoadingOverlayPort.UnloadLoadingOverlay(); 
+			yield return _controlLoadingOverlayPort.UnloadLoadingOverlay(); 
 
 			_currentLoadingTask = null;
 		}
