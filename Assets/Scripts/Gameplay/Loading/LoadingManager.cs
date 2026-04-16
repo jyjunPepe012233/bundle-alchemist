@@ -75,7 +75,7 @@ namespace ProjectB.Gameplay.Loading
 			
 			// 실제 로딩이 끝나면 트랜지션의 fade-out이 끝날 때까지 대기
 			bool isTransitionDisposed = false;
-			_TransitionReadiedEvent += () => isTransitionDisposed = true;
+			_TransitionDisposedEvent += () => isTransitionDisposed = true;
 			yield return new WaitUntil(() => isTransitionDisposed);
 			
 			// 로딩 화면 Unload
