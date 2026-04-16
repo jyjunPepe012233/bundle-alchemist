@@ -3,7 +3,8 @@
     "rootNamespace": "ProjectB",
     "references": [
         "GUID:57c074a4726b4ac9a0b105d90daef00c",
-        "GUID:ffee8bdd83114fb0875a06bdba6c1e4a"
+        "GUID:ffee8bdd83114fb0875a06bdba6c1e4a",
+        "GUID:a7ae962cc0a34ef2bdd6cf30ba3fdd80"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
