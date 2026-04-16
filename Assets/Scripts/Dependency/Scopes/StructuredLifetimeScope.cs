@@ -14,7 +14,7 @@ namespace ProjectB.Dependency.Scopes
 		protected IContainerBuilder Builder => _builder;
 		
 		// 구조화된 LifetimeScope 작성을 위해 이 클래스에서 제공하는 추상 메서드를 통해서만 어댑터들을 등록할 수 있게 함
-		protected override void Configure(IContainerBuilder builder)
+		protected sealed override void Configure(IContainerBuilder builder)
 		{
 			_builder = builder;
 			
