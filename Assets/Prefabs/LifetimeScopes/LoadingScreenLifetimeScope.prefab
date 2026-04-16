@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentReference:
-    TypeName: Composition.CoreLifetimeScope
+    TypeName: ProjectB.Dependency.Scopes.CoreLifetimeScope
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 1019653834012082398}
