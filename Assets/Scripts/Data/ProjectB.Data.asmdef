@@ -1,7 +1,7 @@
 {
     "name": "ProjectB.Data",
     "rootNamespace": "ProjectB",
-    "references": [],
+    "references": ["GUID:57c074a4726b4ac9a0b105d90daef00c"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
