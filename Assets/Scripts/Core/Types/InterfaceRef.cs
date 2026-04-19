@@ -34,7 +34,7 @@ namespace ProjectB.Core.Types
 	{
 		[SerializeField] private Object[] targets;
 
-		public IReadOnlyCollection<T> Value
+		public IReadOnlyList<T> Value
 		{
 			get
 			{
@@ -53,7 +53,7 @@ namespace ProjectB.Core.Types
 
 		private T[] _values;
 
-		public IReadOnlyCollection<Object> Raw => targets;
+		public IReadOnlyList<Object> Raw => targets;
 	}
 
 }

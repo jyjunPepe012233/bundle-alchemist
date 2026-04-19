@@ -1,6 +1,8 @@
+using ProjectB.Authoring.ScriptableObject.Character;
 using ProjectB.Authoring.ScriptableObject.Invasion;
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Invasion;
+using ProjectB.Data.Static.Soldier;
 using ProjectB.Gameplay.Loading;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
@@ -13,6 +15,7 @@ namespace ProjectB.Dependency.Scopes
 
 	public class CoreLifetimeScope : StructuredLifetimeScope
 	{
+		[SerializeField] private SoldierDatabaseSO _soldierDatabaseSO;
 		[SerializeField] private InvasionSettingSO _invasionSettingSO;
 		
 		protected override void AddInboundAdapters()
@@ -35,6 +38,7 @@ namespace ProjectB.Dependency.Scopes
 		{
 			base.AddData();
 			RegisterPortInstance<IInvasionSetting, InvasionSettingSO>(_invasionSettingSO);
+			RegisterPortInstance<ISoldierDatabase, SoldierDatabaseSO>(_soldierDatabaseSO);
 		}
 	}
 

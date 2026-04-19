@@ -15,7 +15,7 @@ namespace ProjectB.UI.Lists.SoldierList
 		protected override void InitializeView()
 		{
 			base.InitializeView();
-			view.UpdateAllSoldiers(_soldierListProvider.Value.Soldiers.ToArray());
+			view.UpdateAllSoldiers(_soldierListProvider.Value.Soldiers);
 		}
 	}
 

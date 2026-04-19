@@ -7,10 +7,10 @@ namespace ProjectB.Authoring.ScriptableObject.Character
 {
 
 	[CreateAssetMenu(menuName = "Soldier Database")]
-	public class SoldierDatabaseSO : UnityEngine.ScriptableObject, ISoldierListProvider
+	public class SoldierDatabaseSO : UnityEngine.ScriptableObject, ISoldierDatabase
 	{
 		[SerializeField] private InterfaceRefs<ISoldierData> _soldiers;
-		public IEnumerable<ISoldierData> Soldiers => _soldiers.Value;
+		public IReadOnlyList<ISoldierData> Soldiers => _soldiers.Value;
 	}
 
 }
