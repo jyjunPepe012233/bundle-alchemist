@@ -1,3 +1,4 @@
+using ProjectB.Data.Static.Invasion;
 using ProjectB.UI.Core;
 
 namespace ProjectB.UI.Modals.StageInfoModal
@@ -37,10 +38,10 @@ namespace ProjectB.UI.Modals.StageInfoModal
 			IsOpen = false;
 		}
 
-//		public void InitializeStageInfo(StageSO stage)
-//		{
-//			view.InitializeStageInfo(stage.StageName);
-//		}
+		public void InitializeStageInfo(IStageData stage)
+		{
+			view.InitializeStageInfo(stage.StageName);
+		}
 	}
 
 }
