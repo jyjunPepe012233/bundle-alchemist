@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df5a3a29acd4d55a86c12c04dd73e91, type: 3}
+  m_Name: Soldier_Vivi
+  m_EditorClassIdentifier: 
+  _soldierId: VIVI
+  _soldierName: "\uBE44\uBE44"
+  _spirit:
+    target: {fileID: 11400000, guid: e89352f32269444998b71f4b3a3cedc0, type: 2}
+  _role:
+    target: {fileID: 11400000, guid: cf62385a52c4d4332bebf55e1f08168a, type: 2}
+  _displayedSoldierPrefab: {fileID: 3493666056230920870, guid: d5621388082434fa491f3e2f12ba95ac, type: 3}

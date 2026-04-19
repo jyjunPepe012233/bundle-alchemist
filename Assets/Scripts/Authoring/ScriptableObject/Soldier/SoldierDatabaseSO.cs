@@ -1,16 +1,16 @@
 using System.Collections.Generic;
 using ProjectB.Core.Types;
-using ProjectB.Data.Static.Character;
+using ProjectB.Data.Static.Soldier;
 using UnityEngine;
 
 namespace ProjectB.Authoring.ScriptableObject.Character
 {
 
 	[CreateAssetMenu(menuName = "Soldier Database")]
-	public class SoldierDatabaseSO : UnityEngine.ScriptableObject, ISoldierList
+	public class SoldierDatabaseSO : UnityEngine.ScriptableObject, ISoldierListProvider
 	{
 		[SerializeField] private InterfaceRefs<ISoldierData> _soldiers;
-		public IReadOnlyCollection<ISoldierData> Soldiers => _soldiers.Value;
+		public IEnumerable<ISoldierData> Soldiers => _soldiers.Value;
 	}
 
 }
