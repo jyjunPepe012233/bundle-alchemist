@@ -24,6 +24,7 @@ namespace ProjectB.Dependency.Scopes
 			AddInboundAdapters();
 			AddOutboundAdapters();
 			AddInfrastructure();
+			AddData();
 		}
 
 		/// <summary>
@@ -41,15 +42,23 @@ namespace ProjectB.Dependency.Scopes
 		{
 			
 		}
+		
+		/// <summary>
+		/// Data 어셈블리 
+		/// </summary>
+		protected virtual void AddData()
+		{
+			
+		}
 
 		/// <summary>
 		/// Infrastructure 내부 시스템을 등록 (예시: SceneLoader 등)
 		/// </summary>
 		/*protected virtual*/ void AddInfrastructure() // 사용 안 함
 		{
-			
+
 		}
-		
+
 		/// <summary>
 		/// 이 메서드를 통해서 Port-Adapter를 편하게 등록할 수 있도록 함
 		/// </summary>
@@ -59,6 +68,14 @@ namespace ProjectB.Dependency.Scopes
 		{
 			_builder.Register<TAdapter>(Lifetime.Singleton).As<TPort>();
 		}
+
+
+		protected void RegisterPortInstance<TPort, TAdapter>(TAdapter instance)
+			where TPort : class
+			where TAdapter : class, TPort
+		{
+			_builder.RegisterInstance(instance).As<TPort>();
+		} 
 	}
 
 }

@@ -1,3 +1,6 @@
+using System;
+using ProjectB.Data.Static.Invasion;
+using ProjectB.UI.Buttons.StageInfoButton;
 using ProjectB.UI.Modals.StageInfoModal;
 using TMPro;
 using UnityEngine;
@@ -12,12 +15,12 @@ namespace ProjectB.UI.Screens.WorldMapScreen
 	
 		[SerializeField] private StageInfoModalPresenter _stageInfoModalRight;
 		[SerializeField] private StageInfoModalPresenter _stageInfoModalLeft;
-	
-//		private StageSO _lastStageInfo;
+
+		private IStageData _lastStageData;
 	
 		public void Awake()
 		{
-//			HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked += OnStageInfoButtonClicked;
+			StageInfoButtonEvents.Clicked += OnStageInfoButtonClicked;
 		
 			_stageInfoModalRight.Hide();
 			_stageInfoModalLeft.Hide();
@@ -25,47 +28,47 @@ namespace ProjectB.UI.Screens.WorldMapScreen
 
 		public void OnDestroy()
 		{
-//			HomeUIEventBus.WorldMapScreen.StageInfoButtonClicked -= OnStageInfoButtonClicked;
+			StageInfoButtonEvents.Clicked -= OnStageInfoButtonClicked;
 		}
 
-//		private void OnStageInfoButtonClicked(StageSO stage, bool isRightSide)
-//		{
-//			if (_stageInfoModalRight.IsOpen || _stageInfoModalLeft.IsOpen)
-//			{
-//				_stageInfoModalRight.Hide();
-//				_stageInfoModalLeft.Hide();
-//
-//				if (_lastStageInfo != stage)
-//				{
-//					_lastStageInfo = stage;
-//					OpenStageInfoModal(stage, isRightSide);
-//				}
-//				else
-//				{
-//					_lastStageInfo = null;
-//				}
-//			}
-//			else
-//			{
-//				_lastStageInfo = stage;
-//				OpenStageInfoModal(stage, isRightSide);
-//			}
-//		}
-//	
-//		private void OpenStageInfoModal(StageSO stage, bool isRightSide)
-//		{
-//			var stageModal = isRightSide ? _stageInfoModalLeft : _stageInfoModalRight;
-//		
-//			stageModal.InitializeStageInfo(stage);
-//			stageModal.Show();
-//		
-//			_lastStageInfo = stage;
-//		}
-//	
-//		public void InitializeChapter(ChapterSO chapter)
-//		{
-//			UpdateChapterName(chapter.ChapterName);
-//		}
+		private void OnStageInfoButtonClicked(IStageData stage, bool isRightSide) // isRightSide: 버튼이 오른쪽에 있는지 여부
+		{
+			if (_stageInfoModalRight.IsOpen || _stageInfoModalLeft.IsOpen)
+			{
+				_stageInfoModalRight.Hide();
+				_stageInfoModalLeft.Hide();
+
+				if (_lastStageData != stage)
+				{
+					_lastStageData = stage;
+					OpenStageInfoModal(stage, isRightSide);
+				}
+				else
+				{
+					_lastStageData = null;
+				}
+			}
+			else
+			{
+				_lastStageData = stage;
+				OpenStageInfoModal(stage, isRightSide);
+			}
+		}
+	
+		private void OpenStageInfoModal(IStageData stage, bool isRightSide)
+		{
+			var stageModal = isRightSide ? _stageInfoModalLeft : _stageInfoModalRight;
+		
+			stageModal.InitializeStageInfo(stage);
+			stageModal.Show();
+		
+			_lastStageData = stage;
+		}
+	
+		public void InitializeChapter(IChapterData chapter)
+		{
+			UpdateChapterName(chapter.ChapterName);
+		}
 	
 		private void UpdateChapterName(string chapterName)
 		{

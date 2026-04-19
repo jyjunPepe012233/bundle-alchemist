@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _chapterName: "\uBBF8\uB4DC\uAC00\uB974\uB4DC"
   _stages:
-  - {fileID: 11400000, guid: e59d1e65636d640e595d1f7cd6f63664, type: 2}
-  - {fileID: 11400000, guid: 2e9eca1ab1ab34fdfa4dec643094d74e, type: 2}
-  - {fileID: 11400000, guid: 7c84ce397b6b34c16bfb3521931563a4, type: 2}
-  - {fileID: 11400000, guid: 0707a598e23a4470e99d7b7b68ea951f, type: 2}
-  - {fileID: 11400000, guid: fd8b27835508c40878c9028bd7a04acb, type: 2}
-  - {fileID: 11400000, guid: 67dc1937b0b844438a71499258da8d16, type: 2}
+    targets:
+    - {fileID: 11400000, guid: e59d1e65636d640e595d1f7cd6f63664, type: 2}
+    - {fileID: 11400000, guid: 2e9eca1ab1ab34fdfa4dec643094d74e, type: 2}
+    - {fileID: 11400000, guid: 7c84ce397b6b34c16bfb3521931563a4, type: 2}
+    - {fileID: 11400000, guid: 0707a598e23a4470e99d7b7b68ea951f, type: 2}
+    - {fileID: 11400000, guid: fd8b27835508c40878c9028bd7a04acb, type: 2}
+    - {fileID: 11400000, guid: 67dc1937b0b844438a71499258da8d16, type: 2}

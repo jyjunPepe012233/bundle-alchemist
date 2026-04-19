@@ -212,7 +212,10 @@ MonoBehaviour:
     _stageLevelFormat: '{0}-{1}'
     _stageLevelText: {fileID: 5626232679709064046}
     _stageNameText: {fileID: 6338406141726131550}
-  _stage: {fileID: 0}
+  _stage:
+    target: {fileID: 0}
+  _invasionSettingInstaller: {fileID: 0}
+  _isRightSide: 0
 --- !u!1001 &1486134124485868014
 PrefabInstance:
   m_ObjectHideFlags: 0
