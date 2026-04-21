@@ -14,7 +14,6 @@ namespace ProjectB.UI.Screens.SummonAnimationScreen
 		protected override void SetupSubscriptions()
 		{
 			base.SetupSubscriptions();
-			Debug.Log(_summmonAnimManagerPortInstaller.Port);
 			_summmonAnimManagerPortInstaller.Port.StartAnimation += OnStartAnimation;
 		}
 
@@ -26,7 +25,6 @@ namespace ProjectB.UI.Screens.SummonAnimationScreen
 
 		void OnStartAnimation(SummonResult result)
 		{	
-			Debug.Log(29);
 			StartCoroutine(AnimationCoroutine());
 		}
 
