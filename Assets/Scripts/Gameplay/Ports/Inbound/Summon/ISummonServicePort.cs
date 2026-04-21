@@ -1,13 +1,11 @@
-using ProjectB.Data.Runtime.Summon;
+using ProjectB.Data.Types;
 
 namespace ProjectB.Gameplay.Ports.Inbound.Summon
 {
 
 	public interface ISummonServicePort
 	{
-		SummonResult Summon1x();
-		
-		SummonResult Summon10x();
+		void Summon(SummonType type);
 	}
 
 }

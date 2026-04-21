@@ -1,3 +1,4 @@
+using ProjectB.Data.Types;
 using ProjectB.Dependency.Installers.Summon;
 using ProjectB.UI.Buttons.Common;
 using ProjectB.UI.Core;
@@ -6,16 +7,9 @@ using UnityEngine;
 namespace ProjectB.UI.Buttons.SummonButton
 {
 
-	public enum SummonButtonType
-	{
-		Summon1x,
-		Summon10x
-	}
-	
-
 	public class SummonButtonPresenter : UIPresenter<ButtonView>
 	{
-		[SerializeField] private SummonButtonType _type;
+		[SerializeField] private SummonType _type;
 		
 		[SerializeField] private SummonServicePortInstaller _summonServicePortInstaller;
 		
@@ -33,14 +27,7 @@ namespace ProjectB.UI.Buttons.SummonButton
 
 		void OnButtonClicked()
 		{
-			if (_type == SummonButtonType.Summon1x)
-			{
-				_summonServicePortInstaller.Port.Summon1x();
-			}
-			else if (_type == SummonButtonType.Summon10x)
-			{
-				_summonServicePortInstaller.Port.Summon10x();
-			}
+			_summonServicePortInstaller.Port.Summon(_type);
 		}
 	}
 

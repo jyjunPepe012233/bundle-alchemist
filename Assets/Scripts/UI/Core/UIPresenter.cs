@@ -10,12 +10,12 @@ namespace ProjectB.UI.Core
 		public void Awake()
 		{
 			view.RegisterUICallbacks();
-			SetupReferences();
-			SetupSubscriptions();
 		}
 
 		public void Start()
 		{
+			SetupReferences();
+			SetupSubscriptions();
 			InitializeView();
 		}
 	

@@ -5,6 +5,7 @@ using UnityEngine;
 namespace ProjectB.Infrastructure.Loading
 {
 
+	// TODO: 삭제하기. 화면 Unload는 LoadSummonAnimationScreenService와 같이 구현되고 사용되어야 함.
 	public class UnloadScreenService : IUnloadScreenPort
 	{
 		public void UnloadCurrentScreen()

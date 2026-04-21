@@ -1,5 +1,9 @@
 using ProjectB.Gameplay.Ports.Inbound.Summon;
+using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.Gameplay.Summon;
+using ProjectB.Infrastructure;
+using ProjectB.Infrastructure.Loading;
+using VContainer;
 
 namespace ProjectB.Dependency.Scopes
 {
@@ -9,7 +13,12 @@ namespace ProjectB.Dependency.Scopes
 		protected override void AddInboundAdapters()
 		{
 			base.AddInboundAdapters();
-			RegisterPortAdapter<ISummonServicePort, SummonService>();
+			Builder.Register<SummonManager>(Lifetime.Singleton).As<
+				ISummonServicePort,
+				ISummonAnimationManagerPort
+			>();
+			RegisterPortAdapter<ILoadSummonScreenPort, LoadSummonScreenService>();
+			RegisterPortAdapter<ILoadSummonAnimationScreenPort, LoadSummonAnimationScreenService>();
 		}
 	}
 
