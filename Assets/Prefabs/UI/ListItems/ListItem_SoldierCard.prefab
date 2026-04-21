@@ -1325,11 +1325,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8489262964510830670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3328f3e2a3c4be3a7d88b4eec64f791, type: 3}
+  m_Script: {fileID: 11500000, guid: a8bf04081b18478cb2799d105be285fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _soldierNameText: {fileID: 424161411524347152}
-  _soldierDisplayParent: {fileID: 8489262965878959213}
+  _soldierDisplayParent: {fileID: 2091279935770168439}
   _roleIcon: {fileID: 968013843625592691}
   _styleIcon: {fileID: 3799601096771721805}
 --- !u!1 &8489262965031674092
