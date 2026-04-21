@@ -15,6 +15,7 @@ namespace ProjectB.Gameplay.Summon
 	{
 		private readonly ISoldierDatabase _soldierDatabase;
 		private readonly ILoadSummonAnimationScreenPort _loadSummonAnimationScreenPort;
+		private readonly ILoadSummonResultScreenPort _loadSummonResultScreenPort;
 		
 		public event Action<SummonResult> StartAnimation;
 		public event Action AnimationPerfectlyUnloaded;
@@ -26,10 +27,13 @@ namespace ProjectB.Gameplay.Summon
 
 		private bool _isAnimationPlaying;
 		
-		public SummonManager(ISoldierDatabase soldierDatabase, ILoadSummonAnimationScreenPort loadSummonAnimationScreenPort)
+		public SummonManager(ISoldierDatabase soldierDatabase,
+			ILoadSummonAnimationScreenPort loadSummonAnimationScreenPort,
+			ILoadSummonResultScreenPort loadSummonResultScreenPort)
 		{
 			_soldierDatabase = soldierDatabase;
 			_loadSummonAnimationScreenPort = loadSummonAnimationScreenPort;
+			_loadSummonResultScreenPort = loadSummonResultScreenPort;
 		}
 
 		
@@ -107,6 +111,8 @@ namespace ProjectB.Gameplay.Summon
 			AnimationPerfectlyUnloaded?.Invoke();
 			
 			_isAnimationPlaying = false;
+			
+			yield return _loadSummonResultScreenPort.LoadSummonResultScreen(result);
 		}
 		
 		// 외부의 애니메이션 연출 주체가 애니메이션이 끝났음을 알리는 메서드

@@ -1,4 +1,5 @@
 using System.Collections;
+using ProjectB.Data.Runtime.Summon;
 using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.UI.Services;
 using UnityEngine;
@@ -6,15 +7,15 @@ using UnityEngine;
 namespace ProjectB.Infrastructure
 {
 
-	public class LoadSummonAnimationScreenService : ILoadSummonAnimationScreenPort
+	public class LoadSummonResultScreenService : ILoadSummonResultScreenPort
 	{
 		private HomeOverlaysControlService _homeOverlaysControlService;
 		
-		public IEnumerator LoadSummonAnimationScreen()
+		public IEnumerator LoadSummonResultScreen(SummonResult result)
 		{
 			if (_homeOverlaysControlService != null)
 			{
-				_homeOverlaysControlService.OpenOverlay("SummonAnimation");
+				_homeOverlaysControlService.OpenOverlay("SummonResult");
 				yield return null; // HomeOverlay는 내부적으로 오브젝트 활성화/비활성화 기반으로 구현되있음. 따라서 한 프레임을 쉬어서 완벽히 활성화된 상태로 만듬
 				yield break;
 			}
@@ -23,7 +24,7 @@ namespace ProjectB.Infrastructure
 			if (uiService.Length > 0)
 			{
 				_homeOverlaysControlService = uiService[0];
-				_homeOverlaysControlService.OpenOverlay("SummonAnimation");
+				_homeOverlaysControlService.OpenOverlay("SummonResult");
 				yield return null; // 한 프레임을 쉬어서 완벽히 활성화된 상태로 만듬
 			}
 			else
@@ -32,7 +33,7 @@ namespace ProjectB.Infrastructure
 			}
 		}
 
-		public IEnumerator UnloadSummonAnimationScreen()
+		public IEnumerator UnloadSummonResultScreen()
 		{
 			if (_homeOverlaysControlService != null)
 			{

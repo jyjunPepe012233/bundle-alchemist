@@ -19,6 +19,7 @@ namespace ProjectB.Dependency.Scopes
 			>();
 			RegisterPortAdapter<ILoadSummonScreenPort, LoadSummonScreenService>();
 			RegisterPortAdapter<ILoadSummonAnimationScreenPort, LoadSummonAnimationScreenService>();
+			RegisterPortAdapter<ILoadSummonResultScreenPort, LoadSummonResultScreenService>();
 		}
 	}
 
