@@ -19,6 +19,7 @@ namespace ProjectB.Gameplay.Summon
 		
 		public event Action<SummonResult> StartAnimation;
 		public event Action AnimationPerfectlyUnloaded;
+		public event Action<SummonResult> ShowSummonResult;
 
 		// 외부에서는 ISummonAnimationManagerPort.AnimationFinished() 메서드를 통해서 애니메이션 종료를 알리고
 		// AnimationFinished() 메서드가 _AnimationFinishedInternal 이벤트를 호출하는 형태로 구현함.
@@ -94,6 +95,12 @@ namespace ProjectB.Gameplay.Summon
 				Debug.LogError("모집 연출이 이미 재생 중이지만 다시 재생하려고 시도했습니다.");
 				yield break;
 			}
+
+			if (_loadSummonResultScreenPort.IsLoaded)
+			{
+				// 결과 화면이 켜져있으면 닫음
+				yield return _loadSummonResultScreenPort.UnloadSummonResultScreen();
+			}
 			
 			_isAnimationPlaying = true;
 			
@@ -113,6 +120,7 @@ namespace ProjectB.Gameplay.Summon
 			_isAnimationPlaying = false;
 			
 			yield return _loadSummonResultScreenPort.LoadSummonResultScreen(result);
+			ShowSummonResult?.Invoke(result); // 결과 화면이 켜졌으면 화면에 결과 전달
 		}
 		
 		// 외부의 애니메이션 연출 주체가 애니메이션이 끝났음을 알리는 메서드
