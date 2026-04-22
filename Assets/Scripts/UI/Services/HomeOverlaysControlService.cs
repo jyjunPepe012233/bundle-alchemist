@@ -6,6 +6,8 @@ namespace ProjectB.UI.Services
 
 	public class HomeOverlaysControlService : MonoBehaviour
 	{
+		public string CurrentOverlayID => HomeOverlaysController.CurrentOverlayID;
+		
 		public void OpenOverlay(string overlayId)
 		{
 			HomeOverlaysController.OpenOverlay?.Invoke(overlayId);
