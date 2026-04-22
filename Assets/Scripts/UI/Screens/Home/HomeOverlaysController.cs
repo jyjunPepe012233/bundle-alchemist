@@ -12,6 +12,8 @@ namespace ProjectB.UI.Screens.Home
 		public static Action<string> OpenOverlay; // string: overlayID
 		public static Action CloseOverlay; // string: overlayID
 		
+		public static string CurrentOverlayID { get; private set; }
+		
 		
 		
 		[SerializeField]
@@ -72,12 +74,14 @@ namespace ProjectB.UI.Screens.Home
 			{
 				IHomeFullScreenOverlay currentOverlay = _overlayStack.Peek();
 				currentOverlay.Hide();
+				CurrentOverlayID = null;
 			}
 			
 			IHomeFullScreenOverlay overlay = _overlayTable[overlayID];
 		
 			_overlayStack.Push(overlay);
 			overlay.Open();
+			CurrentOverlayID = overlay.OverlayID;
 		}
 
 		void OnCloseOverlay()
@@ -90,11 +94,13 @@ namespace ProjectB.UI.Screens.Home
 		
 			IHomeFullScreenOverlay overlay = _overlayStack.Pop();
 			overlay.Close();
+			CurrentOverlayID = null;
 		
 			if (_overlayStack.Count != 0)
 			{
 				IHomeFullScreenOverlay nextOverlay = _overlayStack.Peek();
 				nextOverlay.Show();
+				CurrentOverlayID = nextOverlay.OverlayID;
 			}
 		}
 	}
