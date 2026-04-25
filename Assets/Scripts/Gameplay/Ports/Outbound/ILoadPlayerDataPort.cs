@@ -12,7 +12,7 @@ namespace ProjectB.Gameplay.Ports.Outbound
 		/// <summary>
 		/// 외부 저장소에서 플레이어의 데이터를 불러옴
 		/// </summary>
-		PlayerData LoadPlayerData();
+		IPlayerData LoadPlayerData();
 	}
 
 }

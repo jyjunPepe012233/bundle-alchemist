@@ -8,7 +8,7 @@ namespace ProjectB.Gameplay.Ports.Outbound
 		/// <summary>
 		/// 플레이어 세션을 초기화함
 		/// </summary>
-		void Initialize(PlayerData playerData);
+		void Initialize(IPlayerData playerData);
 	}
 
 }

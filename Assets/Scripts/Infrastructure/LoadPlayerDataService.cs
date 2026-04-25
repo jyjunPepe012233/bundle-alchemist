@@ -1,4 +1,5 @@
 using ProjectB.Data.Runtime.Player;
+using ProjectB.Data.RuntimeImpl;
 using ProjectB.Gameplay.Ports.Outbound;
 
 namespace ProjectB.Infrastructure
@@ -6,7 +7,7 @@ namespace ProjectB.Infrastructure
 
 	public class LoadPlayerDataService : ILoadPlayerDataPort
 	{
-		public PlayerData LoadPlayerData()
+		public IPlayerData LoadPlayerData()
 		{
 			return new PlayerData();
 		}

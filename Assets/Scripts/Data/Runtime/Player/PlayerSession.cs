@@ -3,9 +3,9 @@ namespace ProjectB.Data.Runtime.Player
 
 	public class PlayerSession
 	{
-		public PlayerData PlayerData { get; }
+		public IPlayerData PlayerData { get; }
 
-		public PlayerSession(PlayerData playerData)
+		public PlayerSession(IPlayerData playerData)
 		{
 			PlayerData = playerData;
 		}

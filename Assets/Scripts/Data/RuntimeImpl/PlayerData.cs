@@ -1,15 +1,13 @@
 using System;
 using System.Collections.Generic;
+using ProjectB.Data.Runtime.Player;
 using UnityEngine;
 
-namespace ProjectB.Data.Runtime.Player
+namespace ProjectB.Data.RuntimeImpl
 {
-	// PlayerData같은 런타임 데이터는 인터페이스가 아니라 구현체로 만들어둠
-	// Data 어셈블리에 구현체를 둬서 Gameplay와 Infrastructure 어셈블리에서 모두 참조할 수 있도록 하는 게 목적임
-	// 
 
 	[Serializable]
-	public class PlayerData
+	public class PlayerData : IPlayerData
 	{
 		[SerializeField] private readonly List<PlayerSoldier> _soldiers = new List<PlayerSoldier>();
 

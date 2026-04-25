@@ -1,10 +1,8 @@
 {
-    "name": "ProjectB.Infrastructure",
+    "name": "ProjectB.Gameplay.Factories",
     "rootNamespace": "ProjectB",
     "references": [
         "GUID:57c074a4726b4ac9a0b105d90daef00c",
-        "GUID:ffee8bdd83114fb0875a06bdba6c1e4a",
-        "GUID:a7ae962cc0a34ef2bdd6cf30ba3fdd80",
         "GUID:edf03d21d85fa438b8e12a8dcd26200b",
         "GUID:18c76a10ec00c4bd5afc18e3ad479946"
     ],

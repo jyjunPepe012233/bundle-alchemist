@@ -6,7 +6,7 @@ namespace ProjectB.Infrastructure
 
 	public class InitializePlayerSessionService : IInitializePlayerSessionPort
 	{
-		public void Initialize(PlayerData playerData)
+		public void Initialize(IPlayerData playerData)
 		{
 			PlayerSessionHolder.Initialize(playerData);
 		}

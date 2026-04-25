@@ -9,7 +9,7 @@ namespace ProjectB.Infrastructure
 
 		public static bool HasInitialized { get; private set; }
 
-		public static PlayerSession Initialize(PlayerData playerData)
+		public static PlayerSession Initialize(IPlayerData playerData)
 		{
 			PlayerSession = new PlayerSession(playerData);
 			HasInitialized = true;
