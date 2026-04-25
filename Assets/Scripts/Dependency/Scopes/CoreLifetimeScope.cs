@@ -18,6 +18,13 @@ namespace ProjectB.Dependency.Scopes
 	{
 		[SerializeField] private SoldierDatabaseSO _soldierDatabaseSO;
 		[SerializeField] private InvasionSettingSO _invasionSettingSO;
+
+		protected override void Awake()
+		{
+			base.Awake();
+			
+			Container.Resolve<PlayerSessionInitializer>();
+		}
 		
 		protected override void AddInboundAdapters()
 		{
