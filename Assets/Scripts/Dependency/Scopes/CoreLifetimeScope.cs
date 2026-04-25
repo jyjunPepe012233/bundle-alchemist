@@ -27,6 +27,8 @@ namespace ProjectB.Dependency.Scopes
 				ILoadingOverlayManagerPort
 			>();
 
+			RegisterPortAdapter<IPlayerDataServicePort, PlayerDataService>();
+
 			// TODO:
 			// PlayerSessionInitializer는 Inbound Adapter가 아니라 독립적으로 작동하는 게임 시스템에 가까움.
 			// 이 사례처럼 클래스에 대한 분리 기준이 항상 명확하게 작용하지 않고 있으므로 StructureLifetimeScope를 리팩토링하여
