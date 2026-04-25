@@ -41,7 +41,7 @@ namespace ProjectB.Dependency.Scopes
 			base.AddOutboundAdapters();
 			RegisterPortAdapter<IControlLoadingOverlayPort, ControlLoadingOverlayService>();
 			RegisterPortAdapter<ILoadHomePort, LoadHomeService>();
-			RegisterPortAdapter<ILoadPlayerSessionPort, LoadPlayerSessionService>();
+			RegisterPortAdapter<IPlayerSessionHolderPort, PlayerSessionHolderService>();
 			RegisterPortAdapter<ILoadPlayerDataPort, LoadPlayerDataService>();
 			RegisterPortAdapter<IInitializePlayerSessionPort, InitializePlayerSessionService>();
 		}

@@ -4,9 +4,9 @@ using ProjectB.Gameplay.Ports.Outbound;
 namespace ProjectB.Infrastructure
 {
 
-	public class LoadPlayerSessionService : ILoadPlayerSessionPort
+	public class PlayerSessionHolderService : IPlayerSessionHolderPort
 	{
-		public PlayerSession LoadPlayerSession()
+		public PlayerSession GetPlayerSession()
 		{
 			return PlayerSessionHolder.PlayerSession;
 		}
