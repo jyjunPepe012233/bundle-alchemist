@@ -1,4 +1,5 @@
 using ProjectB.Data.Runtime.Player;
+using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Static.Soldier;
 
 namespace ProjectB.Gameplay.Factories

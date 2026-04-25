@@ -6,7 +6,7 @@ namespace ProjectB.Infrastructure
 
 	public class PlayerSessionHolderService : IPlayerSessionHolderPort
 	{
-		public PlayerSession GetPlayerSession()
+		public IPlayerSession GetPlayerSession()
 		{
 			return PlayerSessionHolder.PlayerSession;
 		}

@@ -1,9 +1,10 @@
+using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
 
-namespace ProjectB.Data.Runtime.Player
+namespace ProjectB.Data.Runtime.Summon
 {
 
-	public class PlayerSoldier
+	public class PlayerSoldier : IPlayerSoldier
 	{
 		public string SoldierId { get; }
 		

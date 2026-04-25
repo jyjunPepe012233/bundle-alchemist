@@ -1,7 +1,9 @@
-namespace ProjectB.Data.Runtime.Player
+using ProjectB.Data.Runtime.Player;
+
+namespace ProjectB.Data.Runtime.Summon
 {
 
-	public class PlayerSession
+	public class PlayerSession : IPlayerSession
 	{
 		public IPlayerData PlayerData { get; }
 

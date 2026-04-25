@@ -5,7 +5,7 @@ namespace ProjectB.Gameplay.Ports.Outbound
 
 	public interface IPlayerSessionHolderPort
 	{
-		PlayerSession GetPlayerSession();
+		IPlayerSession GetPlayerSession();
 	}
 
 }
