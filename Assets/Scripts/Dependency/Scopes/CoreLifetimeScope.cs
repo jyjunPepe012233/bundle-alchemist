@@ -4,8 +4,10 @@ using ProjectB.Core.Types;
 using ProjectB.Data.Static.Invasion;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Gameplay.Loading;
+using ProjectB.Gameplay.Player;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
+using ProjectB.Infrastructure;
 using ProjectB.Infrastructure.Loading;
 using UnityEngine;
 using VContainer;
@@ -25,6 +27,13 @@ namespace ProjectB.Dependency.Scopes
 				ILoadingServicePort,
 				ILoadingOverlayManagerPort
 			>();
+
+			// TODO:
+			// PlayerSessionInitializer는 Inbound Adapter가 아니라 독립적으로 작동하는 게임 시스템에 가까움.
+			// 이 사례처럼 클래스에 대한 분리 기준이 항상 명확하게 작용하지 않고 있으므로 StructureLifetimeScope를 리팩토링하여
+			// 클래스 구분을 최대한 유연하게 만들거나 없애는 방안을 고려해볼 수 있음.
+			// 지금은 임시로 Inbound Adapter를 등록하는 메서드에서 등록함
+			Builder.Register<PlayerSessionInitializer>(Lifetime.Singleton);
 		}
 
 		protected override void AddOutboundAdapters()
@@ -32,6 +41,9 @@ namespace ProjectB.Dependency.Scopes
 			base.AddOutboundAdapters();
 			RegisterPortAdapter<IControlLoadingOverlayPort, ControlLoadingOverlayService>();
 			RegisterPortAdapter<ILoadHomePort, LoadHomeService>();
+			RegisterPortAdapter<ILoadPlayerSessionPort, LoadPlayerSessionService>();
+			RegisterPortAdapter<ILoadPlayerDataPort, LoadPlayerDataService>();
+			RegisterPortAdapter<IInitializePlayerSessionPort, InitializePlayerSessionService>();
 		}
 
 		protected override void AddData()
