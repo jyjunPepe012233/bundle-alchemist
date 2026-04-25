@@ -3,7 +3,7 @@ using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.UI.Services;
 using UnityEngine;
 
-namespace ProjectB.Infrastructure.Loading
+namespace ProjectB.Infrastructure
 {
 
 	public class LoadSummonScreenService : ILoadSummonScreenPort

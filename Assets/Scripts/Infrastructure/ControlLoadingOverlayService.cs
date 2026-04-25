@@ -2,7 +2,7 @@ using System.Collections;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine.SceneManagement;
 
-namespace ProjectB.Infrastructure.Loading
+namespace ProjectB.Infrastructure
 {
 
 	public class ControlLoadingOverlayService : IControlLoadingOverlayPort // TODO: Load보다 Control이 더 적합함 (Load, Unload를 모두 담당하기 때문)

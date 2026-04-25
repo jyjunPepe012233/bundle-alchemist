@@ -4,7 +4,7 @@ using ProjectB.Core.Types;
 using ProjectB.Data.Static.Soldier;
 using UnityEngine;
 
-namespace ProjectB.Authoring.ScriptableObject.Character
+namespace ProjectB.Authoring.ScriptableObject.Soldier
 {
 
 	[CreateAssetMenu(menuName = "Soldier Database")]

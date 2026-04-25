@@ -2,7 +2,7 @@ using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.UI.Services;
 using UnityEngine;
 
-namespace ProjectB.Infrastructure.Loading
+namespace ProjectB.Infrastructure
 {
 
 	// TODO: 삭제하기. 화면 Unload는 LoadSummonAnimationScreenService와 같이 구현되고 사용되어야 함.

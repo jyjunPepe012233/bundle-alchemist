@@ -1,5 +1,5 @@
-using ProjectB.Authoring.ScriptableObject.Character;
 using ProjectB.Authoring.ScriptableObject.Invasion;
+using ProjectB.Authoring.ScriptableObject.Soldier;
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Invasion;
 using ProjectB.Data.Static.Soldier;
@@ -8,7 +8,6 @@ using ProjectB.Gameplay.Player;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.Infrastructure;
-using ProjectB.Infrastructure.Loading;
 using UnityEngine;
 using VContainer;
 

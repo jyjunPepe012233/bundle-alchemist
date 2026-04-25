@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 using ProjectB.Data.Static.Soldier;
-using ProjectB.Data.Types;
 using ProjectB.UI.Components;
 using ProjectB.UI.Core;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ProjectB.UI.Screens.SummonResultOverlay
+namespace ProjectB.UI.Screens.SummonResultScreen
 {
 
 	[Serializable]

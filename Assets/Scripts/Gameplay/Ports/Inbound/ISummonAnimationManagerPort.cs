@@ -1,7 +1,7 @@
 using System;
 using ProjectB.Data.Runtime.Summon;
 
-namespace ProjectB.Gameplay.Ports.Inbound.Summon
+namespace ProjectB.Gameplay.Ports.Inbound
 {
 
 	public interface ISummonAnimationManagerPort

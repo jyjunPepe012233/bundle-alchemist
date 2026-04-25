@@ -2,7 +2,7 @@ using System;
 using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Types;
 
-namespace ProjectB.Gameplay.Ports.Inbound.Summon
+namespace ProjectB.Gameplay.Ports.Inbound
 {
 
 	public interface ISummonServicePort

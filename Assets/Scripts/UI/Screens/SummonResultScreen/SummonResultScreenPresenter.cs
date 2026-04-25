@@ -4,7 +4,7 @@ using ProjectB.Dependency.Installers.Summon;
 using ProjectB.UI.Core;
 using UnityEngine;
 
-namespace ProjectB.UI.Screens.SummonResultOverlay
+namespace ProjectB.UI.Screens.SummonResultScreen
 {
 
 	public class SummonResultScreenPresenter : UIPresenter<SummonResultScreenView>

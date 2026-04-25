@@ -4,7 +4,7 @@ using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ProjectB.Infrastructure.Loading
+namespace ProjectB.Infrastructure
 {
 
 	public class SceneLoadingTask : ILoadingTaskPort

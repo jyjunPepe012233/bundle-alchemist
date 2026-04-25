@@ -5,7 +5,7 @@ using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Types;
 using ProjectB.Gameplay.Factories;
-using ProjectB.Gameplay.Ports.Inbound.Summon;
+using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 

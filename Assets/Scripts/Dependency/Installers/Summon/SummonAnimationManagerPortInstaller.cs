@@ -1,4 +1,4 @@
-using ProjectB.Gameplay.Ports.Inbound.Summon;
+using ProjectB.Gameplay.Ports.Inbound;
 
 namespace ProjectB.Dependency.Installers.Summon
 {

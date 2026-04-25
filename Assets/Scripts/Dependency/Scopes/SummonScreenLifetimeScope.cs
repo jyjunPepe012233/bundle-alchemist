@@ -1,8 +1,7 @@
-using ProjectB.Gameplay.Ports.Inbound.Summon;
+using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.Gameplay.Summon;
 using ProjectB.Infrastructure;
-using ProjectB.Infrastructure.Loading;
 using VContainer;
 
 namespace ProjectB.Dependency.Scopes

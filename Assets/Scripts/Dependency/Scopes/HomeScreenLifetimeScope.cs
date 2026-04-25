@@ -1,7 +1,7 @@
 using ProjectB.Gameplay.HomeScreen;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
-using ProjectB.Infrastructure.Loading;
+using ProjectB.Infrastructure;
 
 namespace ProjectB.Dependency.Scopes
 {

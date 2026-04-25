@@ -1,6 +1,6 @@
 using ProjectB.Gameplay.Ports.Outbound;
 
-namespace ProjectB.Infrastructure.Loading
+namespace ProjectB.Infrastructure
 {
 
 	public class LoadHomeService : ILoadHomePort

@@ -1,6 +1,6 @@
 using ProjectB.Data.Runtime.Player;
 
-namespace ProjectB.Data.Runtime.Summon
+namespace ProjectB.Data.RuntimeImpl
 {
 
 	public class PlayerSession : IPlayerSession

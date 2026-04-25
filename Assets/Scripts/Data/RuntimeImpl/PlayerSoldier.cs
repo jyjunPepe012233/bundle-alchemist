@@ -1,7 +1,7 @@
 using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
 
-namespace ProjectB.Data.Runtime.Summon
+namespace ProjectB.Data.RuntimeImpl
 {
 
 	public class PlayerSoldier : IPlayerSoldier

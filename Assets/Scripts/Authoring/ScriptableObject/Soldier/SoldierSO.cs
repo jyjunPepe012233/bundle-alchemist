@@ -4,7 +4,7 @@ using ProjectB.Data.Static.SoldierRole;
 using ProjectB.Data.Static.Spirit;
 using UnityEngine;
 
-namespace ProjectB.Authoring.ScriptableObject.Character
+namespace ProjectB.Authoring.ScriptableObject.Soldier
 {
 
 	[CreateAssetMenu(menuName = "Soldier")]
