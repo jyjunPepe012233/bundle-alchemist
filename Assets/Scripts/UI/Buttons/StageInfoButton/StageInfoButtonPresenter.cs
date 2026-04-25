@@ -1,6 +1,6 @@
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Invasion;
-using ProjectB.Dependency.Installers.Data;
+using ProjectB.Dependency.Installers;
 using ProjectB.UI.Core;
 using ProjectB.UI.Screens.WorldMapScreen;
 using UnityEngine;

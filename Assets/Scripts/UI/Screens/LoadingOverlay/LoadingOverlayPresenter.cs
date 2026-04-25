@@ -1,5 +1,5 @@
 using System.Collections;
-using ProjectB.Dependency.Installers.Loading;
+using ProjectB.Dependency.Installers;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.UI.Core;
 using UnityEngine;

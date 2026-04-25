@@ -1,6 +1,6 @@
 using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Types;
-using ProjectB.Dependency.Installers.Summon;
+using ProjectB.Dependency.Installers;
 using ProjectB.UI.Core;
 using UnityEngine;
 

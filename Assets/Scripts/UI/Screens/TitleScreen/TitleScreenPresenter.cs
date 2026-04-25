@@ -1,4 +1,4 @@
-using ProjectB.Dependency.Installers.TitleScreen;
+using ProjectB.Dependency.Installers;
 using ProjectB.UI.Core;
 using UnityEngine;
 
