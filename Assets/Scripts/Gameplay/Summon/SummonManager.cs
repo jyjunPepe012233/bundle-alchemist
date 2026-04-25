@@ -4,6 +4,7 @@ using ProjectB.Core.Supports;
 using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Types;
+using ProjectB.Gameplay.Factories;
 using ProjectB.Gameplay.Ports.Inbound.Summon;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
@@ -16,6 +17,7 @@ namespace ProjectB.Gameplay.Summon
 		private readonly ISoldierDatabase _soldierDatabase;
 		private readonly ILoadSummonAnimationScreenPort _loadSummonAnimationScreenPort;
 		private readonly ILoadSummonResultScreenPort _loadSummonResultScreenPort;
+		private readonly IPlayerSessionHolderPort _playerSessionHolderPort;
 		
 		public event Action<SummonResult> StartAnimation;
 		public event Action AnimationPerfectlyUnloaded;
@@ -61,6 +63,15 @@ namespace ProjectB.Gameplay.Summon
 			// 단수 모집
 			int i = UnityEngine.Random.Range(0, _soldierDatabase.Soldiers.Count);
 			var soldier = _soldierDatabase.Soldiers[i];
+
+			// 저장
+			var playerSession = _playerSessionHolderPort.GetPlayerSession();
+			playerSession.PlayerData.AddSoldier(PlayerSoldierFactory.Create(soldier));
+			
+			// TODO:
+			// PlayerSession의 정보를 직렬화하여 저장하는 과정 필요함
+			// 모집 결과는 중요한 데이터이기 때문임
+			// 아래 10뽑도 마찬가지로 저장 과정 필요함
 			
 			LoadSummonAnimation(new SummonResult(new []{ soldier }, SummonType.Summon1x));
 		}
@@ -75,6 +86,12 @@ namespace ProjectB.Gameplay.Summon
 				int random = UnityEngine.Random.Range(0, _soldierDatabase.Soldiers.Count);
 				summonedSoldiers[i] = _soldierDatabase.Soldiers[random];
 			}
+			
+			// 저장
+			var playerSession = _playerSessionHolderPort.GetPlayerSession();
+			playerSession.PlayerData.AddSoldiers(
+				Array.ConvertAll(summonedSoldiers, s => PlayerSoldierFactory.Create(s))
+			);
 
 			LoadSummonAnimation(new SummonResult(summonedSoldiers, SummonType.Summon10x));
 		}
