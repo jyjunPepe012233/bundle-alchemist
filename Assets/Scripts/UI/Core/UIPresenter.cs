@@ -5,6 +5,8 @@ namespace ProjectB.UI.Core
 
 	public abstract class UIPresenter<TView> : MonoBehaviour where TView : UIView
 	{
+		[SerializeField] protected bool initializeOnShow = true;
+		[SerializeField] protected bool initializeOnEnable = true;
 		[SerializeField] protected TView view;
 
 		public void Awake()
@@ -23,6 +25,14 @@ namespace ProjectB.UI.Core
 		{
 			view.Dispose();
 			DisposeSubscriptions();
+		}
+
+		public void OnEnable()
+		{
+			if (initializeOnShow)
+			{
+				InitializeView();
+			}
 		}
 
 		protected virtual void SetupReferences()
@@ -47,6 +57,11 @@ namespace ProjectB.UI.Core
 
 		public virtual void Show()
 		{
+			if (initializeOnShow)
+			{
+				InitializeView();
+			}
+			
 			view?.Show();
 		}
 
