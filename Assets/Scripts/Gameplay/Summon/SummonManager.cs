@@ -32,11 +32,13 @@ namespace ProjectB.Gameplay.Summon
 		
 		public SummonManager(ISoldierDatabase soldierDatabase,
 			ILoadSummonAnimationScreenPort loadSummonAnimationScreenPort,
-			ILoadSummonResultScreenPort loadSummonResultScreenPort)
+			ILoadSummonResultScreenPort loadSummonResultScreenPort, 
+			IPlayerSessionHolderPort playerSessionHolderPort)
 		{
 			_soldierDatabase = soldierDatabase;
 			_loadSummonAnimationScreenPort = loadSummonAnimationScreenPort;
 			_loadSummonResultScreenPort = loadSummonResultScreenPort;
+			_playerSessionHolderPort = playerSessionHolderPort;
 		}
 
 		

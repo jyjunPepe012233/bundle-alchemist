@@ -50,6 +50,8 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects:
   - {fileID: 6319045930434167843}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6319045930434167843
 GameObject:
   m_ObjectHideFlags: 0

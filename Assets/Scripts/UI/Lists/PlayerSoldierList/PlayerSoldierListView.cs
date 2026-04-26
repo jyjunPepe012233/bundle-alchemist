@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
@@ -8,6 +9,7 @@ using UnityEngine;
 namespace ProjectB.UI.Lists.PlayerSoldierList
 {
 
+	[Serializable]
 	public class PlayerSoldierListView : UIView
 	{
 		[SerializeField] private SimplePlayerSoldierCardList _cardList;
