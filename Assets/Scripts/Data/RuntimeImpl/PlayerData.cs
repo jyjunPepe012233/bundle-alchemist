@@ -69,7 +69,7 @@ namespace ProjectB.Data.RuntimeImpl
 			{
 				// 기능 작동에는 문제가 없도록 LogError 출력만 함
 				Debug.LogError("보석이 최대 수치를 넘어섰습니다!");
-				_coins = Int32.MaxValue;
+				_gems = Int32.MaxValue;
 			}
 
 			_gems += amount;
