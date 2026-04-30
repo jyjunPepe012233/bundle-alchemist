@@ -15,22 +15,27 @@ namespace ProjectB.Data.RuntimeImpl
 
 		[SerializeField] private int _gems;
 		public int Gems => _gems;
-		
+
+		[SerializeField] private int _foods;
+		public int Foods => _foods;
+
 		[SerializeField] private List<IPlayerSoldier> _soldiers = new List<IPlayerSoldier>();
 		public IReadOnlyCollection<IPlayerSoldier> Soldiers => _soldiers;
 		
 		
 		public event Action CoinsChanged;
 		public event Action GemsChanged;
+		public event Action FoodsChanged;
 
 		public PlayerData()
 		{
 		}
 		
-		public PlayerData(int coins, int gems)
+		public PlayerData(int coins, int gems, int foods)
 		{
 			_coins = coins;
 			_gems = gems;
+			_foods = foods;
 		}
 
 
@@ -85,6 +90,30 @@ namespace ProjectB.Data.RuntimeImpl
 
 			_gems -= amount;
 			GemsChanged?.Invoke();
+			return true;
+		}
+
+		public void AddFoods(int amount)
+		{
+			if (Int32.MaxValue - _foods < amount)
+			{
+				Debug.LogError("식량이 최대 수치를 넘어섰습니다!");
+				_foods = Int32.MaxValue;
+			}
+
+			_foods += amount;
+			FoodsChanged?.Invoke();
+		}
+
+		public bool TryConsumeFoods(int amount)
+		{
+			if (_foods < amount)
+			{
+				return false;
+			}
+
+			_foods -= amount;
+			FoodsChanged?.Invoke();
 			return true;
 		}
 
