@@ -10,10 +10,73 @@ namespace ProjectB.Data.RuntimeImpl
 	[Serializable]
 	public class PlayerData : IPlayerData
 	{
-		[SerializeField] private readonly List<IPlayerSoldier> _soldiers = new List<IPlayerSoldier>();
+		[SerializeField] private int _coins;
+		public int Coins => _coins;
 
+		[SerializeField] private int _gems;
+		public int Gems => _gems;
+		
+		[SerializeField] private List<IPlayerSoldier> _soldiers = new List<IPlayerSoldier>();
 		public IReadOnlyCollection<IPlayerSoldier> Soldiers => _soldiers;
+		
+		
+		public event Action CoinsChanged;
+		public event Action GemsChanged;
 
+
+		public void AddCoins(int amount)
+		{
+			// 코인이 최대 수치(21억..)를 넘어서는 문제는
+			// 대부분의 로직에서 고려되지 않으므로 PlayerData 내부에서 예외처리함.
+			if (Int32.MaxValue - _coins < amount)
+			{
+				// 기능 작동에는 문제가 없도록 LogError 출력만 함
+				Debug.LogError("코인이 최대 수치를 넘어섰습니다!");
+				_coins = Int32.MaxValue;
+			}
+
+			_coins += amount;
+			CoinsChanged?.Invoke();
+		}
+
+		public bool TryConsumeCoins(int amount)
+		{
+			if (_coins < amount)
+			{
+				return false;
+			}
+
+			_coins -= amount;
+			CoinsChanged?.Invoke();
+			return true;
+		}
+
+		public void AddGems(int amount)
+		{
+			// 보석이 최대 수치(21억..)를 넘어서는 문제는
+			// 대부분의 로직에서 고려되지 않으므로 PlayerData 내부에서 예외처리함.
+			if (Int32.MaxValue - _gems < amount)
+			{
+				// 기능 작동에는 문제가 없도록 LogError 출력만 함
+				Debug.LogError("보석이 최대 수치를 넘어섰습니다!");
+				_coins = Int32.MaxValue;
+			}
+
+			_gems += amount;
+			GemsChanged?.Invoke();
+		}
+
+		public bool TryConsumeGems(int amount)
+		{
+			if (_gems < amount)
+			{
+				return false;
+			}
+
+			_gems -= amount;
+			GemsChanged?.Invoke();
+			return true;
+		}
 
 		public void AddSoldier(IPlayerSoldier soldier)
 		{
