@@ -3,6 +3,7 @@ using System.Collections;
 using ProjectB.Core.Supports;
 using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Static.Soldier;
+using ProjectB.Data.Static.Summon;
 using ProjectB.Data.Types;
 using ProjectB.Gameplay.Factories;
 using ProjectB.Gameplay.Ports.Inbound;
@@ -18,6 +19,7 @@ namespace ProjectB.Gameplay.Summon
 		private readonly ILoadSummonAnimationScreenPort _loadSummonAnimationScreenPort;
 		private readonly ILoadSummonResultScreenPort _loadSummonResultScreenPort;
 		private readonly IPlayerSessionHolderPort _playerSessionHolderPort;
+		private readonly ISummonCostSetting _summonCostSetting;
 		
 		public event Action<SummonResult> StartAnimation;
 		public event Action AnimationPerfectlyUnloaded;
@@ -33,12 +35,14 @@ namespace ProjectB.Gameplay.Summon
 		public SummonManager(ISoldierDatabase soldierDatabase,
 			ILoadSummonAnimationScreenPort loadSummonAnimationScreenPort,
 			ILoadSummonResultScreenPort loadSummonResultScreenPort, 
-			IPlayerSessionHolderPort playerSessionHolderPort)
+			IPlayerSessionHolderPort playerSessionHolderPort,
+			ISummonCostSetting summonCostSetting)
 		{
 			_soldierDatabase = soldierDatabase;
 			_loadSummonAnimationScreenPort = loadSummonAnimationScreenPort;
 			_loadSummonResultScreenPort = loadSummonResultScreenPort;
 			_playerSessionHolderPort = playerSessionHolderPort;
+			_summonCostSetting = summonCostSetting;
 		}
 
 		
@@ -62,13 +66,21 @@ namespace ProjectB.Gameplay.Summon
 				return;
 			}
 			
+			// 보석 소모
+			var playerData = _playerSessionHolderPort.GetPlayerSession().PlayerData;
+			if (!playerData.TryConsumeGems(_summonCostSetting.Price1x))
+			{
+				// 보석 소모에 실패할 경우(부족할 경우) 모집을 방지
+				Debug.Log("보석이 부족하여 모집에 실패했습니다");
+				return;
+			}
+			
 			// 단수 모집
 			int i = UnityEngine.Random.Range(0, _soldierDatabase.Soldiers.Count);
 			var soldier = _soldierDatabase.Soldiers[i];
 
 			// 저장
-			var playerSession = _playerSessionHolderPort.GetPlayerSession();
-			playerSession.PlayerData.AddSoldier(PlayerSoldierFactory.Create(soldier));
+			playerData.AddSoldier(PlayerSoldierFactory.Create(soldier));
 			
 			// TODO:
 			// PlayerSession의 정보를 직렬화하여 저장하는 과정 필요함
@@ -82,6 +94,16 @@ namespace ProjectB.Gameplay.Summon
 		{
 			if (_isAnimationPlaying) return;
 			
+			// 보석 소모
+			var playerData = _playerSessionHolderPort.GetPlayerSession().PlayerData;
+			if (!playerData.TryConsumeGems(_summonCostSetting.Price10x))
+			{
+				// 보석 소모에 실패할 경우(부족할 경우) 모집을 방지
+				Debug.Log("보석이 부족하여 모집에 실패했습니다");
+				return;
+			}
+			
+			// 10뽑
 			ISoldierData[] summonedSoldiers = new ISoldierData[10];
 			for (int i = 0; i < 10; i++)
 			{
@@ -90,8 +112,7 @@ namespace ProjectB.Gameplay.Summon
 			}
 			
 			// 저장
-			var playerSession = _playerSessionHolderPort.GetPlayerSession();
-			playerSession.PlayerData.AddSoldiers(
+			playerData.AddSoldiers(
 				Array.ConvertAll(summonedSoldiers, s => PlayerSoldierFactory.Create(s))
 			);
 
