@@ -23,6 +23,16 @@ namespace ProjectB.Data.RuntimeImpl
 		public event Action CoinsChanged;
 		public event Action GemsChanged;
 
+		public PlayerData()
+		{
+		}
+		
+		public PlayerData(int coins, int gems)
+		{
+			_coins = coins;
+			_gems = gems;
+		}
+
 
 		public void AddCoins(int amount)
 		{
