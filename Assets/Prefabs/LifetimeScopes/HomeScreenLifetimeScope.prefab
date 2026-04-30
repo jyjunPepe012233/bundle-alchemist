@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7414308301948056793}
   - component: {fileID: -1129702677603920999}
+  - component: {fileID: 581503583454526530}
   m_Layer: 0
   m_Name: HomeScreenLifetimeScope
   m_TagString: Untagged
@@ -52,6 +53,23 @@ MonoBehaviour:
   autoInjectGameObjects:
   - {fileID: 3973697811433457781}
   - {fileID: 8402045428716746763}
+--- !u!114 &581503583454526530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3516182780080791312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1649fca26374089af92ce85c0e6b3bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  note: "\uBB38\uC81C:\n\uC9C0\uAE08 \"Home\"\uACFC \"Lobby\"\uB77C\uB294 \uC6A9\uC5B4\uB97C
+    \uD63C\uC6A9\uD558\uC5EC \uC0AC\uC6A9 \uC911\uC784\n\uC2E4\uC81C\uB85C HomeScreenLifetimeScope\uB294
+    Home\uC5D0 \uC18D\uD558\uB294 \uD654\uBA74\uB4E4\uC5D0\uC11C \uC694\uAD6C\uD558\uB294
+    \uC758\uC874\uC131\uACFC Lobby \uD654\uBA74\uC5D0\uC11C \uC694\uAD6C\uD558\uB294
+    \uC758\uC874\uC131\uC744 \uBAA8\uB450 \uCEE4\uBC84\uD558\uACE0 \uC788\uC74C."
 --- !u!1 &3973697811433457781
 GameObject:
   m_ObjectHideFlags: 0
