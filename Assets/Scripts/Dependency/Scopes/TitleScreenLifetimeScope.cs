@@ -1,5 +1,5 @@
+using ProjectB.Gameplay;
 using ProjectB.Gameplay.Ports.Inbound;
-using ProjectB.Gameplay.TitleScreen;
 
 namespace ProjectB.Dependency.Scopes
 {

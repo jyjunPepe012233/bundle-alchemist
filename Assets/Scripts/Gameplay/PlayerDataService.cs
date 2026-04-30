@@ -2,7 +2,7 @@ using ProjectB.Data.Runtime.Player;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 
-namespace ProjectB.Gameplay.Player
+namespace ProjectB.Gameplay
 {
 
 	public class PlayerDataService : IPlayerDataServicePort

@@ -1,7 +1,7 @@
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 
-namespace ProjectB.Gameplay.TitleScreen
+namespace ProjectB.Gameplay
 {
 
 	public class TitleScreenManager : ITitleScreenManagerPort

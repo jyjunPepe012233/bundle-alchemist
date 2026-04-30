@@ -5,7 +5,7 @@ using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 
-namespace ProjectB.Gameplay.Loading
+namespace ProjectB.Gameplay
 {
 
 	public class LoadingManager : ILoadingServicePort, ILoadingOverlayManagerPort

@@ -10,7 +10,7 @@ using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 
-namespace ProjectB.Gameplay.Summon
+namespace ProjectB.Gameplay
 {
 
 	public class SummonManager : ISummonServicePort, ISummonAnimationManagerPort

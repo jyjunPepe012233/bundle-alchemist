@@ -1,7 +1,6 @@
 using ProjectB.Gameplay.Ports.Outbound;
-using UnityEngine;
 
-namespace ProjectB.Gameplay.Player
+namespace ProjectB.Gameplay
 {
 
 	public class PlayerSessionInitializer
