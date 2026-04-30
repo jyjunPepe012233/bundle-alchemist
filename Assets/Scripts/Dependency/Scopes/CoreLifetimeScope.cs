@@ -44,6 +44,9 @@ namespace ProjectB.Dependency.Scopes
 			// 클래스 구분을 최대한 유연하게 만들거나 없애는 방안을 고려해볼 수 있음.
 			// 지금은 임시로 Inbound Adapter를 등록하는 메서드에서 등록함
 			Builder.Register<PlayerSessionInitializer>(Lifetime.Singleton);
+			
+			// 사도 정보는 대부분의 화면에서 열릴 수 있기 때문에 Core에 등록
+			RegisterPortAdapter<ISoldierDetailServicePort, SoldierDetailService>();
 		}
 
 		protected override void AddOutboundAdapters()
@@ -54,6 +57,7 @@ namespace ProjectB.Dependency.Scopes
 			RegisterPortAdapter<IPlayerSessionHolderPort, PlayerSessionHolderService>();
 			RegisterPortAdapter<ILoadPlayerDataPort, LoadPlayerDataService>();
 			RegisterPortAdapter<IInitializePlayerSessionPort, InitializePlayerSessionService>();
+			RegisterPortAdapter<ILoadSoldierDetailScreenPort, LoadSoldierDetailScreenService>();
 		}
 
 		protected override void AddData()

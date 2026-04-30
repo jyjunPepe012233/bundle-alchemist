@@ -1332,6 +1332,9 @@ MonoBehaviour:
   _soldierDisplayParent: {fileID: 2091279935770168439}
   _roleIcon: {fileID: 968013843625592691}
   _styleIcon: {fileID: 3799601096771721805}
+  _soldierDataAppliedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8489262965031674092
 GameObject:
   m_ObjectHideFlags: 0

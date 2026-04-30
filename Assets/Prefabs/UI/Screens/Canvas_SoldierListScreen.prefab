@@ -482,6 +482,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c16217e56cb430b9d5a19dbcd2e2316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initializeOnShow: 1
+  initializeOnEnable: 1
   view:
     _topElement: {fileID: 3904828695557066364}
     _cardList: {fileID: 7382855803333495713}
@@ -500,7 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _contentRoot: {fileID: 3887847955980346000}
-  _cardPrefab: {fileID: 5805192399772639895, guid: 63d4dd146236a4286953aff537562c29, type: 3}
+  _cardPrefab: {fileID: 4189540498079293433, guid: 1a9e9803f30ae4b8d9e2c2818f496cbe, type: 3}
 --- !u!1 &7164075767698974189
 GameObject:
   m_ObjectHideFlags: 0

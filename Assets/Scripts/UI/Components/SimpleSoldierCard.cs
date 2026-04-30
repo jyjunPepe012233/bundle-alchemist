@@ -1,6 +1,7 @@
 using ProjectB.Data.Static.Soldier;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace ProjectB.UI.Components
 {
@@ -11,6 +12,8 @@ namespace ProjectB.UI.Components
 		[SerializeField] private Transform _soldierDisplayParent;
 		[SerializeField] private SimpleIconView _roleIcon;
 		[SerializeField] private SimpleIconView _styleIcon;
+
+		[SerializeField] private UnityEvent<ISoldierData> _soldierDataAppliedEvent; 
 
 		private GameObject _displaySoldier;
 		
@@ -45,6 +48,8 @@ namespace ProjectB.UI.Components
 				_styleIcon.SetIcon(soldierData.Spirit.Icon64);
 				_styleIcon.SetBackgroundColor(soldierData.Spirit.Color);
 			}
+			
+			_soldierDataAppliedEvent.Invoke(soldierData);
 		}
 	}
 
