@@ -1,8 +1,10 @@
 using ProjectB.Authoring.ScriptableObject.Invasion;
 using ProjectB.Authoring.ScriptableObject.Soldier;
+using ProjectB.Authoring.ScriptableObject.Summon;
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Invasion;
 using ProjectB.Data.Static.Soldier;
+using ProjectB.Data.Static.Summon;
 using ProjectB.Gameplay.Loading;
 using ProjectB.Gameplay.Player;
 using ProjectB.Gameplay.Ports.Inbound;
@@ -18,6 +20,7 @@ namespace ProjectB.Dependency.Scopes
 	{
 		[SerializeField] private SoldierDatabaseSO _soldierDatabaseSO;
 		[SerializeField] private InvasionSettingSO _invasionSettingSO;
+		[SerializeField] private SummonCostSettingSO _summonCostSettingSo;
 
 		protected override void Awake()
 		{
@@ -59,6 +62,7 @@ namespace ProjectB.Dependency.Scopes
 			base.AddData();
 			RegisterPortInstance<IInvasionSetting, InvasionSettingSO>(_invasionSettingSO);
 			RegisterPortInstance<ISoldierDatabase, SoldierDatabaseSO>(_soldierDatabaseSO);
+			RegisterPortInstance<ISummonCostSetting, SummonCostSettingSO>(_summonCostSettingSo);
 		}
 	}
 
