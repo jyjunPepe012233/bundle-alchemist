@@ -21,6 +21,16 @@ namespace ProjectB.Gameplay
 			_soldierDatabase = soldierDatabase;
 		}
 
+
+		public void ConsumeFoods(string soldierId)
+		{
+			var soldierData = _soldierDatabase.GetSoldierById(soldierId);
+			if (soldierData != null)
+			{
+				ConsumeFoods(soldierData);
+			}
+		}
+
 		public void ConsumeFoods(ISoldierData soldier)
 		{
 			var playerData = _playerSessionHolderPort.GetPlayerSession().PlayerData;
@@ -69,6 +79,15 @@ namespace ProjectB.Gameplay
 			else
 			{
 				playerSoldier.SetExp(playerSoldier.Exp + consumeFood);
+			}
+		}
+
+		public void LevelUpTo(string soldierId, short targetLevel)
+		{
+			var soldierData = _soldierDatabase.GetSoldierById(soldierId);
+			if (soldierData != null)
+			{ 
+				LevelUpTo(soldierData, targetLevel);
 			}
 		}
 
