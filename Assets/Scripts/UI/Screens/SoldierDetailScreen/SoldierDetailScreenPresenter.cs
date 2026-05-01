@@ -95,16 +95,23 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		void SubscribePlayerSoldierData()
 		{
 			_playerSoldierData.ExpChanged += OnPlayerSoldierExpChanged;
+			_playerSoldierData.LevelChanged += OnPlayerSoldierLevelChanged;
 		}
 
 		void UnsubscribePlayerSoldierData()
 		{
 			_playerSoldierData.ExpChanged -= OnPlayerSoldierExpChanged;
+			_playerSoldierData.LevelChanged -= OnPlayerSoldierLevelChanged;
 		}
 
 		void OnPlayerSoldierExpChanged()
 		{
 			view.LevelUpPageView.SetCurrentExperience(_playerSoldierData.Exp);
+		}
+
+		void OnPlayerSoldierLevelChanged()
+		{
+			view.LevelUpPageView.SetTargetExperience(_soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(_playerSoldierData.Level));
 		}
 	}
 
