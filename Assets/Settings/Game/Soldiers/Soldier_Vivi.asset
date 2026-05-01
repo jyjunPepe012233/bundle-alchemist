@@ -19,3 +19,4 @@ MonoBehaviour:
   _role:
     target: {fileID: 11400000, guid: cf62385a52c4d4332bebf55e1f08168a, type: 2}
   _displayedSoldierPrefab: {fileID: 3493666056230920870, guid: d5621388082434fa491f3e2f12ba95ac, type: 3}
+  _soldierLevelUpExpSettingSo: {fileID: 11400000, guid: c438162ae40f3451cb1301e2fcb58e95, type: 2}

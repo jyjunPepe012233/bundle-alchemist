@@ -10,7 +10,9 @@ namespace ProjectB.Gameplay.Factories
 	{
 		public static IPlayerSoldier Create(ISoldierData soldierData)
 		{
-			return new PlayerSoldier(soldierData, 1);
+			return new PlayerSoldier(soldierData: soldierData,
+				exp: 0,
+				level: 1);
 		}
 	}
 

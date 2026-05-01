@@ -12,6 +12,7 @@ namespace ProjectB.Authoring.ScriptableObject.Soldier
 	{
 		public ISoldierCardDisplaySetting CardDisplaySetting => this;
 		
+		public ISoldierLevelUpExpSetting LevelUpExpSetting => _soldierLevelUpExpSettingSo;
 		
 		
 		[Header("Soldier Info")]
@@ -32,6 +33,11 @@ namespace ProjectB.Authoring.ScriptableObject.Soldier
 		[Header("Card Display Setting")]
 		[SerializeField] private GameObject _displayedSoldierPrefab;
 		public GameObject DisplayedSoldierPrefab => _displayedSoldierPrefab;
+
+
+
+		[Header("LevelUp Exp Setting")]
+		[SerializeField] private SoldierLevelUpExpSettingSO _soldierLevelUpExpSettingSo;
 	}
 
 }

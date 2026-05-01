@@ -1,11 +1,14 @@
 namespace ProjectB.Data.Runtime.Player
 {
 
-	public interface IPlayerSoldier
+	// TODO:
+	// 수정할 의도가 없는데도 IReadOnlyPlayerSoldier가 아니라
+	// IPlayerSoldier를 그대로 쓰는 곳 찾아서 바꾸기
+	public interface IPlayerSoldier : IReadOnlyPlayerSoldier
 	{
-		public string SoldierId { get; }
+		void SetExp(int exp);
 		
-		public short Level { get; }
+		void SetLevel(short level);
 	}
 
 }
