@@ -15,6 +15,20 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		
 		[SerializeField] private LevelUpPageView _levelUpPageView;
 		public LevelUpPageView LevelUpPageView => _levelUpPageView;
+
+		public override void RegisterUICallbacks()
+		{
+			base.RegisterUICallbacks();
+			_infoPageView.RegisterUICallbacks();
+			_levelUpPageView.RegisterUICallbacks();
+		}
+
+		public override void Dispose()
+		{
+			base.Dispose();
+			_infoPageView.Dispose();
+			_levelUpPageView.Dispose();
+		}
 	}
 
 }
