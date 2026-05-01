@@ -10,6 +10,10 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 	[Serializable]
 	public class LevelUpPageView : SoldierDetailPageView
 	{
+		[Header("Level")]
+		[SerializeField] private TextMeshProUGUI _currentLevelText;
+		[SerializeField] private TextMeshProUGUI _nextLevelText;
+		
 		[Header("Experience")]
 		[SerializeField] private Slider _experienceSlider;
 		[SerializeField] private TextMeshProUGUI _currentExperienceText;
@@ -36,6 +40,12 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		void OnConsumeFoodButtonClicked()
 		{
 			ConsumeFoodButtonClicked?.Invoke();
+		}
+
+		public void SetCurrentLevel(int level)
+		{
+			_currentLevelText.text = level.ToString();
+			_nextLevelText.text = (level + 1).ToString();
 		}
 		
 		public void SetCurrentExperience(int experience)

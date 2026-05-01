@@ -2174,6 +2174,8 @@ MonoBehaviour:
     _levelUpPageView:
       _topElement: {fileID: 3240184506406990482}
       _pageId: LevelUp
+      _currentLevelText: {fileID: 7529677214504736937}
+      _nextLevelText: {fileID: 6573182206048513667}
       _experienceSlider: {fileID: 6116982851371303605}
       _currentExperienceText: {fileID: 6839444857298305812}
       _targetExperienceText: {fileID: 3250369007225191486}
@@ -5306,9 +5308,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6573182206048513667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7954599829739451513, guid: 171685627272c4282acbf47c7a61647c, type: 3}
+  m_PrefabInstance: {fileID: 3845168108846193402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6839444857298305812 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7761495297700878830, guid: 171685627272c4282acbf47c7a61647c, type: 3}
+  m_PrefabInstance: {fileID: 3845168108846193402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7529677214504736937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6710928103706214995, guid: 171685627272c4282acbf47c7a61647c, type: 3}
   m_PrefabInstance: {fileID: 3845168108846193402}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}

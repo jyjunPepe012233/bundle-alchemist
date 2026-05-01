@@ -85,11 +85,10 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 
 			// 레벨업 페이지 업데이트
+			view.LevelUpPageView.SetCurrentLevel(_playerSoldierData.Level);
 			view.LevelUpPageView.SetCurrentExperience(_playerSoldierData.Exp);
 			view.LevelUpPageView.SetTargetExperience(_soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(_playerSoldierData.Level));
-			
-			int consumeFoodAmount = _soldierLevelUpServicePortInstaller.Port.GetConsumeFoodAmount(playerSoldier.SoldierId);
-			view.LevelUpPageView.SetConsumeFoodAmount(consumeFoodAmount);
+			view.LevelUpPageView.SetConsumeFoodAmount(_soldierLevelUpServicePortInstaller.Port.GetConsumeFoodAmount(playerSoldier.SoldierId));
 		}
 
 		void SubscribePlayerSoldierData()
@@ -111,7 +110,10 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 		void OnPlayerSoldierLevelChanged()
 		{
+			view.LevelUpPageView.SetCurrentLevel(_playerSoldierData.Level);
 			view.LevelUpPageView.SetTargetExperience(_soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(_playerSoldierData.Level));
+			
+			view.LevelUpPageView.SetConsumeFoodAmount(_soldierLevelUpServicePortInstaller.Port.GetConsumeFoodAmount(_playerSoldierData.SoldierId));
 		}
 	}
 
