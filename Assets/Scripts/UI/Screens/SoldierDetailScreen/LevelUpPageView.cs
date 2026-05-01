@@ -10,6 +10,11 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 	[Serializable]
 	public class LevelUpPageView : SoldierDetailPageView
 	{
+		[Header("Experience")]
+		[SerializeField] private Slider _experienceSlider;
+		[SerializeField] private TextMeshProUGUI _currentExperienceText;
+		[SerializeField] private TextMeshProUGUI _targetExperienceText;
+		
 		[Header("Consume Food Button")]
 		[SerializeField] private Button _consumeFoodButton;
 		[SerializeField] private TextMeshProUGUI _consumeFoodAmountText;
@@ -31,6 +36,18 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		void OnConsumeFoodButtonClicked()
 		{
 			ConsumeFoodButtonClicked?.Invoke();
+		}
+		
+		public void SetCurrentExperience(int experience)
+		{
+			_experienceSlider.value = experience;
+			_currentExperienceText.text = experience.ToString();
+		}
+		
+		public void SetTargetExperience(int experience)
+		{
+			_experienceSlider.maxValue = experience;
+			_targetExperienceText.text = experience.ToString();
 		}
 		
 		public void SetConsumeFoodAmount(int amount)

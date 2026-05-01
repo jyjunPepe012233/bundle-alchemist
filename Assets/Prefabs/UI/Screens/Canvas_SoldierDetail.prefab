@@ -2174,8 +2174,12 @@ MonoBehaviour:
     _levelUpPageView:
       _topElement: {fileID: 3240184506406990482}
       _pageId: LevelUp
+      _experienceSlider: {fileID: 6116982851371303605}
+      _currentExperienceText: {fileID: 6839444857298305812}
+      _targetExperienceText: {fileID: 3250369007225191486}
       _consumeFoodButton: {fileID: 1923368038000543958}
       _consumeFoodAmountText: {fileID: 8187464708103816220}
+  _soldierDatabaseInstaller: {fileID: 0}
   _soldierDetailServicePortInstaller: {fileID: 0}
   _soldierLevelUpServicePortInstaller: {fileID: 0}
 --- !u!223 &4954669166617598307
@@ -5280,6 +5284,39 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1849777275074832488, guid: 171685627272c4282acbf47c7a61647c, type: 3}
   m_PrefabInstance: {fileID: 3845168108846193402}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3250369007225191486 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1749482848507176644, guid: 171685627272c4282acbf47c7a61647c, type: 3}
+  m_PrefabInstance: {fileID: 3845168108846193402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6116982851371303605 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7043396150523893839, guid: 171685627272c4282acbf47c7a61647c, type: 3}
+  m_PrefabInstance: {fileID: 3845168108846193402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6839444857298305812 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7761495297700878830, guid: 171685627272c4282acbf47c7a61647c, type: 3}
+  m_PrefabInstance: {fileID: 3845168108846193402}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8187464708103816220 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4954944479206530790, guid: 171685627272c4282acbf47c7a61647c, type: 3}
