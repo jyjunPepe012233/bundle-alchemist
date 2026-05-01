@@ -1,4 +1,5 @@
 using System.Collections;
+using ProjectB.Data.Runtime.Player;
 using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.UI.Services;
 using UnityEngine;
@@ -12,7 +13,7 @@ namespace ProjectB.Infrastructure
 
 		public bool IsLoaded => GetUIService(out var service) && service.CurrentOverlayID == "SoldierDetail";
 
-		public IEnumerator Load()
+		public IEnumerator Load(IReadOnlyPlayerSoldier playerSoldier)
 		{
 			if (GetUIService(out var service))
 			{

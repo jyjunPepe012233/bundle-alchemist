@@ -1,3 +1,4 @@
+using System;
 using ProjectB.Data.Static.Soldier;
 
 namespace ProjectB.Gameplay.Ports.Inbound
@@ -12,6 +13,9 @@ namespace ProjectB.Gameplay.Ports.Inbound
 		void LevelUpTo(string soldierId, short targetLevel);
 
 		void LevelUpTo(ISoldierData soldier, short targetLevel);
+
+
+		int GetConsumeFoodAmount(string soldierId);
 	}
 
 }
