@@ -8,7 +8,7 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 {
 
 	[Serializable]
-	public class LevelUpPageView : UIView
+	public class LevelUpPageView : SoldierDetailPageView
 	{
 		[Header("Consume Food Button")]
 		[SerializeField] private Button _consumeFoodButton;

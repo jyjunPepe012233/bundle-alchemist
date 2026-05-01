@@ -14,7 +14,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 70742432072041618, guid: cd69bfab073f343328124e2f6017b178, type: 3}
       propertyPath: m_fontSize
-      value: 36
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 1718825621651512041, guid: cd69bfab073f343328124e2f6017b178, type: 3}
       propertyPath: m_Sprite
@@ -103,6 +103,10 @@ PrefabInstance:
     - target: {fileID: 5415488233290561039, guid: cd69bfab073f343328124e2f6017b178, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6374081895591833258, guid: cd69bfab073f343328124e2f6017b178, type: 3}
+      propertyPath: _pageId
+      value: RankUp
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

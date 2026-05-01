@@ -2168,8 +2168,12 @@ MonoBehaviour:
   initializeOnEnable: 1
   view:
     _topElement: {fileID: 4582923392925340195}
-    _levelUpPageView:
+    _infoPageView:
       _topElement: {fileID: 2879075054101283694}
+      _pageId: Info
+    _levelUpPageView:
+      _topElement: {fileID: 3240184506406990482}
+      _pageId: LevelUp
       _consumeFoodButton: {fileID: 1923368038000543958}
       _consumeFoodAmountText: {fileID: 8187464708103816220}
   _soldierDetailServicePortInstaller: {fileID: 0}
@@ -5269,6 +5273,11 @@ MonoBehaviour:
 --- !u!224 &2405669988529430105 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1458709012964787363, guid: 171685627272c4282acbf47c7a61647c, type: 3}
+  m_PrefabInstance: {fileID: 3845168108846193402}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3240184506406990482 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1849777275074832488, guid: 171685627272c4282acbf47c7a61647c, type: 3}
   m_PrefabInstance: {fileID: 3845168108846193402}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8187464708103816220 stripped
