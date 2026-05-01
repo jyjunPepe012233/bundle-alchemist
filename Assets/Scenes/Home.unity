@@ -3207,6 +3207,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4274228692733458735, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: _playerDataServicePortInstaller
+      value: 
+      objectReference: {fileID: 1156134722}
     - target: {fileID: 4285728446428419182, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: _summonServicePortInstaller
       value: 
@@ -3551,6 +3555,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5120517082503527453, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120517082503527453, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120517082503527453, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5120517082503527453, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5200943347864730284, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3655,6 +3675,10 @@ PrefabInstance:
       propertyPath: _playerDataServicePortInstaller
       value: 
       objectReference: {fileID: 911522433}
+    - target: {fileID: 5363482689035475059, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: _playerDataServicePortInstaller
+      value: 
+      objectReference: {fileID: 1156134722}
     - target: {fileID: 5395114684032072440, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3668,6 +3692,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5395114684032072440, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408017364211791355, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408017364211791355, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408017364211791355, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5408017364211791355, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -3851,6 +3891,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5643900001320307283, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: _playerDataServicePortInstaller
+      value: 
+      objectReference: {fileID: 1156134722}
     - target: {fileID: 5646995079839561948, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4843,6 +4887,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7649842117585123246, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: _playerDataServicePortInstaller
+      value: 
+      objectReference: {fileID: 1156134722}
     - target: {fileID: 7712781604850676399, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5171,6 +5219,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8249567189931365942, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: _playerDataServicePortInstaller
+      value: 
+      objectReference: {fileID: 1156134722}
     - target: {fileID: 8249594068612042586, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -5248,6 +5300,22 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8291626972556176134, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318024947300982526, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318024947300982526, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318024947300982526, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8318024947300982526, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
@@ -5731,6 +5799,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875032426420437326, guid: c68629272d378436db8639593bdd8b1a, type: 3}
+      propertyPath: _playerDataServicePortInstaller
+      value: 
+      objectReference: {fileID: 1156134722}
     - target: {fileID: 9005585690124977599, guid: c68629272d378436db8639593bdd8b1a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
