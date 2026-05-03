@@ -24,12 +24,13 @@ namespace ProjectB.Data.RuntimeImpl
 		public event Action CombatPowerChanged;
 
 
-		public PlayerSoldier(ISoldierData soldierData, int exp, short level, SoldierStatus status)
+		public PlayerSoldier(ISoldierData soldierData, int exp, short level, SoldierStatus status, int combatPower)
 		{
 			SoldierId = soldierData.SoldierId;
 			Exp = exp;
 			Level = level;
 			Status = status;
+			CombatPower = combatPower;
 		}
 
 		public void SetExp(int exp)

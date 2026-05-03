@@ -54,6 +54,7 @@ namespace ProjectB.Dependency.Scopes
 		{
 			base.AddInternalAdapters();
 			RegisterPortAdapter<ISoldierStatusComputerPort, SoldierStatusComputer>();
+			RegisterPortAdapter<IPlayerSoldierFactory, PlayerSoldierFactory>();
 		}
 
 		protected override void AddOutboundAdapters()
