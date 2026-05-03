@@ -1,5 +1,7 @@
 **/ExternalAssets/
 
+gitignore_*
+
 # Unity generated folders
 **/[Ll]ibrary/
 **/[Tt]emp/
