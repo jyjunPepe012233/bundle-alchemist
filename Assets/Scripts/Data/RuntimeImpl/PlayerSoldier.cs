@@ -1,6 +1,7 @@
 using System;
 using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
+using ProjectB.Data.Types;
 
 namespace ProjectB.Data.RuntimeImpl
 {
@@ -13,8 +14,11 @@ namespace ProjectB.Data.RuntimeImpl
 
 		public short Level { get; private set; }
 		
+		public SoldierStatus Status { get; private set; }
+
 		public event Action ExpChanged;
 		public event Action LevelChanged;
+		public event Action StatusChanged;
 
 
 		public PlayerSoldier(ISoldierData soldierData, int exp, short level)
@@ -34,6 +38,12 @@ namespace ProjectB.Data.RuntimeImpl
 		{
 			Level = level;
 			LevelChanged?.Invoke();
+		}
+
+		public void SetStatus(SoldierStatus status)
+		{
+			Status = status;
+			StatusChanged?.Invoke();
 		}
 	}
 

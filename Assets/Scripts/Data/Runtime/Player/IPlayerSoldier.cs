@@ -1,3 +1,5 @@
+using ProjectB.Data.Types;
+
 namespace ProjectB.Data.Runtime.Player
 {
 
@@ -9,6 +11,8 @@ namespace ProjectB.Data.Runtime.Player
 		void SetExp(int exp);
 		
 		void SetLevel(short level);
+
+		void SetStatus(SoldierStatus status);
 	}
 
 }
