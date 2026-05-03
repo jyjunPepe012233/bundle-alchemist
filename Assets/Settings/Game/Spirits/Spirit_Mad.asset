@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d53c2bdf41c42da99ea8795c0bf4f5b, type: 3}
-  m_Name: Spirit_Pure
+  m_Name: Spirit_Mad
   m_EditorClassIdentifier: 
-  _spiritName: Pure
-  _color: {r: 0.14189897, g: 0.6226415, b: 0.1262905, a: 1}
-  _icon64: {fileID: 21300000, guid: a2dd5e65568e148cc9a9cf6ea47e984c, type: 3}
+  _spiritName: "\uAD11\uB780"
+  _iconPrefab64: {fileID: 8497547751855386680, guid: fe081e79bf0444c959d9943cc8e426a5, type: 3}
