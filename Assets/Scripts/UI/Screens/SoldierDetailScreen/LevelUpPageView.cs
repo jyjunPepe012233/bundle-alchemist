@@ -15,6 +15,10 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		[Header("Status")]
 		[SerializeField] private SimpleSoldierStatusUpgradeList _statusUpgradeList;
 		
+		[Header("Combat Power")]
+		[SerializeField] private TextMeshProUGUI _currentCombatPowerText;
+		[SerializeField] private TextMeshProUGUI _nextLevelCombatPowerText;
+		
 		[Header("Level")]
 		[SerializeField] private TextMeshProUGUI _currentLevelText;
 		[SerializeField] private TextMeshProUGUI _nextLevelText;
@@ -45,6 +49,16 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		void OnConsumeFoodButtonClicked()
 		{
 			ConsumeFoodButtonClicked?.Invoke();
+		}
+		
+		public void SetCurrentCombatPower(int combatPower)
+		{
+			_currentCombatPowerText.text = combatPower.ToString();
+		}
+		
+		public void SetNextLevelCombatPower(int combatPower)
+		{
+			_nextLevelCombatPowerText.text = combatPower.ToString();
 		}
 		
 		public void SetStatus(SoldierStatus currentStatus, SoldierStatus nextStatus)

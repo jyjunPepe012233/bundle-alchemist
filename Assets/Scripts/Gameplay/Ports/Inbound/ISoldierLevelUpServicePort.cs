@@ -20,6 +20,8 @@ namespace ProjectB.Gameplay.Ports.Inbound
 
 		
 		SoldierStatus GetNextLevelStatus(string soldierId);
+
+		int GetNextLevelCombatPower(string soldierId);
 	}
 
 }

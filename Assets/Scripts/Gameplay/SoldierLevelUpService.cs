@@ -18,14 +18,17 @@ namespace ProjectB.Gameplay
 		private readonly IPlayerSessionHolderPort _playerSessionHolderPort;
 		private readonly ISoldierDatabase _soldierDatabase;
 		private readonly ISoldierStatusComputerPort _soldierStatusComputerPort;
+		private readonly ISoldierCombatPowerComputerPort _soldierCombatPowerComputerPort;
 
 		public SoldierLevelUpService(IPlayerSessionHolderPort playerSessionHolderPort,
 			ISoldierDatabase soldierDatabase,
-			ISoldierStatusComputerPort soldierStatusComputerPort)
+			ISoldierStatusComputerPort soldierStatusComputerPort, 
+			ISoldierCombatPowerComputerPort soldierCombatPowerComputerPort)
 		{
 			_playerSessionHolderPort = playerSessionHolderPort;
 			_soldierDatabase = soldierDatabase;
 			_soldierStatusComputerPort = soldierStatusComputerPort;
+			_soldierCombatPowerComputerPort = soldierCombatPowerComputerPort;
 		}
 
 
@@ -90,6 +93,9 @@ namespace ProjectB.Gameplay
 			
 			var newStatus = _soldierStatusComputerPort.ComputeSoldierStatus(soldierData, playerSoldier);
 			playerSoldier.SetStatus(newStatus);
+			
+			var newCombatPower = _soldierCombatPowerComputerPort.ComputeCombatPower(soldierData, newStatus);
+			playerSoldier.SetCombatPower(newCombatPower);
 		}
 
 		public void LevelUpTo(string soldierId, short targetLevel)
@@ -138,6 +144,9 @@ namespace ProjectB.Gameplay
 			
 			var newStatus = _soldierStatusComputerPort.ComputeSoldierStatus(soldierData, playerSoldier);
 			playerSoldier.SetStatus(newStatus);
+			
+			var newCombatPower = _soldierCombatPowerComputerPort.ComputeCombatPower(soldierData, newStatus);
+			playerSoldier.SetCombatPower(newCombatPower);
 		}
 
 		
@@ -171,6 +180,22 @@ namespace ProjectB.Gameplay
 
 			ISoldierData soldierData = _soldierDatabase.GetSoldierById(playerSoldier.SoldierId);
 			return _soldierStatusComputerPort.GetNextLevelStatus(soldierData, playerSoldier);
+		}
+
+		public int GetNextLevelCombatPower(string soldierId)
+		{
+			var playerData = _playerSessionHolderPort.GetPlayerSession().PlayerData;
+
+			var playerSoldier = playerData.Soldiers.FirstOrDefault(s => s.SoldierId == soldierId);
+			if (playerSoldier == null)
+			{
+				Debug.LogError("플레이어가 보유하지 않은 병사를 강화하려 시도했습니다 SoldierId: " + soldierId);
+				return 0;
+			}
+
+			ISoldierData soldierData = _soldierDatabase.GetSoldierById(playerSoldier.SoldierId);
+			SoldierStatus nextLevelStatus = _soldierStatusComputerPort.GetNextLevelStatus(soldierData, playerSoldier);
+			return _soldierCombatPowerComputerPort.ComputeCombatPower(soldierData, nextLevelStatus);
 		}
 	}
 

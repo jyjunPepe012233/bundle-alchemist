@@ -9,7 +9,12 @@ namespace ProjectB.Gameplay
 	public class PlayerSoldierFactory : IPlayerSoldierFactory
 	{
 		private readonly ISoldierCombatPowerComputerPort _soldierCombatPowerComputerPort;
-		
+
+		public PlayerSoldierFactory(ISoldierCombatPowerComputerPort soldierCombatPowerComputerPort)
+		{
+			_soldierCombatPowerComputerPort = soldierCombatPowerComputerPort;
+		}
+
 		public IPlayerSoldier Create(ISoldierData soldierData)
 		{
 			return new PlayerSoldier(soldierData: soldierData,

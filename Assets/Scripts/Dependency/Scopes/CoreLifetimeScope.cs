@@ -6,6 +6,7 @@ using ProjectB.Data.Static.Invasion;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Static.Summon;
 using ProjectB.Gameplay;
+using ProjectB.Gameplay.Ports;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Internal;
 using ProjectB.Gameplay.Ports.Outbound;
@@ -54,6 +55,7 @@ namespace ProjectB.Dependency.Scopes
 		{
 			base.AddInternalAdapters();
 			RegisterPortAdapter<ISoldierStatusComputerPort, SoldierStatusComputer>();
+			RegisterPortAdapter<ISoldierCombatPowerComputerPort, SoldierCombatPowerComputer>();
 			RegisterPortAdapter<IPlayerSoldierFactory, PlayerSoldierFactory>();
 		}
 
