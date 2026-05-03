@@ -90,7 +90,6 @@ namespace ProjectB.Gameplay
 			
 			var newStatus = _soldierStatusComputerPort.ComputeSoldierStatus(soldierData, playerSoldier);
 			playerSoldier.SetStatus(newStatus);
-			Debug.Log(newStatus.hp);
 		}
 
 		public void LevelUpTo(string soldierId, short targetLevel)
