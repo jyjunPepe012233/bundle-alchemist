@@ -87,6 +87,10 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 			
 			_soldierData = _soldierDatabaseInstaller.Port.GetSoldierById(playerSoldier.SoldierId);
 
+			// 기본 업데이트
+			view.SetSpiritIcon(_soldierData.Spirit);
+			view.SetSoldierRoleIcon(_soldierData.Role);
+			
 
 			// 레벨업 페이지 업데이트
 			var nextStatus = _soldierLevelUpServicePortInstaller.Port.GetNextLevelStatus(playerSoldier.SoldierId);
