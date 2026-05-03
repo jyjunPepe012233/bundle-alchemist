@@ -10,8 +10,8 @@ namespace ProjectB.Authoring.ScriptableObject.SoldierRole
 		[SerializeField] private string _soldierRoleName;
 		public string SoldierRoleName => _soldierRoleName;
 		
-		[SerializeField] private Sprite _icon64;
-		public Sprite Icon64 => _icon64;
+		[SerializeField] private GameObject _iconPrefab64;
+		public GameObject IconPrefab64 => _iconPrefab64;
 	}
 
 }

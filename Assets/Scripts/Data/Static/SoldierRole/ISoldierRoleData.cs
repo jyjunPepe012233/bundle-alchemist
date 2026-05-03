@@ -7,7 +7,7 @@ namespace ProjectB.Data.Static.SoldierRole
 	{
 		string SoldierRoleName { get; }
 		
-		Sprite Icon64 { get; }
+		GameObject IconPrefab64 { get; }
 	}
 
 }
