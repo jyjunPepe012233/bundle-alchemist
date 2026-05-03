@@ -12,7 +12,8 @@ namespace ProjectB.Gameplay.Factories
 		{
 			return new PlayerSoldier(soldierData: soldierData,
 				exp: 0,
-				level: 1);
+				level: 1,
+				soldierData.BaseStatus);
 		}
 	}
 

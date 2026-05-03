@@ -21,11 +21,12 @@ namespace ProjectB.Data.RuntimeImpl
 		public event Action StatusChanged;
 
 
-		public PlayerSoldier(ISoldierData soldierData, int exp, short level)
+		public PlayerSoldier(ISoldierData soldierData, int exp, short level, SoldierStatus status)
 		{
 			SoldierId = soldierData.SoldierId;
 			Exp = exp;
 			Level = level;
+			Status = status;
 		}
 
 		public void SetExp(int exp)
