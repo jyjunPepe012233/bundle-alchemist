@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 492e1e57daba4ed1b36b37e2e337f3ec, type: 3}
-  m_Name: SoldierRole_Tanker
+  m_Name: SoldierRole_Dealer
   m_EditorClassIdentifier: 
-  _soldierRoleName: "\uD0F1\uCEE4"
-  _iconPrefab64: {fileID: 5535716352078733827, guid: e64beb3bef0524c0e98cd1bad68533df, type: 3}
+  _soldierRoleName: "\uB51C\uB7EC"
+  _iconPrefab64: {fileID: 5535716352078733827, guid: ca0d875921be24aadb8de44c3b6c35eb, type: 3}
