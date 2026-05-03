@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96ba10cd049747a28bbfc3030201f7e2, type: 3}
+  m_Name: SoldierPosition_Front
+  m_EditorClassIdentifier: 
+  _soldierPositionName: "\uC804\uC5F4"
+  _iconPrefab64: {fileID: 2542239269414966392, guid: 446f12232672949ce80577bf7be3b737, type: 3}
+  _canFront: 1
+  _canMid: 0
+  _canBack: 0

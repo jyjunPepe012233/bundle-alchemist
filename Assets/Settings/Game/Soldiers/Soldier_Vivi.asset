@@ -18,5 +18,23 @@ MonoBehaviour:
     target: {fileID: 11400000, guid: e89352f32269444998b71f4b3a3cedc0, type: 2}
   _role:
     target: {fileID: 11400000, guid: cf62385a52c4d4332bebf55e1f08168a, type: 2}
+  _attackType:
+    target: {fileID: 11400000, guid: 8fdf0cdebcd864c0e9f4979f5a6d1448, type: 2}
+  _position:
+    target: {fileID: 11400000, guid: 99bc00884ee1848a0895a4b37c01eea8, type: 2}
+  _baseStatus:
+    hp: 1000
+    sp: 300
+    physicalAttack: 150
+    magicalAttack: 150
+    physicalDefense: 150
+    magicalDefense: 150
+  _statusGrowth:
+    hp: 0.1
+    sp: 0
+    physicalAttack: 0.1
+    magicalAttack: 0.1
+    physicalDefense: 0.1
+    magicalDefense: 0.1
   _displayedSoldierPrefab: {fileID: 3493666056230920870, guid: d5621388082434fa491f3e2f12ba95ac, type: 3}
   _soldierLevelUpExpSettingSo: {fileID: 11400000, guid: c438162ae40f3451cb1301e2fcb58e95, type: 2}

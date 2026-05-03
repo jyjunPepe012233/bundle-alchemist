@@ -1,5 +1,7 @@
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Soldier;
+using ProjectB.Data.Static.SoldierAttackType;
+using ProjectB.Data.Static.SoldierPosition;
 using ProjectB.Data.Static.SoldierRole;
 using ProjectB.Data.Static.Spirit;
 using ProjectB.Data.Types;
@@ -28,6 +30,12 @@ namespace ProjectB.Authoring.ScriptableObject.Soldier
 		
 		[SerializeField] private InterfaceRef<ISoldierRoleData> _role;
 		public ISoldierRoleData Role => _role.Value;
+		
+		[SerializeField] private InterfaceRef<ISoldierAttackType> _attackType;
+		public ISoldierAttackType AttackType => _attackType.Value;
+		
+		[SerializeField] private InterfaceRef<ISoldierPosition> _position;
+		public ISoldierPosition Position => _position.Value;
 
 		[SerializeField] private SoldierStatus _baseStatus = new SoldierStatus
 		{
