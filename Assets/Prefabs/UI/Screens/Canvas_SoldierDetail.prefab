@@ -1312,6 +1312,8 @@ MonoBehaviour:
     _topElement: {fileID: 4582923392925340195}
     _spiritIconParent: {fileID: 4420763167874686144}
     _soldierRoleIconParent: {fileID: 2253163160115036867}
+    _attackTypeIconParent: {fileID: 995774784957566549}
+    _positionIconParent: {fileID: 4806413210472131342}
     _infoPageView:
       _topElement: {fileID: 2879075054101283694}
       _pageId: Info

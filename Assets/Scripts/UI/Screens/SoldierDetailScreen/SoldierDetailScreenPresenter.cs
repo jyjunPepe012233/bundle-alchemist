@@ -90,6 +90,8 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 			// 기본 업데이트
 			view.SetSpiritIcon(_soldierData.Spirit);
 			view.SetSoldierRoleIcon(_soldierData.Role);
+			view.SetAttackTypeIcon(_soldierData.AttackType);
+			view.SetPositionIcon(_soldierData.Position);
 			
 
 			// 레벨업 페이지 업데이트

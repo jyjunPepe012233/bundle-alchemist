@@ -1,4 +1,6 @@
 using System;
+using ProjectB.Data.Static.SoldierAttackType;
+using ProjectB.Data.Static.SoldierPosition;
 using ProjectB.Data.Static.SoldierRole;
 using ProjectB.Data.Static.Spirit;
 using ProjectB.UI.Components;
@@ -16,6 +18,8 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 		[SerializeField] private PrefabIconParent _spiritIconParent;
 		[SerializeField] private PrefabIconParent _soldierRoleIconParent;
+		[SerializeField] private PrefabIconParent _attackTypeIconParent;
+		[SerializeField] private PrefabIconParent _positionIconParent;
 		
 		[Header("Pages")]
 		
@@ -47,6 +51,16 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		public void SetSoldierRoleIcon(ISoldierRoleData soldierRole)
 		{
 			_soldierRoleIconParent.SetIcon(soldierRole.IconPrefab64);
+		}
+
+		public void SetAttackTypeIcon(ISoldierAttackType attackType)
+		{
+			_attackTypeIconParent.SetIcon(attackType.IconPrefab64);
+		}
+		
+		public void SetPositionIcon(ISoldierPosition position)
+		{
+			_positionIconParent.SetIcon(position.IconPrefab64);
 		}
 	}
 
