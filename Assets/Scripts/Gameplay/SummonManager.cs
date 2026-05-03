@@ -5,8 +5,9 @@ using ProjectB.Data.Runtime.Summon;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Static.Summon;
 using ProjectB.Data.Types;
-using ProjectB.Gameplay.Factories;
+using ProjectB.Gameplay.Ports;
 using ProjectB.Gameplay.Ports.Inbound;
+using ProjectB.Gameplay.Ports.Internal;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 
@@ -20,6 +21,7 @@ namespace ProjectB.Gameplay
 		private readonly ILoadSummonResultScreenPort _loadSummonResultScreenPort;
 		private readonly IPlayerSessionHolderPort _playerSessionHolderPort;
 		private readonly ISummonCostSetting _summonCostSetting;
+		private readonly IPlayerSoldierFactory _playerSoldierFactory;
 		
 		public event Action<SummonResult> StartAnimation;
 		public event Action AnimationPerfectlyUnloaded;
@@ -36,13 +38,15 @@ namespace ProjectB.Gameplay
 			ILoadSummonAnimationScreenPort loadSummonAnimationScreenPort,
 			ILoadSummonResultScreenPort loadSummonResultScreenPort, 
 			IPlayerSessionHolderPort playerSessionHolderPort,
-			ISummonCostSetting summonCostSetting)
+			ISummonCostSetting summonCostSetting,
+			IPlayerSoldierFactory playerSoldierFactory)
 		{
 			_soldierDatabase = soldierDatabase;
 			_loadSummonAnimationScreenPort = loadSummonAnimationScreenPort;
 			_loadSummonResultScreenPort = loadSummonResultScreenPort;
 			_playerSessionHolderPort = playerSessionHolderPort;
 			_summonCostSetting = summonCostSetting;
+			_playerSoldierFactory = playerSoldierFactory;
 		}
 
 		
@@ -80,7 +84,7 @@ namespace ProjectB.Gameplay
 			var soldier = _soldierDatabase.Soldiers[i];
 
 			// 저장
-			playerData.AddSoldier(PlayerSoldierFactory.Create(soldier));
+			playerData.AddSoldier(_playerSoldierFactory.Create(soldier));
 			
 			// TODO:
 			// PlayerSession의 정보를 직렬화하여 저장하는 과정 필요함
@@ -113,7 +117,7 @@ namespace ProjectB.Gameplay
 			
 			// 저장
 			playerData.AddSoldiers(
-				Array.ConvertAll(summonedSoldiers, s => PlayerSoldierFactory.Create(s))
+				Array.ConvertAll(summonedSoldiers, s => _playerSoldierFactory.Create(s))
 			);
 
 			LoadSummonAnimation(new SummonResult(summonedSoldiers, SummonType.Summon10x));
