@@ -7,6 +7,7 @@ using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Static.Summon;
 using ProjectB.Gameplay;
 using ProjectB.Gameplay.Ports.Inbound;
+using ProjectB.Gameplay.Ports.Internal;
 using ProjectB.Gameplay.Ports.Outbound;
 using ProjectB.Infrastructure;
 using UnityEngine;
@@ -47,6 +48,12 @@ namespace ProjectB.Dependency.Scopes
 			
 			// 사도 정보는 대부분의 화면에서 열릴 수 있기 때문에 Core에 등록
 			RegisterPortAdapter<ISoldierDetailServicePort, SoldierDetailService>();
+		}
+
+		protected override void AddInternalAdapters()
+		{
+			base.AddInternalAdapters();
+			RegisterPortAdapter<ISoldierStatusComputerPort, SoldierStatusComputer>();
 		}
 
 		protected override void AddOutboundAdapters()

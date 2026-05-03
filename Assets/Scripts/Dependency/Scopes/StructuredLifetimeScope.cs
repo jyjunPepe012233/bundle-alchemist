@@ -22,6 +22,7 @@ namespace ProjectB.Dependency.Scopes
 			
 			// 컨테이너에 Register하는 순서는 상관 없음
 			AddInboundAdapters();
+			AddInternalAdapters();
 			AddOutboundAdapters();
 			AddInfrastructure();
 			AddData();
@@ -31,6 +32,14 @@ namespace ProjectB.Dependency.Scopes
 		/// Gameplay 어셈블리에 구현된 Inbound Ports들의 어댑터들을 등록
 		/// </summary>
 		protected virtual void AddInboundAdapters()
+		{
+			
+		}
+		
+		/// <summary>
+		/// Gameplay 어셈블리에 구현된 Internal Ports들의 어댑터들을 등록
+		///	</summary>
+		protected virtual void AddInternalAdapters()
 		{
 			
 		}

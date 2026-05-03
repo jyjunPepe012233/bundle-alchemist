@@ -1,6 +1,8 @@
 using System.Linq;
+using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Gameplay.Ports.Inbound;
+using ProjectB.Gameplay.Ports.Internal;
 using ProjectB.Gameplay.Ports.Outbound;
 using UnityEngine;
 
@@ -14,11 +16,15 @@ namespace ProjectB.Gameplay
 		
 		private readonly IPlayerSessionHolderPort _playerSessionHolderPort;
 		private readonly ISoldierDatabase _soldierDatabase;
+		private readonly ISoldierStatusComputerPort _soldierStatusComputerPort;
 
-		public SoldierLevelUpService(IPlayerSessionHolderPort playerSessionHolderPort, ISoldierDatabase soldierDatabase)
+		public SoldierLevelUpService(IPlayerSessionHolderPort playerSessionHolderPort,
+			ISoldierDatabase soldierDatabase,
+			ISoldierStatusComputerPort soldierStatusComputerPort)
 		{
 			_playerSessionHolderPort = playerSessionHolderPort;
 			_soldierDatabase = soldierDatabase;
+			_soldierStatusComputerPort = soldierStatusComputerPort;
 		}
 
 
@@ -80,6 +86,10 @@ namespace ProjectB.Gameplay
 			{
 				playerSoldier.SetExp(playerSoldier.Exp + consumeFood);
 			}
+			
+			var newStatus = _soldierStatusComputerPort.ComputeSoldierStatus(soldierData, playerSoldier);
+			playerSoldier.SetStatus(newStatus);
+			Debug.Log(newStatus.hp);
 		}
 
 		public void LevelUpTo(string soldierId, short targetLevel)
@@ -125,6 +135,9 @@ namespace ProjectB.Gameplay
 					break;
 				}
 			}
+			
+			var newStatus = _soldierStatusComputerPort.ComputeSoldierStatus(soldierData, playerSoldier);
+			playerSoldier.SetStatus(newStatus);
 		}
 
 		
