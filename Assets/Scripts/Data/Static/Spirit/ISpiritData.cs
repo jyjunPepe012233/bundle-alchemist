@@ -9,7 +9,7 @@ namespace ProjectB.Data.Static.Spirit
 		
 		Color Color { get; }
 		
-		Sprite Icon64 { get; }
+		GameObject IconPrefab64 { get; }
 	}
 
 }

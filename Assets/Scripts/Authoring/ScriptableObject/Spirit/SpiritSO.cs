@@ -12,9 +12,9 @@ namespace ProjectB.Authoring.ScriptableObject.Spirit
 		
 		[SerializeField] private Color _color;
 		public Color Color => _color;
-		
-		[SerializeField] private Sprite _icon64;
-		public Sprite Icon64 => _icon64;
+
+		[SerializeField] private GameObject _iconPrefab64;
+		public GameObject IconPrefab64 => _iconPrefab64;
 	}
 
 }

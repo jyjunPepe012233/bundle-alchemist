@@ -43,11 +43,11 @@ namespace ProjectB.UI.Components
 				_roleIcon.SetBackgroundColor(soldierData.Role.Color);
 			}
 
-			if (_styleIcon)
-			{
-				_styleIcon.SetIcon(soldierData.Spirit.Icon64);
-				_styleIcon.SetBackgroundColor(soldierData.Spirit.Color);
-			}
+//			if (_styleIcon)
+//			{
+//				_styleIcon.SetIcon(soldierData.Spirit.Icon64);
+//				_styleIcon.SetBackgroundColor(soldierData.Spirit.Color);
+//			}
 			
 			_soldierDataAppliedEvent.Invoke(soldierData);
 		}
