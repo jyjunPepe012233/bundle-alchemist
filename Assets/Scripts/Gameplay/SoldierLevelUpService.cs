@@ -1,6 +1,7 @@
 using System.Linq;
 using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
+using ProjectB.Data.Types;
 using ProjectB.Gameplay.Ports.Inbound;
 using ProjectB.Gameplay.Ports.Internal;
 using ProjectB.Gameplay.Ports.Outbound;
@@ -151,11 +152,26 @@ namespace ProjectB.Gameplay
 				Debug.LogError("플레이어가 보유하지 않은 병사를 강화하려 시도했습니다 SoldierId: " + soldierId);
 				return 0;
 			}
-			
+
 			ISoldierData soldierData = _soldierDatabase.GetSoldierById(playerSoldier.SoldierId);
-			
+
 			var targetExp = soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(playerSoldier.Level);
 			return (int)(targetExp * FOODS_CONSUME_RATIO);
+		}
+
+		public SoldierStatus GetNextLevelStatus(string soldierId)
+		{
+			var playerData = _playerSessionHolderPort.GetPlayerSession().PlayerData;
+
+			var playerSoldier = playerData.Soldiers.FirstOrDefault(s => s.SoldierId == soldierId);
+			if (playerSoldier == null)
+			{
+				Debug.LogError("플레이어가 보유하지 않은 병사를 강화하려 시도했습니다 SoldierId: " + soldierId);
+				return default;
+			}
+
+			ISoldierData soldierData = _soldierDatabase.GetSoldierById(playerSoldier.SoldierId);
+			return _soldierStatusComputerPort.GetNextLevelStatus(soldierData, playerSoldier);
 		}
 	}
 

@@ -1,5 +1,6 @@
 using System;
 using ProjectB.Data.Static.Soldier;
+using ProjectB.Data.Types;
 
 namespace ProjectB.Gameplay.Ports.Inbound
 {
@@ -16,6 +17,9 @@ namespace ProjectB.Gameplay.Ports.Inbound
 
 
 		int GetConsumeFoodAmount(string soldierId);
+
+		
+		SoldierStatus GetNextLevelStatus(string soldierId);
 	}
 
 }
