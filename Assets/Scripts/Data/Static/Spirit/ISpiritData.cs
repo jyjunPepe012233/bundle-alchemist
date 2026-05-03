@@ -7,8 +7,6 @@ namespace ProjectB.Data.Static.Spirit
 	{
 		string SpiritName { get; }
 		
-		Color Color { get; }
-		
 		GameObject IconPrefab64 { get; }
 	}
 

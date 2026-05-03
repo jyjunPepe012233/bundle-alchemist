@@ -9,9 +9,6 @@ namespace ProjectB.Authoring.ScriptableObject.Spirit
 	{
 		[SerializeField] private string _spiritName;
 		public string SpiritName => _spiritName;
-		
-		[SerializeField] private Color _color;
-		public Color Color => _color;
 
 		[SerializeField] private GameObject _iconPrefab64;
 		public GameObject IconPrefab64 => _iconPrefab64;
