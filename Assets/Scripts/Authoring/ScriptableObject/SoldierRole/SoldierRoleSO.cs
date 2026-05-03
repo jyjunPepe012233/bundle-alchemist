@@ -10,9 +10,6 @@ namespace ProjectB.Authoring.ScriptableObject.SoldierRole
 		[SerializeField] private string _soldierRoleName;
 		public string SoldierRoleName => _soldierRoleName;
 		
-		[SerializeField] private Color _color;
-		public Color Color => _color;
-		
 		[SerializeField] private Sprite _icon64;
 		public Sprite Icon64 => _icon64;
 	}

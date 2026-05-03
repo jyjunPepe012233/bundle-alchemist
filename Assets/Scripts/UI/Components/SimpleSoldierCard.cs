@@ -37,11 +37,11 @@ namespace ProjectB.UI.Components
 				);
 			}
 
-			if (_roleIcon)
-			{
-				_roleIcon.SetIcon(soldierData.Role.Icon64);
-				_roleIcon.SetBackgroundColor(soldierData.Role.Color);
-			}
+//			if (_roleIcon)
+//			{
+//				_roleIcon.SetIcon(soldierData.Role.Icon64);
+//				_roleIcon.SetBackgroundColor(soldierData.Role.Color);
+//			}
 
 //			if (_styleIcon)
 //			{

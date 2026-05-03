@@ -7,8 +7,6 @@ namespace ProjectB.Data.Static.SoldierRole
 	{
 		string SoldierRoleName { get; }
 		
-		Color Color { get; }
-		
 		Sprite Icon64 { get; }
 	}
 
