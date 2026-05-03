@@ -2,6 +2,7 @@ using ProjectB.Core.Types;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Static.SoldierRole;
 using ProjectB.Data.Static.Spirit;
+using ProjectB.Data.Types;
 using UnityEngine;
 
 namespace ProjectB.Authoring.ScriptableObject.Soldier
@@ -28,8 +29,29 @@ namespace ProjectB.Authoring.ScriptableObject.Soldier
 		[SerializeField] private InterfaceRef<ISoldierRoleData> _role;
 		public ISoldierRoleData Role => _role.Value;
 
-
+		[SerializeField] private SoldierStatus _baseStatus = new SoldierStatus
+		{
+			hp = 1000,
+			sp = 300,
+			physicalAttack = 150,
+			magicalAttack = 150,
+			physicalDefense = 150,
+			magicalDefense = 150
+		};
+		public SoldierStatus BaseStatus => _baseStatus;
 		
+		[SerializeField] private SoldierStatusf _statusGrowth = new SoldierStatusf
+		{
+			hp = 0.1f,
+			sp = 0f,
+			physicalAttack = 0.1f,
+			magicalAttack = 0.1f,
+			physicalDefense = 0.1f,
+			magicalDefense = 0.1f
+		};
+		public SoldierStatusf StatusGrowth => _statusGrowth;
+
+
 		[Header("Card Display Setting")]
 		[SerializeField] private GameObject _displayedSoldierPrefab;
 		public GameObject DisplayedSoldierPrefab => _displayedSoldierPrefab;

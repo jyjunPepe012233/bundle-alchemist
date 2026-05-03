@@ -1,5 +1,6 @@
 using ProjectB.Data.Static.SoldierRole;
 using ProjectB.Data.Static.Spirit;
+using ProjectB.Data.Types;
 
 namespace ProjectB.Data.Static.Soldier
 {
@@ -18,6 +19,10 @@ namespace ProjectB.Data.Static.Soldier
 		ISpiritData Spirit { get; }
 		
 		ISoldierRoleData Role { get; }
+		
+		SoldierStatus BaseStatus { get; }
+		
+		SoldierStatusf StatusGrowth { get; }
 	}
 
 }
