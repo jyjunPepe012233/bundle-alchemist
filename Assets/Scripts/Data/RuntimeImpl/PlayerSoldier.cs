@@ -15,10 +15,13 @@ namespace ProjectB.Data.RuntimeImpl
 		public short Level { get; private set; }
 		
 		public SoldierStatus Status { get; private set; }
+		
+		public int CombatPower { get; private set; }
 
 		public event Action ExpChanged;
 		public event Action LevelChanged;
 		public event Action StatusChanged;
+		public event Action CombatPowerChanged;
 
 
 		public PlayerSoldier(ISoldierData soldierData, int exp, short level, SoldierStatus status)
@@ -45,6 +48,12 @@ namespace ProjectB.Data.RuntimeImpl
 		{
 			Status = status;
 			StatusChanged?.Invoke();
+		}
+		
+		public void SetCombatPower(int combatPower)
+		{
+			CombatPower = combatPower;
+			CombatPowerChanged?.Invoke();
 		}
 	}
 

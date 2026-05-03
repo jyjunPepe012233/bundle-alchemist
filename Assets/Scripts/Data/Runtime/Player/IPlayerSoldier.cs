@@ -13,6 +13,8 @@ namespace ProjectB.Data.Runtime.Player
 		void SetLevel(short level);
 
 		void SetStatus(SoldierStatus status);
+		
+		void SetCombatPower(int combatPower);
 	}
 
 }
