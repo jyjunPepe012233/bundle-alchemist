@@ -15,6 +15,10 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		// 병사 정보(_soldierData, _playerSoldierData)와 관련된 로직만 이 클래스가 담당하고
 		// 정보를 바탕으로 화면을 업데이트하는 로직은 SoldierDetailScreenView가 담당하게 만들어도 됨
 		
+		// TODO:
+		// 망했다 이 클래스 너무 방대함
+		// 리팩토링 필요!!
+		
 		
 		[SerializeField] private SoldierDatabaseInstaller _soldierDatabaseInstaller;
 		[SerializeField] private SoldierDetailServicePortInstaller _soldierDetailServicePortInstaller;
@@ -85,6 +89,9 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 
 			// 레벨업 페이지 업데이트
+			var nextStatus = _soldierLevelUpServicePortInstaller.Port.GetNextLevelStatus(playerSoldier.SoldierId);
+			view.LevelUpPageView.SetStatus(_playerSoldierData.Status, nextStatus);
+			
 			view.LevelUpPageView.SetCurrentLevel(_playerSoldierData.Level);
 			view.LevelUpPageView.SetCurrentExperience(_playerSoldierData.Exp);
 			view.LevelUpPageView.SetTargetExperience(_soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(_playerSoldierData.Level));
@@ -95,12 +102,14 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		{
 			_playerSoldierData.ExpChanged += OnPlayerSoldierExpChanged;
 			_playerSoldierData.LevelChanged += OnPlayerSoldierLevelChanged;
+			_playerSoldierData.StatusChanged += OnPlayerSoldierStatusChanged;
 		}
 
 		void UnsubscribePlayerSoldierData()
 		{
 			_playerSoldierData.ExpChanged -= OnPlayerSoldierExpChanged;
 			_playerSoldierData.LevelChanged -= OnPlayerSoldierLevelChanged;
+			_playerSoldierData.StatusChanged -= OnPlayerSoldierStatusChanged;
 		}
 
 		void OnPlayerSoldierExpChanged()
@@ -114,6 +123,12 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 			view.LevelUpPageView.SetTargetExperience(_soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(_playerSoldierData.Level));
 			
 			view.LevelUpPageView.SetConsumeFoodAmount(_soldierLevelUpServicePortInstaller.Port.GetConsumeFoodAmount(_playerSoldierData.SoldierId));
+		}
+
+		void OnPlayerSoldierStatusChanged()
+		{
+			var nextStatus = _soldierLevelUpServicePortInstaller.Port.GetNextLevelStatus(_playerSoldierData.SoldierId);
+			view.LevelUpPageView.SetStatus(_playerSoldierData.Status, nextStatus);
 		}
 	}
 

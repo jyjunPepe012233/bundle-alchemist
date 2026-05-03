@@ -1,4 +1,6 @@
 using System;
+using ProjectB.Data.Types;
+using ProjectB.UI.Components;
 using ProjectB.UI.Core;
 using TMPro;
 using UnityEngine;
@@ -10,6 +12,9 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 	[Serializable]
 	public class LevelUpPageView : SoldierDetailPageView
 	{
+		[Header("Status")]
+		[SerializeField] private SimpleSoldierStatusUpgradeList _statusUpgradeList;
+		
 		[Header("Level")]
 		[SerializeField] private TextMeshProUGUI _currentLevelText;
 		[SerializeField] private TextMeshProUGUI _nextLevelText;
@@ -40,6 +45,11 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 		void OnConsumeFoodButtonClicked()
 		{
 			ConsumeFoodButtonClicked?.Invoke();
+		}
+		
+		public void SetStatus(SoldierStatus currentStatus, SoldierStatus nextStatus)
+		{
+			_statusUpgradeList.SetStatus(currentStatus, nextStatus);
 		}
 
 		public void SetCurrentLevel(int level)
