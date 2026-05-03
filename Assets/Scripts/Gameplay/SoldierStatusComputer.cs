@@ -2,6 +2,7 @@ using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Types;
 using ProjectB.Gameplay.Ports.Internal;
+using UnityEngine;
 
 namespace ProjectB.Gameplay
 {
@@ -20,12 +21,12 @@ namespace ProjectB.Gameplay
 			var growthLevel = level - 1; // 레벨 1에는 성장 효과가 없다고 가정하는 처리 (레벨 2부터 곱함)
 			var multiplier = new SoldierStatusf
 			{
-				hp = 1f + growth.hp * growthLevel,
-				sp = 1f + growth.sp * growthLevel,
-				physicalAttack = 1f + growth.physicalAttack * growthLevel,
-				magicalAttack = 1f + growth.magicalAttack * growthLevel,
-				physicalDefense = 1f + growth.physicalDefense * growthLevel,
-				magicalDefense = 1f + growth.magicalDefense * growthLevel
+				hp = Mathf.Pow(1f + growth.hp, growthLevel),
+				sp = Mathf.Pow(1f + growth.sp, growthLevel),
+				physicalAttack = Mathf .Pow(1f + growth.physicalAttack, growthLevel),
+				magicalAttack = Mathf.Pow(1f + growth.magicalAttack, growthLevel),
+				physicalDefense = Mathf.Pow(1f + growth.physicalDefense, growthLevel),
+				magicalDefense = Mathf.Pow(1f + growth.magicalDefense, growthLevel)
 			};
 
 			return baseStatus * multiplier;
