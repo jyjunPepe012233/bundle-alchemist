@@ -8,6 +8,8 @@ namespace ProjectB.Data.Runtime.Player
 	// IPlayerSoldier를 그대로 쓰는 곳 찾아서 바꾸기
 	public interface IPlayerSoldier : IReadOnlyPlayerSoldier
 	{
+		void SetRank(byte rank);
+		
 		void SetExp(int exp);
 		
 		void SetLevel(short level);

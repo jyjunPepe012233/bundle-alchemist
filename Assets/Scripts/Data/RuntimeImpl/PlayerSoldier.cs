@@ -10,6 +10,8 @@ namespace ProjectB.Data.RuntimeImpl
 	{
 		public string SoldierId { get; }
 		
+		public byte Rank { get; private set; }
+		
 		public int Exp { get; private set; }
 
 		public short Level { get; private set; }
@@ -18,19 +20,32 @@ namespace ProjectB.Data.RuntimeImpl
 		
 		public int CombatPower { get; private set; }
 
+		public event Action RankChanged;
 		public event Action ExpChanged;
 		public event Action LevelChanged;
 		public event Action StatusChanged;
 		public event Action CombatPowerChanged;
 
 
-		public PlayerSoldier(ISoldierData soldierData, int exp, short level, SoldierStatus status, int combatPower)
+		public PlayerSoldier(ISoldierData soldierData,
+			byte rank,
+			int exp,
+			short level,
+			SoldierStatus status,
+			int combatPower)
 		{
 			SoldierId = soldierData.SoldierId;
+			Rank = rank;
 			Exp = exp;
 			Level = level;
 			Status = status;
 			CombatPower = combatPower;
+		}
+
+		public void SetRank(byte rank)
+		{
+			Rank = rank;
+			RankChanged?.Invoke();
 		}
 
 		public void SetExp(int exp)
