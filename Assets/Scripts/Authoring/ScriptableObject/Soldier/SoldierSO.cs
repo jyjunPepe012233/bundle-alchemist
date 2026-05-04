@@ -25,6 +25,9 @@ namespace ProjectB.Authoring.ScriptableObject.Soldier
 		[SerializeField] private string _soldierName;
 		public string SoldierName => _soldierName;
 
+		[SerializeField] private byte _bornRank = 1;
+		public byte BornRank => _bornRank;
+
 		[SerializeField] private InterfaceRef<ISpiritData> _spirit;
 		public ISpiritData Spirit => _spirit.Value;
 		

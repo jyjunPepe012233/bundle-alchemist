@@ -18,6 +18,8 @@ namespace ProjectB.Data.Static.Soldier
 		
 		string SoldierName { get; }
 		
+		byte BornRank { get; } // 태생 성급 1,2,3
+		
 		ISpiritData Spirit { get; }
 		
 		ISoldierRoleData Role { get; }
