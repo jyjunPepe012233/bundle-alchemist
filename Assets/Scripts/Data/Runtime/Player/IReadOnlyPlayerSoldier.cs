@@ -17,6 +17,8 @@ namespace ProjectB.Data.Runtime.Player
 		SoldierStatus Status { get; }
 		
 		int CombatPower { get; }
+		
+		event Action RankChanged;
 
 		event Action ExpChanged;
 

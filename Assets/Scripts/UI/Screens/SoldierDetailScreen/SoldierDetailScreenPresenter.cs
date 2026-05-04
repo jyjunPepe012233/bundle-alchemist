@@ -93,6 +93,13 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 			view.SetAttackTypeIcon(_soldierData.AttackType);
 			view.SetPositionIcon(_soldierData.Position);
 			
+			
+			// 정보 페이지 업데이트
+			view.InfoPageView.SetLevel(playerSoldier.Level);
+			view.InfoPageView.SetRank(playerSoldier.Rank);
+			view.InfoPageView.SetCombatPower(playerSoldier.CombatPower);
+			view.InfoPageView.SetStatus(playerSoldier.Status);
+			
 
 			// 레벨업 페이지 업데이트
 			var nextStatus = _soldierLevelUpServicePortInstaller.Port.GetNextLevelStatus(playerSoldier.SoldierId);
@@ -110,6 +117,7 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 		void SubscribePlayerSoldierData()
 		{
+			_playerSoldierData.RankChanged += OnPlayerSoldierRankChanged;
 			_playerSoldierData.ExpChanged += OnPlayerSoldierExpChanged;
 			_playerSoldierData.LevelChanged += OnPlayerSoldierLevelChanged;
 			_playerSoldierData.StatusChanged += OnPlayerSoldierStatusChanged;
@@ -118,10 +126,16 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 		void UnsubscribePlayerSoldierData()
 		{
+			_playerSoldierData.RankChanged -= OnPlayerSoldierRankChanged;
 			_playerSoldierData.ExpChanged -= OnPlayerSoldierExpChanged;
 			_playerSoldierData.LevelChanged -= OnPlayerSoldierLevelChanged;
 			_playerSoldierData.StatusChanged -= OnPlayerSoldierStatusChanged;
 			_playerSoldierData.CombatPowerChanged -= OnPlayerSoldierCombatPowerChanged;
+		}
+		
+		void OnPlayerSoldierRankChanged()
+		{
+			view.InfoPageView.SetRank(_playerSoldierData.Rank);
 		}
 
 		void OnPlayerSoldierExpChanged()
@@ -131,6 +145,8 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 		void OnPlayerSoldierLevelChanged()
 		{
+			view.InfoPageView.SetLevel(_playerSoldierData.Level);
+			
 			view.LevelUpPageView.SetCurrentLevel(_playerSoldierData.Level);
 			view.LevelUpPageView.SetTargetExperience(_soldierData.LevelUpExpSetting.GetLevelUpExpOfLevel(_playerSoldierData.Level));
 			
@@ -139,12 +155,16 @@ namespace ProjectB.UI.Screens.SoldierDetailScreen
 
 		void OnPlayerSoldierStatusChanged()
 		{
+			view.InfoPageView.SetStatus(_playerSoldierData.Status);
+			
 			var nextStatus = _soldierLevelUpServicePortInstaller.Port.GetNextLevelStatus(_playerSoldierData.SoldierId);
 			view.LevelUpPageView.SetStatus(_playerSoldierData.Status, nextStatus);
 		}
 
 		void OnPlayerSoldierCombatPowerChanged()
 		{
+			view.InfoPageView.SetCombatPower(_playerSoldierData.CombatPower);
+			
 			view.LevelUpPageView.SetCurrentCombatPower(_playerSoldierData.CombatPower);
 			var nextLevelCombatPower = _soldierLevelUpServicePortInstaller.Port.GetNextLevelCombatPower(_playerSoldierData.SoldierId);
 			view.LevelUpPageView.SetNextLevelCombatPower(nextLevelCombatPower);
