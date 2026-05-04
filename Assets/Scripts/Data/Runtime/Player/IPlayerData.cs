@@ -21,6 +21,10 @@ namespace ProjectB.Data.Runtime.Player
 		void AddSoldier(IPlayerSoldier soldier);
 		
 		void AddSoldiers(IEnumerable<IPlayerSoldier> soldiers);
+		
+		void AddItem(IPlayerItem item);
+		
+		void AddItems(IEnumerable<IPlayerItem> items);
 	}
 
 }

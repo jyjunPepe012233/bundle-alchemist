@@ -13,6 +13,8 @@ namespace ProjectB.Data.Runtime.Player
 		int Foods { get; }
 		
 		IReadOnlyCollection<IPlayerSoldier> Soldiers { get; }
+		
+		IReadOnlyCollection<IPlayerItem> Items { get; }
 
 		event Action CoinsChanged;
 

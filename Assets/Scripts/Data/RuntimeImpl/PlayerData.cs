@@ -22,6 +22,8 @@ namespace ProjectB.Data.RuntimeImpl
 		[SerializeField] private List<IPlayerSoldier> _soldiers = new List<IPlayerSoldier>();
 		public IReadOnlyCollection<IPlayerSoldier> Soldiers => _soldiers;
 		
+		[SerializeField] private List<IPlayerItem> _items = new List<IPlayerItem>();
+		public IReadOnlyCollection<IPlayerItem> Items => _items;
 		
 		public event Action CoinsChanged;
 		public event Action GemsChanged;
@@ -125,6 +127,16 @@ namespace ProjectB.Data.RuntimeImpl
 		public void AddSoldiers(IEnumerable<IPlayerSoldier> soldiers)
 		{
 			_soldiers.AddRange(soldiers);
+		}
+		
+		public void AddItem(IPlayerItem item)
+		{
+			_items.Add(item);
+		}
+		
+		public void AddItems(IEnumerable<IPlayerItem> items)
+		{
+			_items.AddRange(items);
 		}
 	}
 
