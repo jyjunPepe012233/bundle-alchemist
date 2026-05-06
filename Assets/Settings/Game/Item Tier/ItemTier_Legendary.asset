@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a78c4a212d34399a14caa9b188c3244, type: 3}
+  m_Name: ItemTier_Legendary
+  m_EditorClassIdentifier: 
+  _itemTierName: "\uC804\uC124"
+  _itemTierLevel: 1000
+  _backgroundPrefab128: {fileID: 6244869983977159121, guid: 7711c618bbcbc4b498ff93c619c22a46, type: 3}
