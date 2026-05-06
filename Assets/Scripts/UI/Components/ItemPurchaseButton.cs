@@ -8,6 +8,8 @@ namespace ProjectB.UI.Components
 
 	public class ItemPurchaseButton : MonoBehaviour
 	{
+		// TODO: ItemSlot 사용하기
+		
 		[SerializeField] private TextMeshProUGUI _itemNameText;
 		[SerializeField] private TextMeshProUGUI _itemQuantityText;
 		[SerializeField] private TextMeshProUGUI _priceText;
