@@ -19,7 +19,7 @@ namespace ProjectB.UI.Components
 
 		public event Action<IShopItem> PurchaseButtonClicked;
 
-		public void CreateAllItems(IReadOnlyList<IShopItem> shopItems)
+		public void InitializeAllItems(IReadOnlyList<IShopItem> shopItems)
 		{
 			foreach (var button in _buttonInstances)
 			{

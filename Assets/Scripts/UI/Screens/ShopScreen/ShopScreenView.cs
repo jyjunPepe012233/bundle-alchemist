@@ -51,9 +51,11 @@ namespace ProjectB.UI.Screens.ShopScreen
 			foreach (var pageData in shopPageData)
 			{
 				var pageView = Object.Instantiate(_shopPageViewPrefab, _shopPageParent);
-				pageView.CreateShopItems(pageData.ShopItems.ToArray()); // 메서드가 IReadOnlyList를 요구하므로 배열로 변환하여 전달
+				
+				pageView.SetPageName(pageData.ShopPageName);
+				pageView.InitializeAllItems(pageData.ShopItems.ToArray()); // 메서드가 IReadOnlyList를 요구하므로 배열로 변환하여 전달
+				
 				_shopPageInstances.Add((pageView, pageData));
-				Debug.Log(pageData.ShopPageName);
 			}
 		}
 
