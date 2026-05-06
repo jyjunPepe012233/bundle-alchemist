@@ -1,9 +1,12 @@
+using System;
 using System.Linq;
 using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.RuntimeImpl;
 using ProjectB.Data.Static.Item;
+using ProjectB.Data.Types;
 using ProjectB.Gameplay.Ports.Internal;
 using ProjectB.Gameplay.Ports.Outbound;
+using UnityEngine;
 
 namespace ProjectB.Gameplay
 {
@@ -11,13 +14,15 @@ namespace ProjectB.Gameplay
 	public class PlayerInventoryService : IPlayerInventoryServicePort
 	{
 		private readonly IPlayerSessionHolderPort _playerSessionHolderPort;
+		private readonly ILoadRewardGainPopupPort _loadRewardGainPopupPort;
 
-		public PlayerInventoryService(IPlayerSessionHolderPort playerSessionHolderPort)
+		public PlayerInventoryService(IPlayerSessionHolderPort playerSessionHolderPort, ILoadRewardGainPopupPort loadRewardGainPopupPort)
 		{
 			_playerSessionHolderPort = playerSessionHolderPort;
+			_loadRewardGainPopupPort = loadRewardGainPopupPort;
 		}
 
-		public void GiveItem(IItemData itemData, int quantity)
+		public void GiveItem(IItemData itemData, int quantity, ItemGainAction gainAction)
 		{
 			var playerData = _playerSessionHolderPort.GetPlayerSession().PlayerData;
 
@@ -33,6 +38,19 @@ namespace ProjectB.Gameplay
 				IPlayerItem newItem = new PlayerItem(itemData.ItemId, quantity);
 				playerData.AddItem(newItem);
 			}
+
+			switch (gainAction)
+			{
+				case ItemGainAction.NoAction:
+					Debug.Log("NoAction 아이템 획득: " + itemData.ItemId + " x" + quantity);
+					break;
+				
+				case ItemGainAction.Reward:
+					var singleItemGainArr = new[] { new ItemGain(itemData, quantity) };
+					_loadRewardGainPopupPort.Load(singleItemGainArr);
+					break;
+			}
+			
 		}
 	}
 

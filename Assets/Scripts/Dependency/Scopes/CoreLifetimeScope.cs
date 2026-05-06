@@ -72,6 +72,7 @@ namespace ProjectB.Dependency.Scopes
 			RegisterPortAdapter<ILoadPlayerDataPort, LoadPlayerDataService>();
 			RegisterPortAdapter<IInitializePlayerSessionPort, InitializePlayerSessionService>();
 			RegisterPortAdapter<ILoadSoldierDetailScreenPort, LoadSoldierDetailScreenService>();
+			RegisterPortAdapter<ILoadRewardGainPopupPort, LoadRewardGainPopupPort>();
 		}
 
 		protected override void AddData()

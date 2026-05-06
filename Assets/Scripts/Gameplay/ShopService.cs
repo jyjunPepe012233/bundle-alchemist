@@ -52,7 +52,7 @@ namespace ProjectB.Gameplay
 
 			if (isPurchaseSuccess)
 			{
-				_playerInventoryServicePort.GiveItem(shopItem.ItemData, shopItem.Quantity);
+				_playerInventoryServicePort.GiveItem(shopItem.ItemData, shopItem.Quantity, ItemGainAction.Reward);
 			}
 		}
 	}
