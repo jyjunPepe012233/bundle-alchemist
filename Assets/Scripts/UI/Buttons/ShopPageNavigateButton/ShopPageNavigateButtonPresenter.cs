@@ -1,13 +1,13 @@
+using ProjectB.Data.Static.ShopPage;
 using ProjectB.UI.Buttons.Common;
 using ProjectB.UI.Core;
-using UnityEngine;
 
 namespace ProjectB.UI.Buttons.ShopPageNavigateButton
 {
 
-	public class ShopPageNavigateButtonPresenter : UIPresenter<ButtonView>
+	public class ShopPageNavigateButtonPresenter : UIPresenter<ShopPageNavigateButtonView>
 	{
-		[SerializeField] private string _pageId;
+		private IShopPage _targetPage;
 		
 		protected override void SetupSubscriptions()
 		{
@@ -23,7 +23,13 @@ namespace ProjectB.UI.Buttons.ShopPageNavigateButton
 		
 		void OnButtonClicked()
 		{
-			ShopPageNavigateButtonEvents.Clicked?.Invoke(_pageId);
+			ShopPageNavigateButtonEvents.Clicked?.Invoke(_targetPage);
+		}
+
+		public void InitializeNavigation(IShopPage targetPage)
+		{
+			_targetPage = targetPage;
+			view.SetPageName(targetPage.ShopPageName);
 		}
 	}
 

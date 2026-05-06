@@ -1,10 +1,12 @@
 using System.Linq;
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Shop;
+using ProjectB.Data.Static.ShopPage;
 using ProjectB.Dependency.Installers;
 using ProjectB.UI.Buttons.ShopPageNavigateButton;
 using ProjectB.UI.Core;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ProjectB.UI.Screens.ShopScreen
 {
@@ -12,7 +14,7 @@ namespace ProjectB.UI.Screens.ShopScreen
 	public class ShopScreenPresenter : UIPresenter<ShopScreenView>
 	{
 		[SerializeField] private InterfaceRef<IShopSetting> _shopSetting;
-		[SerializeField] private ShopServiceInstaller _shopServiceInstaller;
+		[SerializeField] private ShopServicePortInstaller _shopServicePortInstaller;
 
 		
 		protected override void SetupSubscriptions()
@@ -29,27 +31,35 @@ namespace ProjectB.UI.Screens.ShopScreen
 			ShopPageNavigateButtonEvents.Clicked -= OnShopPageNavigateButtonClicked;
 		}
 		
-		void OnShopPageNavigateButtonClicked(string pageId)
+		void OnShopPageNavigateButtonClicked(IShopPage pageData)
 		{
-			var pageData = _shopSetting.Value.ShopPages.FirstOrDefault(page => page.ShopPageId == pageId);
 			if (pageData != null)
 			{
 				view.OpenPage(pageData);
 			}
 			else
 			{
-				Debug.LogError("해당 페이지 ID에 대한 페이지 데이터를 찾을 수 없습니다: " + pageId);
+				Debug.LogError("전달된 페이지 데이터가 null임");
 			}
 		}
 
 		protected override void InitializeView()
 		{
 			base.InitializeView();
+			view.InitializeNavigationButtons(_shopSetting.Value.ShopPages);
 			view.InitializeShopPages(_shopSetting.Value.ShopPages);
 			
 			// IEnumerator는 사용 후 Dispose 해야 하므로 using문 사용 
-			using var enumerator = _shopSetting.Value.ShopPages.GetEnumerator();
-			view.OpenPage(enumerator.Current); // 첫 번째 페이지를 기본으로 열도록 설정. 필요에 따라 다른 페이지를 열도록 수정 가능
+			var pageData = _shopSetting.Value.ShopPages.FirstOrDefault();
+			if (pageData != null)
+			{
+				view.OpenPage(pageData);
+			}
+			else
+			{
+				Debug.LogError("ShopSetting에 페이지 데이터가 존재하지 않음");
+				return;
+			}
 		}
 	}
 

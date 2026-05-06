@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using ProjectB.Data.Static.ShopPage;
+using ProjectB.UI.Buttons.ShopPageNavigateButton;
 using ProjectB.UI.Core;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -12,31 +13,55 @@ namespace ProjectB.UI.Screens.ShopScreen
 	[Serializable]
 	public class ShopScreenView : UIView
 	{
+		[Header("Shop Page Navigation Buttons")]
+		[SerializeField] private ShopPageNavigateButtonPresenter _shopPageNavigateButtonPrefab;
+		[SerializeField] private Transform _buttonParent;
+		
+		[Header("Shop Page")]
 		[SerializeField] private ShopPageView _shopPageViewPrefab;
 		[SerializeField] private Transform _shopPageParent;
 
-		private List<(ShopPageView pageView, IShopPage pageData)> _shopPageInstances;
+		private readonly List<ShopPageNavigateButtonPresenter> _buttonInstances = new();
+		private readonly List<(ShopPageView pageView, IShopPage pageData)> _shopPageInstances = new();
+		
+		public void InitializeNavigationButtons(IEnumerable<IShopPage> shopPages)
+		{
+			foreach (var buttonInstance in _buttonInstances)
+			{
+				Object.Destroy(buttonInstance.gameObject);
+			}
+			_buttonInstances.Clear();
+			
+			foreach (var pageData in shopPages)
+			{
+				var buttonInstance = Object.Instantiate(_shopPageNavigateButtonPrefab, _buttonParent);
+				buttonInstance.InitializeNavigation(pageData);
+				_buttonInstances.Add(buttonInstance);
+			}
+		}
 
 		public void InitializeShopPages(IEnumerable<IShopPage> shopPageData)
 		{ 
+			foreach (var pageInstance in _shopPageInstances)
+			{
+				Object.Destroy(pageInstance.pageView.gameObject);
+			}
+			_shopPageInstances.Clear();
+			
 			foreach (var pageData in shopPageData)
 			{
 				var pageView = Object.Instantiate(_shopPageViewPrefab, _shopPageParent);
 				pageView.CreateShopItems(pageData.ShopItems.ToArray()); // 메서드가 IReadOnlyList를 요구하므로 배열로 변환하여 전달
 				_shopPageInstances.Add((pageView, pageData));
+				Debug.Log(pageData.ShopPageName);
 			}
 		}
 
-		public void OpenPage(IShopPage pageData)
+		public void OpenPage(IShopPage targetPage)
 		{
-			var pageInstance = _shopPageInstances.FirstOrDefault(instance => instance.pageData == pageData);
-			if (pageInstance.pageView != null)
+			foreach (var (pageView, pageData) in _shopPageInstances)
 			{
-				pageInstance.pageView.gameObject.SetActive(true);
-			}
-			else
-			{
-				Debug.LogError("해당 페이지 데이터에 대한 페이지 뷰 인스턴스를 찾을 수 없습니다: " + pageData.ShopPageId);
+				pageView.gameObject.SetActive(pageData == targetPage);
 			}
 		}
 	}

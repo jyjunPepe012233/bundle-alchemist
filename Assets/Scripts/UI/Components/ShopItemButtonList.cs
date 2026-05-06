@@ -11,7 +11,7 @@ namespace ProjectB.UI.Components
 		[SerializeField] private Transform _contentRoot;
 		[SerializeField] private ItemPurchaseButton _buttonPrefab;
 
-		private readonly List<ItemPurchaseButton> _buttonInstances;
+		private readonly List<ItemPurchaseButton> _buttonInstances = new List<ItemPurchaseButton>();
 		
 		// CreateAllItems 호출 시 ShopItem 배열을 이 변수에 저장하여
 		// 버튼이 클릭되었을 때 버튼의 인덱스를 통해 특정 ShopItem을 이벤트로 전달함
