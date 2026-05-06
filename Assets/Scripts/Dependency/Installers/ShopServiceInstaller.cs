@@ -1,7 +1,9 @@
+using ProjectB.Gameplay.Ports.Inbound;
+
 namespace ProjectB.Dependency.Installers
 {
 
-	public class ShopServiceInstaller : DIBasedPortInstaller<ShopServiceInstaller>
+	public class ShopServiceInstaller : DIBasedPortInstaller<IShopServicePort>
 	{
 		
 	}
