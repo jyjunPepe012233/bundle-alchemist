@@ -1,3 +1,4 @@
+using ProjectB.Data.Static.ItemTier;
 using ProjectB.Data.Types;
 
 namespace ProjectB.Data.Static.Item
@@ -8,6 +9,8 @@ namespace ProjectB.Data.Static.Item
 		string ItemId { get; }
 		
 		string ItemName { get; }
+		
+		IItemTierData ItemTier { get; }
 		
 		ItemCategory Category { get; }
 	}
