@@ -12,13 +12,13 @@ namespace ProjectB.UI.Components
 		[SerializeField] private TextMeshProUGUI _itemQuantityText;
 		[SerializeField] private TextMeshProUGUI _priceText;
 		[SerializeField] private Button _purchaseButton;
-		[SerializeField] private Transform _backgroundParent;
+		[SerializeField] private Transform _backgroundParent256;
 
 		public event Action PurchaseButtonClicked;
 		
 		private GameObject _backgroundInstance;
 		
-		public void SetItemNameTex(string text)
+		public void SetItemNameText(string text)
 		{
 			_itemNameText.text = text;
 		}
@@ -38,14 +38,14 @@ namespace ProjectB.UI.Components
 			_purchaseButton.interactable = interactable;
 		}
 
-		public void SetBackground(GameObject prefab)
+		public void SetBackground256(GameObject prefab)
 		{
 			if (_backgroundInstance != null)
 			{
 				Destroy(_backgroundInstance);
 			}
 			
-			_backgroundInstance = Instantiate(prefab, _backgroundParent);
+			_backgroundInstance = Instantiate(prefab, _backgroundParent256);
 		}
 	}
 
