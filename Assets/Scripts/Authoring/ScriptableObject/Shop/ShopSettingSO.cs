@@ -7,6 +7,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Shop
 {
 
+	[CreateAssetMenu(menuName = "Project B/Shop/Shop Setting")]
 	public class ShopSettingSO : UnityEngine.ScriptableObject, IShopSetting
 	{
 		[SerializeField] private InterfaceRefs<IShopPage> _shopPages;

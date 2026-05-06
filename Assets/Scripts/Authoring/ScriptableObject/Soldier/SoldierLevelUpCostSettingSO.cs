@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Soldier
 {
 
-	[CreateAssetMenu(menuName = "Soldier LevelUp Cost Setting")]
+	[CreateAssetMenu(menuName = "Project B/Soldier/Level Up Cost Setting")]
 	public class SoldierLevelUpExpSettingSO : UnityEngine.ScriptableObject, ISoldierLevelUpExpSetting
 	{
 		[Header("인덱스+1 이 레벨입니다")]

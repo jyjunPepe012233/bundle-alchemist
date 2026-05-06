@@ -5,7 +5,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Item
 {
 
-	[CreateAssetMenu(fileName = "GainCurrencyItem", menuName = "ScriptableObjects/Item/GainCurrencyItem")]
+	[CreateAssetMenu(fileName = "Gain Currency Item", menuName = "Project B/Item/Gain Currency Item")]
 	public sealed class GainCurrencyItemSO : ConsumableItemSO, IGainCurrencyItem
 	{
 		[SerializeField] private CurrencyType _currencyType;

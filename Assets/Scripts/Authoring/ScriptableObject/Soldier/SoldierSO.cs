@@ -10,7 +10,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Soldier
 {
 
-	[CreateAssetMenu(menuName = "Soldier")]
+	[CreateAssetMenu(menuName = "Project B/Soldier/Soldier")]
 	public class SoldierSO : UnityEngine.ScriptableObject, ISoldierData, ISoldierCardDisplaySetting
 	{
 		public ISoldierCardDisplaySetting CardDisplaySetting => this;

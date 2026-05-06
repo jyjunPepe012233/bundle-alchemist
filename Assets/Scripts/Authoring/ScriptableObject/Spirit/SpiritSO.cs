@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Spirit
 {
 
-	[CreateAssetMenu(menuName = "Spirit")]
+	[CreateAssetMenu(menuName = "Project B/Spirit")]
 	public class SpiritSO : UnityEngine.ScriptableObject, ISpiritData
 	{
 		[SerializeField] private string _spiritName;

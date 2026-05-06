@@ -4,6 +4,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.ItemTier
 {
 
+	[CreateAssetMenu(fileName = "Item Tier", menuName = "Project B/Item/Tier")]
 	public class ItemTierDataSO : UnityEngine.ScriptableObject, IItemTierData
 	{
 		[SerializeField] private string _itemTierName;

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Invasion
 {
 
-	[CreateAssetMenu(menuName = "Stage")]
+	[CreateAssetMenu(menuName = "Project B/Invasion/Stage")]
 	public class StageSO : UnityEngine.ScriptableObject, IStageData
 	{
 		[SerializeField] private string _stageName;

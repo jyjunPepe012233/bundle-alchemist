@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Invasion
 {
 
-	[CreateAssetMenu(menuName = "Chapter")]
+	[CreateAssetMenu(menuName = "Project B/Invasion/Chapter")]
 	public class ChapterSO : UnityEngine.ScriptableObject, IChapterData
 	{
 		[SerializeField] private string _chapterName;

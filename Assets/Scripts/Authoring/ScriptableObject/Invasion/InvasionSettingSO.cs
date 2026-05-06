@@ -7,7 +7,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Invasion
 {
 
-	[CreateAssetMenu(menuName = "Chapter List")]
+	[CreateAssetMenu(menuName = "Project B/Invasion/Invasion Setting")]
 	public class InvasionSettingSO : UnityEngine.ScriptableObject, IInvasionSetting
 	{
 		private static readonly Dictionary<IStageData, (int chapterLevel, int stageLevel)> _stageLevelsCache = new();

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Summon
 {
 
-	[CreateAssetMenu(menuName = "Summon Price Settings")]
+	[CreateAssetMenu(menuName = "Project B/Summon/Summon Price Setting")]
 	public class SummonCostSettingSO : UnityEngine.ScriptableObject, ISummonCostSetting
 	{
 		[SerializeField] private int _price1x;

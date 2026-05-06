@@ -7,7 +7,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.ShopItem
 {
 
-	[CreateAssetMenu(fileName = "Shop Item", menuName = "Shop Item")]
+	[CreateAssetMenu(fileName = "Shop Item", menuName = "Project B/Shop/Shop Item")]
 	public class ShopItemSO : UnityEngine.ScriptableObject, IShopItem
 	{
 		[Header("Cost")]

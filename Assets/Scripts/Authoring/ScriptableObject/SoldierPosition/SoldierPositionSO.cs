@@ -4,7 +4,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.SoldierPosition
 {
 
-	[CreateAssetMenu(menuName = "Soldier Position")]
+	[CreateAssetMenu(menuName = "Project B/Soldier/Position")]
 	public class SoldierPositionSO : UnityEngine.ScriptableObject, ISoldierPosition
 	{
 		[SerializeField] private string _soldierPositionName;

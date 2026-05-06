@@ -7,7 +7,7 @@ using UnityEngine;
 namespace ProjectB.Authoring.ScriptableObject.Item
 {
 
-	[CreateAssetMenu(menuName = "Item Database")]
+	[CreateAssetMenu(menuName = "Project B/Item/Item Database")]
 	public class ItemDatabaseSO : UnityEngine.ScriptableObject, IItemDatabase
 	{
 		[SerializeField] private InterfaceRefs<IItemData> _items;
