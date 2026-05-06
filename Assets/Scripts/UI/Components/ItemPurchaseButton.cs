@@ -12,7 +12,7 @@ namespace ProjectB.UI.Components
 		[SerializeField] private TextMeshProUGUI _itemQuantityText;
 		[SerializeField] private TextMeshProUGUI _priceText;
 		[SerializeField] private Button _purchaseButton;
-		[SerializeField] private Transform _backgroundParent256;
+		[SerializeField] private Transform _backgroundParent256; // TODO: 256이 아니라 128
 
 		public event Action PurchaseButtonClicked;
 		
