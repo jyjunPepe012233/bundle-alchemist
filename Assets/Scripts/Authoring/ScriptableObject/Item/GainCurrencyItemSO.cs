@@ -9,7 +9,7 @@ namespace ProjectB.Authoring.ScriptableObject.Item
 	public sealed class GainCurrencyItemSO : ConsumableItemSO, IGainCurrencyItem
 	{
 		[SerializeField] private CurrencyType _currencyType;
-		public CurrencyType CurrencyType { get; }
+		public CurrencyType CurrencyType => _currencyType;
 		
 		[SerializeField] private int _amount = 100;
 		public int Amount => _amount;

@@ -15,6 +15,9 @@ namespace ProjectB.Authoring.ScriptableObject.Item
 		[SerializeField] private string _itemName;
 		public string ItemName => _itemName;
 		
+		[SerializeField] private Sprite _icon128;
+		public Sprite Icon128 => _icon128;
+
 		[SerializeField] private ItemTierDataSO _itemTier;
 		public IItemTierData ItemTier => _itemTier;
 		

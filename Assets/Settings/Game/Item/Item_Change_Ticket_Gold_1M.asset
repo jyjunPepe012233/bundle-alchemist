@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemId: CHANGE_TICKET_GOLD_1M
   _itemName: "100\uB9CC \uACE8\uB4DC \uAD50\uD658\uAD8C"
+  _icon64: {fileID: 21300000, guid: ec32adfb684024d3c8a3d853e4b9a562, type: 3}
+  _icon128: {fileID: 21300000, guid: ec32adfb684024d3c8a3d853e4b9a562, type: 3}
   _itemTier: {fileID: 11400000, guid: 4558d152aaec243979a969f73ab9dff5, type: 2}
   _currencyType: 0
   _amount: 1000000

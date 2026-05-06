@@ -1,5 +1,6 @@
 using ProjectB.Data.Static.ItemTier;
 using ProjectB.Data.Types;
+using UnityEngine;
 
 namespace ProjectB.Data.Static.Item
 {
@@ -9,6 +10,8 @@ namespace ProjectB.Data.Static.Item
 		string ItemId { get; }
 		
 		string ItemName { get; }
+		
+		Sprite Icon128 { get; }
 		
 		IItemTierData ItemTier { get; }
 		
