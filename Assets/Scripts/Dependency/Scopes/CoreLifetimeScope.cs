@@ -57,6 +57,7 @@ namespace ProjectB.Dependency.Scopes
 			RegisterPortAdapter<ISoldierStatusComputerPort, SoldierStatusComputer>();
 			RegisterPortAdapter<ISoldierCombatPowerComputerPort, SoldierCombatPowerComputer>();
 			RegisterPortAdapter<IPlayerSoldierFactory, PlayerSoldierFactory>();
+			RegisterPortAdapter<IPlayerInventoryServicePort, PlayerInventoryService>();
 		}
 
 		protected override void AddOutboundAdapters()
