@@ -1,8 +1,10 @@
 using ProjectB.Authoring.ScriptableObject.Invasion;
+using ProjectB.Authoring.ScriptableObject.Item;
 using ProjectB.Authoring.ScriptableObject.Soldier;
 using ProjectB.Authoring.ScriptableObject.Summon;
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Invasion;
+using ProjectB.Data.Static.Item;
 using ProjectB.Data.Static.Soldier;
 using ProjectB.Data.Static.Summon;
 using ProjectB.Gameplay;
@@ -20,6 +22,7 @@ namespace ProjectB.Dependency.Scopes
 	public class CoreLifetimeScope : StructuredLifetimeScope
 	{
 		[SerializeField] private SoldierDatabaseSO _soldierDatabaseSO;
+		[SerializeField] private ItemDatabaseSO _itemDatabaseSO;
 		[SerializeField] private InvasionSettingSO _invasionSettingSO;
 		[SerializeField] private SummonCostSettingSO _summonCostSettingSo;
 
@@ -76,6 +79,7 @@ namespace ProjectB.Dependency.Scopes
 			base.AddData();
 			RegisterPortInstance<IInvasionSetting, InvasionSettingSO>(_invasionSettingSO);
 			RegisterPortInstance<ISoldierDatabase, SoldierDatabaseSO>(_soldierDatabaseSO);
+			RegisterPortInstance<IItemDatabase, ItemDatabaseSO>(_itemDatabaseSO);
 			RegisterPortInstance<ISummonCostSetting, SummonCostSettingSO>(_summonCostSettingSo);
 		}
 	}
