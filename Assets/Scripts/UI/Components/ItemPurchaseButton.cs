@@ -38,7 +38,7 @@ namespace ProjectB.UI.Components
 			_purchaseButton.interactable = interactable;
 		}
 
-		public void SetBackground256(GameObject prefab)
+		public void SetBackground128(GameObject prefab)
 		{
 			if (_backgroundInstance != null)
 			{

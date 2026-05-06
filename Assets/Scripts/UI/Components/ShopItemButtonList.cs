@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
 using ProjectB.Data.Static.ShopItem;
-using ProjectB.UI.Components;
 using UnityEngine;
 
-namespace ProjectB.UI.Screens.ShopScreen
+namespace ProjectB.UI.Components
 {
 
 	public class ShopItemButtonList : MonoBehaviour
@@ -43,6 +42,7 @@ namespace ProjectB.UI.Screens.ShopScreen
 				button.SetItemNameText(shopItem.ItemData.ItemName);
 				button.SetItemQuantityText(shopItem.Quantity.ToString());
 				button.SetPriceText(shopItem.Price.ToString());
+				button.SetBackground128(shopItem.ItemData.ItemTier.BackgroundPrefab128);	
 				
 				_buttonInstances.Add(button);
 			}

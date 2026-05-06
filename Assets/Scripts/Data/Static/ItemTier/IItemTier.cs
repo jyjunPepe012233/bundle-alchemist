@@ -9,7 +9,7 @@ namespace ProjectB.Data.Static.ItemTier
 		
 		int ItemTierLevel { get; }
 
-		GameObject BackgroundPrefab256 { get; }
+		GameObject BackgroundPrefab128 { get; }
 	}
 
 }

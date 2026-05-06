@@ -1,5 +1,6 @@
 using ProjectB.Data.Static.ItemTier;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace ProjectB.Authoring.ScriptableObject.ItemTier
 {
@@ -13,8 +14,8 @@ namespace ProjectB.Authoring.ScriptableObject.ItemTier
 		[SerializeField] private int _itemTierLevel;
 		public int ItemTierLevel => _itemTierLevel;
 		
-		[SerializeField] private GameObject _backgroundPrefab256;
-		public GameObject BackgroundPrefab256 => _backgroundPrefab256;
+		[SerializeField] private GameObject _backgroundPrefab128;
+		public GameObject BackgroundPrefab128 => _backgroundPrefab128;
 	}
 
 }
