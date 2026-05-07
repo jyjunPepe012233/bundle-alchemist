@@ -5,6 +5,8 @@ namespace ProjectB.UI.Core
 
 	public abstract class UIPresenter<TView> : MonoBehaviour where TView : UIView
 	{
+		[SerializeField] protected bool defaultDisable = false;
+		[SerializeField] protected bool dontDestroyOnLoad = false;
 		[SerializeField] protected bool initializeOnShow = true;
 		[SerializeField] protected bool initializeOnEnable = true;
 		[SerializeField] protected TView view;
@@ -12,6 +14,11 @@ namespace ProjectB.UI.Core
 		public void Awake()
 		{
 			view.RegisterUICallbacks();
+			
+			if (dontDestroyOnLoad)
+			{
+				DontDestroyOnLoad(gameObject);
+			}
 		}
 
 		public void Start()
@@ -19,6 +26,11 @@ namespace ProjectB.UI.Core
 			SetupReferences();
 			SetupSubscriptions();
 			InitializeView();
+
+			if (defaultDisable)
+			{
+				Hide();
+			}
 		}
 	
 		public void OnDestroy()
@@ -29,7 +41,7 @@ namespace ProjectB.UI.Core
 
 		public void OnEnable()
 		{
-			if (initializeOnShow)
+			if (initializeOnEnable)
 			{
 				InitializeView();
 			}
