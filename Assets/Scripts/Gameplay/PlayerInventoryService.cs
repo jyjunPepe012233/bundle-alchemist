@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using ProjectB.Core.Supports;
 using ProjectB.Data.Runtime.Player;
 using ProjectB.Data.RuntimeImpl;
 using ProjectB.Data.Static.Item;
@@ -47,7 +48,7 @@ namespace ProjectB.Gameplay
 				
 				case ItemGainAction.Reward:
 					var singleItemGainArr = new[] { new ItemGain(itemData, quantity) };
-					_loadRewardGainPopupPort.Load(singleItemGainArr);
+					CoroutineHandler.StartAndAdd(_loadRewardGainPopupPort.Load(singleItemGainArr));
 					break;
 			}
 			

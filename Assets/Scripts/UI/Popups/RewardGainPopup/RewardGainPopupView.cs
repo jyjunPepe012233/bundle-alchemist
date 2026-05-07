@@ -45,8 +45,9 @@ namespace ProjectB.UI.Popups.RewardGainPopup
 		{
 			foreach (var i in _itemCardInstances)
 			{
-				Object.Destroy(i);
+				Object.Destroy(i.gameObject);
 			}
+			_itemCardInstances.Clear();
 		}
 
 		public void AddItemCard(IItemData itemData, int quantity)
@@ -58,6 +59,7 @@ namespace ProjectB.UI.Popups.RewardGainPopup
 		
 		public void PlayPopupAnimation()
 		{
+			_openAnimDirector.Stop();
 			_openAnimDirector?.Play();
 		}
 	}

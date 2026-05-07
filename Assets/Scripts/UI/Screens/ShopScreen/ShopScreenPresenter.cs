@@ -1,8 +1,10 @@
 using System.Linq;
 using ProjectB.Core.Types;
 using ProjectB.Data.Static.Shop;
+using ProjectB.Data.Static.ShopItem;
 using ProjectB.Data.Static.ShopPage;
 using ProjectB.Dependency.Installers;
+using ProjectB.UI.Buttons.ShopItemButton;
 using ProjectB.UI.Buttons.ShopPageNavigateButton;
 using ProjectB.UI.Core;
 using UnityEngine;
@@ -22,6 +24,7 @@ namespace ProjectB.UI.Screens.ShopScreen
 			base.SetupSubscriptions();
 			
 			ShopPageNavigateButtonEvents.Clicked += OnShopPageNavigateButtonClicked;
+			ShopItemButtonEvents.Clicked += OnShopItemButtonClicked;
 		}
 
 		protected override void DisposeSubscriptions()
@@ -29,6 +32,7 @@ namespace ProjectB.UI.Screens.ShopScreen
 			base.DisposeSubscriptions();
 			
 			ShopPageNavigateButtonEvents.Clicked -= OnShopPageNavigateButtonClicked;
+			ShopItemButtonEvents.Clicked -= OnShopItemButtonClicked;
 		}
 		
 		void OnShopPageNavigateButtonClicked(IShopPage pageData)
@@ -40,6 +44,18 @@ namespace ProjectB.UI.Screens.ShopScreen
 			else
 			{
 				Debug.LogError("전달된 페이지 데이터가 null임");
+			}
+		}
+		
+		void OnShopItemButtonClicked(IShopItem itemData)
+		{
+			if (itemData != null)
+			{
+				_shopServicePortInstaller.Port.BuyItem(itemData);
+			}
+			else
+			{
+				Debug.LogError("전달된 아이템 데이터가 null임");
 			}
 		}
 

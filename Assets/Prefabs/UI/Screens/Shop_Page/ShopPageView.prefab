@@ -725,7 +725,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _contentRoot: {fileID: 744395928799513801}
-  _buttonPrefab: {fileID: 1980571851209470105, guid: 8cbcfe06f69c142c6be8330286e7faa4, type: 3}
+  _buttonPrefab: {fileID: 6557079540740097240, guid: 8cbcfe06f69c142c6be8330286e7faa4, type: 3}
 --- !u!114 &703501093112131208
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -16,6 +16,7 @@ namespace ProjectB.Infrastructure
 		
 		public IEnumerator Load(IEnumerable<ItemGain> itemGains)
 		{
+			
 			if (GetUIService(out var service))
 			{
 				service.OpenPopup(itemGains);
